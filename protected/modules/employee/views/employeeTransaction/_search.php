@@ -35,7 +35,7 @@
 		<?php echo $form->textField($model,'employee_transaction_category_id'); ?>
 	</div>
 
-	
+
 	<div class="row">
 		<?php echo $form->label($model,'employee_transaction_religion_id'); ?>
 		<?php echo $form->textField($model,'employee_transaction_religion_id'); ?>
@@ -77,7 +77,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
