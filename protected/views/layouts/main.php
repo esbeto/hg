@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />	
-	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/rudrasoftech_favicon.png" type="image/x-icon" />	
+	<meta name="language" content="en" />
+	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/rudrasoftech_favicon.png" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/newstyle.css" media="print,screen" />
 
 
@@ -48,42 +48,37 @@ function auto_logout() {
 <body class="page-header-fixed" oncontextmenu="return false;" onload="set_interval()" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
 <div class="header navbar navbar-inverse navbar-fixed-top">
 	<div id="logo" class="navbar-inner">
-	<div id="site-logo">
-		<?php
-		$org = Organization::model()->findAll();
-		echo CHtml::link(CHtml::image(Yii::app()->controller->createUrl('/site/loadImage', array('id'=>$org[0]['organization_id'])),'No Image',array('width'=>80,'height'=>70)),array('/site/newdashboard'));
-		?>
-	</div>
 	<div id="site-name">
 	<?php
+		$org = Organization::model()->findAll();
 		echo $org[0]['organization_name'];
 	?>
 	</div>
 
 		<li class="dropdown user">
 
-		<?php $user = User::model()->findByPk(Yii::app()->user->id)->user_type; 
-			if($user == 'admin') 
+		<?php $user = User::model()->findByPk(Yii::app()->user->id)->user_type;
+			if($user == 'admin')
 			   $username = 'admin';
 			else if($user == 'student') {
 			   $username = StudentInfo::model()->findByPk(StudentTransaction::model()->findByAttributes(array('student_transaction_user_id'=>Yii::app()->user->id))->student_transaction_student_id)->student_first_name;
 			}
 			else  {
 			  $username = EmployeeInfo::model()->findByPk(EmployeeTransaction::model()->findByAttributes(array('employee_transaction_user_id'=>Yii::app()->user->id))->employee_transaction_employee_id)->employee_first_name;
-			}			
+			}
 
 		?>
 		<a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle" href="#">
-		<?php 
+		<?php
 
-		$checkUser = StudentTransaction::model()->findByAttributes(array('student_transaction_user_id'=>Yii::app()->user->id)); 
+		$checkUser = StudentTransaction::model()->findByAttributes(array('student_transaction_user_id'=>Yii::app()->user->id));
 
 		if($checkUser) {
 		    $avtar = StudentPhotos::model()->findByPk($checkUser->student_transaction_student_photos_id)->student_photos_path;
 		    echo CHtml::image(Yii::app()->baseUrl.'/college_data/stud_images/'.$avtar, 'Student', array('height'=>29,'width'=>'29'));
 		}
 		else {
-		  $checkUser = EmployeeTransaction::model()->findByAttributes(array('employee_transaction_user_id'=>Yii::app()->user->id)); 
+		  $checkUser = EmployeeTransaction::model()->findByAttributes(array('employee_transaction_user_id'=>Yii::app()->user->id));
 		  if($checkUser) {
 		    $avtar = EmployeePhotos::model()->findByPk($checkUser->employee_transaction_emp_photos_id)->employee_photos_path;
 		    echo CHtml::image(Yii::app()->baseUrl.'/college_data/emp_images/'.$avtar, 'Student', array('height'=>29,'width'=>'29'));
@@ -94,7 +89,7 @@ function auto_logout() {
 		}
 
 		?>
-		
+
 		<span class="username"><?php echo $username; ?></span>
 		<i class="icon-angle-down"></i>
 		</a>
@@ -108,7 +103,7 @@ function auto_logout() {
       </div>
 
 </div>
-		
+
 <div class="page-container">
 
 <div class="page-sidebar nav-collapse collapse"> <!-- left sidebar start -->
@@ -198,10 +193,6 @@ function auto_logout() {
 
 </ul>
 
-<div class="product-logo">
-<?php echo CHtml::link(CHtml::image(Yii::app()->baseUrl.'/images/product.png', 'Product'), 'http://www.rudrasoftech.com', array('target'=>'_blank')); ?>
-
-</div>
 </div> <!-- Left sidebar complete -->
 
 <div class="page-content">
@@ -210,7 +201,7 @@ function auto_logout() {
 </div><!-- page -->
 </div><!-- content -->
 <div class="footer">
-	© 2013 design by Rudra Softech, All right Reserved.
+	© 2013 FIME UANL
 </div>
 
 <script>

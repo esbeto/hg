@@ -5,7 +5,7 @@
 	<meta name="language" content="en" />
 
 	<!-- blueprint CSS framework -->
-	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/rudrasoftech_favicon.png" type="image/x-icon" />	
+	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/rudrasoftech_favicon.png" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/login.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -19,7 +19,7 @@
 </div>
 
 <div class="footer-area">
-<div class="powered-by"><span class="powered-text">© Copyright 2013 Rudra Softech. All Rights Reserved.
+<div class="powered-by"><span class="powered-text">© 2013 FIME UANL
 </span></div>
 </div>
 
