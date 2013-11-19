@@ -22,25 +22,27 @@ if(!version_compare(PHP_VERSION, "5.2.2", ">=")) {
    <div class="content">
 	<div class="header">
 		<div class="app-logo">
-		   <img src="<?php echo $_SERVER['REQUEST_URI']?>/../images/product.png" alt="logo" /> 
+		   <img src="<?php echo $_SERVER['REQUEST_URI']?>/../images/product.png" alt="logo" />
 		</div>
 		<h1 class="title">Installation Page</h1>
 		<span>Welcome to the Edusec application installer! We need to collect a little information before we can get your application up and running.</span>
 	</div>
-	
+
 
 <?php if($flag == 1) { ?>
 	<div class="require-note">
 	<ul class="error-list">
-	<h1 class="title">Cannot install Edusec </h1> 
-<?php	
+	<h1 class="title">Cannot install Edusec </h1>
+<?php
 	foreach($error_list as $err)
 	   echo "<li>".$err."</li>";
 	echo '</ul></div>';
 }
 
 else {
+    /*
 	unlink('install.php');
+    */
 
     echo '<div class="req-finish">';
     echo 'System requirement checking successfully completed <a href="configForm.php">Click here</a> for database connectivity</div>';
