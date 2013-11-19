@@ -4,7 +4,7 @@
  * Set of pagination-related classes used for fixing some minor bugs that original
  * cListPager With Ajax Update
  * solution.
- * 
+ *
  * Based on CBasePage, AjaxListPager.
  */
 
@@ -21,7 +21,7 @@ class AjaxList extends CBasePager
 		const CSS_HIDDEN_PAGE = 'hidden';
 		const CSS_SELECTED_PAGE = 'selected';
 
-			
+
 		public $maxButtonCount;
 		public $nextPageLabel;
 		public $prevPageLabel;
@@ -45,21 +45,21 @@ class AjaxList extends CBasePager
 			$this->mPageSizeOptions[$this->maxButtonCount]='All';
 
 		if($this->nextPageLabel === null)
-			$this->nextPageLabel = Yii::t('yii', 'Next &gt;');
+			$this->nextPageLabel = Yii::t('yii', 'Siguiente &gt;');
 		if($this->prevPageLabel === null)
-			$this->prevPageLabel = Yii::t('yii', '&lt; Previous');
+			$this->prevPageLabel = Yii::t('yii', '&lt; Anterior');
 		if($this->firstPageLabel === null)
-			$this->firstPageLabel = Yii::t('yii', '&lt;&lt; First');
+			$this->firstPageLabel = Yii::t('yii', '&lt;&lt; Primera');
 		if($this->lastPageLabel === null)
-			$this->lastPageLabel = Yii::t('yii', 'Last &gt;&gt;');
+			$this->lastPageLabel = Yii::t('yii', 'Última &gt;&gt;');
 		if($this->header === null)
-			$this->header = Yii::t('yii', 'Go to page: ');
+			$this->header = Yii::t('yii', 'Ir a página: ');
 
 		if(!isset($this->htmlOptions['id']))
 			$this->htmlOptions['id'] = $this->getId();
 		if(!isset($this->htmlOptions['class']))
 			$this->htmlOptions['class'] = 'yiiPager';
-                
+
 		if(!isset($this->htmlOptions['id']))
 			$this->htmlOptions['id']=$this->getId();
 		if(!isset($this->htmlOptions['class']))
@@ -70,7 +70,7 @@ class AjaxList extends CBasePager
 	{
 		$this->registerClientScript();
 		$buttons = $this->createPageButtons();
-             	
+
 		if(!empty($buttons))
                 {
 			//print_r($this->mPageSize);
@@ -81,28 +81,28 @@ class AjaxList extends CBasePager
         /* Page Size */
 		$id="'".$this->getOwner()->id."'";
 			//Yii::app()->user->setState('pageSize', $this->mPageSize);
-			
+
 			$this->mPageSize = null == $this->mPageSize ? @$_GET["pageSize"]: $this->mPageSize;
-		
-			echo '<ul class="custom-pager-class"><li>View: '.CHtml::dropDownList('pageSize', $this->mPageSize, $this->mPageSizeOptions,array(
+
+			echo '<ul class="custom-pager-class"><li>Vista: '.CHtml::dropDownList('pageSize', $this->mPageSize, $this->mPageSizeOptions,array(
 					'onchange'=>'$.fn.yiiGridView.update('.$id.',{ data:{pageSize: $(this).val() }})',
-			),array('class'=>'pageScroll')).' Per Page</li></ul>';   
-				
-		
+			),array('class'=>'pageScroll')).' Por página</li></ul>';
+
+
 	}
 
 	protected function createPageButtons()
 	{
 		if(($pageCount = $this->getPageCount()) <= 1)
 			return array();
-		
+
 		list($beginPage, $endPage) = $this->getPageRange();
 		$currentPage = $this->getCurrentPage(false); // currentPage is calculated in getPageRange()
 		$buttons = array();
 
-	
-		// prev page	
-		
+
+		// prev page
+
 		if(($page = $currentPage -1)<0)
 			$page = 0;
 		/*$buttons[] = $this->createPageButton($this->prevPageLabel, $page, self::CSS_PREVIOUS_PAGE, $currentPage <= 0, false);
@@ -123,7 +123,7 @@ class AjaxList extends CBasePager
 			$page = $pageCount -1;
 		$buttons[] = $this->createPageButton($this->nextPageLabel, $page, self::CSS_NEXT_PAGE, $currentPage >= $pageCount -1, false).' ---- ' ;
 			*/
-		
+
 
 		return $buttons;
 	}
@@ -134,39 +134,39 @@ class AjaxList extends CBasePager
                  * Here we do some private tweak-ups to have CLinkPager part looking
                  * and working just as we want it to look and work.
                  */
-                
-               
-                
+
+
+
                 if($class == self::CSS_FIRST_PAGE)
                 {
                         $label = '<<';
-                       
+
                 }
-                
+
                 if($class == self::CSS_LAST_PAGE)
                 {
                         $label = '>>';
-                        
+
                 }
-                
+
                 if($class == self::CSS_PREVIOUS_PAGE)
                 {
                         $label = '<';
-                       
+
                 }
-                
+
                 if($class == self::CSS_NEXT_PAGE)
                 {
                         $label = '>';
-                       
+
                 }
-                
+
                 if($hidden || $selected) $class .= ' '.($hidden ? self::CSS_HIDDEN_PAGE : self::CSS_SELECTED_PAGE);
-                
+
                 $button = '<li  class="'.$class.'">';
                 $button.= (!$hidden) ? CHtml::link($label, $this->createPageUrl($page)) : '<span>'.$label.'</span>';
                 $button.= '</li>';
-                
+
 		return $button;
 	}
 
@@ -182,7 +182,7 @@ class AjaxList extends CBasePager
 		}
 		return array($beginPage, $endPage);
 	}
-        
+
 	protected function generatePageText($page)
 	{
 		if($this->pageTextFormat!==null)
