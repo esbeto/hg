@@ -94,13 +94,12 @@ function auto_logout() {
 		<i class="icon-angle-down"></i>
 		</a>
 		<ul class="dropdown-menu" style="display:none;">
-			<li class="sub-menu"><a href="<?php echo Yii::app()->baseUrl;?>/dashboard/dashboard" class="changeForm"><i class="icon-user"></i> My Profile</a></li>
-			<li class="sub-menu"><a href="<?php echo Yii::app()->baseUrl;?>/mailbox" class="changeForm"><i class="icon-envelope"></i> My Inbox</a></li>
-			<li><i class="icon-key"></i><?php echo CHtml::link('Log Out', 'logout')?></li>
+			<li class="sub-menu"><a href="<?php echo Yii::app()->baseUrl;?>/dashboard/dashboard" class="changeForm"><i class="icon-user"></i> Panel de Control</a></li>
+			<!-- <li class="sub-menu"><a href="<?php echo Yii::app()->baseUrl;?>/mailbox" class="changeForm"><i class="icon-envelope"></i> Mensajes</a></li> -->
+			<li><i class="icon-key"></i><?php echo CHtml::link('Salir', 'logout')?></li>
 		</ul>
 	</li>
-	<span style="float: right; margin-top: 42px; background: none repeat scroll 0 0 #35AA47;  padding: 5px; text-decoration: blink; border-radius: 2px;"><?php echo CHtml::link('Support', 'http://www.rudrasoftech.com/forum', array('style'=>'text-decoration: none; color: #FFF; font-size: 17px;  font-weight: 700;', 'target'=>'_blank')); ?></span>
-      </div>
+    </div>
 
 </div>
 
@@ -109,9 +108,9 @@ function auto_logout() {
 <div class="page-sidebar nav-collapse collapse"> <!-- left sidebar start -->
 <ul id="accordion" class="page-sidebar-menu">
 	<?php if(Yii::app()->user->checkAccess('Configuration')) { ?>
-	<i class="icon-cog"></i><li>Configuration <i class="icon-angle-down"></i> </li>
+	<i class="icon-cog"></i><li>Configuración <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Academic Year', array('/academicTermPeriod/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Año Académico', array('/academicTermPeriod/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Semester', array('/academicTerm/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Department', array('/department/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Designation', array('/employeeDesignation/admin'), array('class'=>'changeForm')); ?></li>

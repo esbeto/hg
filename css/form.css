@@ -22,7 +22,7 @@
   letter-spacing: -1px;
   margin: 0;
   padding: 0;
-  float: left; 
+  float: left;
 }
 
 body {
@@ -67,7 +67,7 @@ body {
 .grid-view table.items th a,
 .grid-view table.items th {
   font-weight: bold;
-  font-family: 'Open Sans';  
+  font-family: 'Open Sans';
 }
 .grid-view table.items tr:hover {
   cursor: pointer;
@@ -89,19 +89,19 @@ body {
 
 .portlet.box.green > .portlet-title,
 .portlet.box.blue > .portlet-title {
-  background-color: #4B8DF8;
-  border-bottom: 1px solid #EEEEEE;
+  background-color: #7694BB;
+  border-bottom: 2px solid #DDD;
   color: #FFFFFF !important;
   font-size: 17px;
   padding: 10px;
 }
 
 .portlet.box.green > .portlet-title {
-  background-color: #35AA47;
+  background-color: #8DBB76;
 }
 
 .portlet.box.blue {
-  border: 1px solid #B4CEF8;
+  border: 1px solid #3566AA;
   float: left;
   width: 100%;
 }
@@ -374,7 +374,7 @@ ul.actions > li > a {
 }
 .profile-tab ul li.ui-state-default.ui-tabs-selected.ui-state-active {
   border: 1px solid #DDD;
-  border-bottom: none; 
+  border-bottom: none;
 }
 .profile-tab ul li.ui-state-default.ui-tabs-selected.ui-state-active > a {
   border-top: 3px solid #D12610 !important;
@@ -618,7 +618,7 @@ h2 {
   width: 25%;
   clear: both;
   margin-bottom: 20px;
-} 
+}
 
 .profile-picture img {
   border: 5px solid #DDDDDD;
@@ -638,7 +638,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-table.course-details th, 
+table.course-details th,
 table.course-details td {
   border-right: 1px solid #DDDDDD;
   padding: 10px;
@@ -677,8 +677,8 @@ p{
  border: medium none !important;
  color: #222222 !important;
 }
- .mailbox-menu .ui-state-default, 
-.mailbox-menu .ui-widget-content .ui-state-default, 
+ .mailbox-menu .ui-state-default,
+.mailbox-menu .ui-widget-content .ui-state-default,
 .mailbox-menu .ui-widget-header .ui-state-default {
  background: none repeat scroll 0 0 #D9EDF7 !important;
  border: medium none !important;
