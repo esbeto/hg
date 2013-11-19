@@ -36,7 +36,8 @@
 }
 
 body {
-  background: #444444 !important;
+  background: url("../images/bg.jpg") no-repeat;
+  background-size: cover;
   font-family: 'Open Sans',sans-serif;
   color: #000;
   font-size: 14px;
@@ -141,8 +142,8 @@ span.required {
 }
 
 .header-area, .footer-area {
-  background: none repeat scroll 0 0 #282828 !important;
-  border-bottom: 1px solid #777777;
+  background: #7694BB;
+  border-bottom: 1px solid #EEE;
   float: left;
   height: 60px;
   width: 100%;
@@ -165,7 +166,7 @@ span.required {
 }
 
 .footer-area .powered-text {
-  color: #999999;
+  color: #FFF;
   float: left;
   line-height: 55px;
   margin-right: 20px;

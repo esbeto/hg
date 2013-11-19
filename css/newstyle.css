@@ -61,7 +61,7 @@
 /******************* LEFT SIDE BAR   *****************************************/
 
 .page-sidebar {
-  background-color: #3D3D3D;
+  background-color: #7694BB;
   width: 17%;
   float: left;
   min-height: 598px;
@@ -100,7 +100,7 @@ ul.page-sidebar-menu > li.start > a {
 }
 
 ul.page-sidebar-menu > li {
-  border-bottom: 1px solid #5C5C5C !important;
+  border-bottom: 1px solid #FFFFFF !important;
   color: #FFFFFF !important;
 }
 ul.page-sidebar-menu > li,
@@ -178,10 +178,8 @@ body {
 }
 
 .header .navbar-inner {
-  background-color: #282828 !important;
-  background-image: none !important;
-  filter: none !important;
-  border-bottom: 3px solid #777777;
+  background-color: #436188;
+  border-bottom: 3px solid #FFF;
 }
 
 .header .navbar-inner {
@@ -207,7 +205,7 @@ body {
 }
 
 #logo > div {
-  color: #DDDDDD;
+  color: #FFF;
   float: left;
   line-height: 40px;
   margin-left: 20px;
@@ -314,17 +312,9 @@ li.sub-menu {
   background: none repeat scroll 0 0 #FFFFFF !important;
 }
 
-.product-logo {
-  float: left;
-  margin-left: 45px;
-  margin-top: 20px;
-}
-img {
-  border: none;
-}
 
 .footer {
-  border-top: 3px solid #777777;
+  border-top: 3px solid #7694BB;
   color: #000000;
   float: right;
   height: 20px;
