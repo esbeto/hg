@@ -3,7 +3,7 @@ $flag = 0;
 $error_list = array();
 
 if(!version_compare(PHP_VERSION, "5.2.2", ">=")) {
-  $error_list[] = 'Need atleast or greater version of PHP 5.2.2';
+  $error_list[] = 'El sistema requiere una versión PHP mayor a 5.2.2';
   $flag = 1;
 }
 
@@ -14,25 +14,22 @@ if(!version_compare(PHP_VERSION, "5.2.2", ">=")) {
     <head>
 	<meta charset="UTF-8" />
 	<meta name="language" content="en" />
-	<title>Edusec Installation</title>
+	<title>Instalación</title>
 <link href="<?php echo $_SERVER['REQUEST_URI']?>/../css/installation.css" type="text/css" rel="stylesheet">
     </head>
    <body>
    <div class="container">
    <div class="content">
 	<div class="header">
-		<div class="app-logo">
-		   <img src="<?php echo $_SERVER['REQUEST_URI']?>/../images/product.png" alt="logo" />
-		</div>
-		<h1 class="title">Installation Page</h1>
-		<span>Welcome to the Edusec application installer! We need to collect a little information before we can get your application up and running.</span>
+		<h1 class="title">Instalación</h1>
+		<span>Bienvenido al instalador! Estamos verificando que el sistema cumpla los requerimientos.</span>
 	</div>
 
 
 <?php if($flag == 1) { ?>
 	<div class="require-note">
+    <h2 class="title">No se podrá instalar el sistema... </h2>
 	<ul class="error-list">
-	<h1 class="title">Cannot install Edusec </h1>
 <?php
 	foreach($error_list as $err)
 	   echo "<li>".$err."</li>";
@@ -45,7 +42,7 @@ else {
     */
 
     echo '<div class="req-finish">';
-    echo 'System requirement checking successfully completed <a href="configForm.php">Click here</a> for database connectivity</div>';
+    echo 'Se completó la revisión de requisitos exitosamente.<br> <a href="configForm.php">Ingresa aquí</a> para conectar la base de datos.</div>';
 }
 ?>
 
