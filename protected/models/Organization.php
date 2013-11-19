@@ -10,7 +10,7 @@
  * @property string $organization_creation_date
 
  * @property string address_line1
- * @property string address_line2 
+ * @property string address_line2
  * @property string city
  * @property string state
 * @property string  country
@@ -43,7 +43,7 @@ class Organization extends CActiveRecord
 	{
 		return 'organization';
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'organization_name'
@@ -62,7 +62,7 @@ class Organization extends CActiveRecord
 			array('organization_name, organization_name,address_line1,fax_no,address_line2', 'length', 'max'=>50, 'message'=>''),
 			array('fax_no', 'length', 'max'=>15, 'message'=>''),
 			//array('organization_name','required','message'=>'','on'=>'update'),
-			array('logo', 'file', 
+			array('logo', 'file',
        				 'types'=>'jpg, gif, png, bmp, jpeg',
             			'maxSize'=>1024 * 1024 * 2, // 10MB
                 		'tooLarge'=>'The file was larger than 2MB. Please upload a smaller file.',
@@ -98,22 +98,22 @@ class Organization extends CActiveRecord
 	{
 		return array(
 			'organization_id' => 'ID',
-			'organization_name' => 'Name ',
-			'name_alias'=>'Name Alias',
-			'organization_created_by' => 'Created By',
-			'organization_creation_date' => 'Creation Date',
-			'address_line1'=>'Address Line1',
-			'address_line2'=>'Address Line2',
-			'pin'=>'Zip / Postal Code',
-			'phone'=>'Phone',
-			'website'=>'website',
+			'organization_name' => 'Nombre ',
+			'name_alias'=>'Alias',
+			'organization_created_by' => 'Creado Por',
+			'organization_creation_date' => 'Fecha de creación',
+			'address_line1'=>'Dirección',
+			'address_line2'=>'Dirección 2',
+			'pin'=>'Código Postal',
+			'phone'=>'Teléfono',
+			'website'=>'Sitio web',
 			'email'=>'Email',
-			'fax_no'=>'Fax No',
-			'city'=>'City / Town',
-			'state'=>'State / Province',
-			'country'=>'Country',
-			'name'=>'Country',
-			'organization_trust_id'=>'Trust',
+			'fax_no'=>'FAX',
+			'city'=>'Ciudad',
+			'state'=>'Estado / Provincia',
+			'country'=>'País',
+			'name'=>'País',
+			'organization_trust_id'=>'Confianza',
 		);
 	}
 
@@ -136,24 +136,24 @@ class Organization extends CActiveRecord
 
 		$criteria->compare('organization_id',$this->organization_id);
 		$criteria->compare('organization_name',$this->organization_name,true);
-		
+
 		$criteria->compare('organization_created_by',$this->organization_created_by);
 		$criteria->compare('organization_creation_date',$this->organization_creation_date,true);
 		$criteria->compare('address_line1',$this->address_line1,true);
 		$criteria->compare('address_line2',$this->address_line2);
 		$criteria->compare('pin',$this->pin);
-		$criteria->compare('phone',$this->phone);	
+		$criteria->compare('phone',$this->phone);
 		$criteria->compare('website',$this->website,true);
 		$criteria->compare('email',$this->email);
 		$criteria->compare('fax_no',$this->fax_no);
 		$criteria->compare('city',$this->city);
-		$criteria->compare('state',$this->state);		
+		$criteria->compare('state',$this->state);
 		$criteria->compare('country',$this->country);
 		$criteria->compare('organization_trust_id',$this->organization_trust_id);
 		$organization_data = new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
-	
+
 		$_SESSION['organization_records']=$organization_data;
 		return $organization_data;
 		}
@@ -190,11 +190,11 @@ class Organization extends CActiveRecord
 					    ->from('organization')
 					    ->where('organization_name='.$orgname)
 				    	    ->queryAll();
-				
+
 				if($organization_name)
 				{
-					$this->addError('organization_name',"Already Exists.");	
-					 return false;	
+					$this->addError('organization_name',"Ya existe.");
+					 return false;
 				}
 				else
 				{
@@ -202,7 +202,7 @@ class Organization extends CActiveRecord
 				}
 			}
 			else
-			{	
+			{
 				$orgid=$_REQUEST['id'];
 				$orgname='"'.strtolower($this->organization_name).'"';
 				$organization_name=Yii::app()->db->createCommand()
@@ -210,17 +210,17 @@ class Organization extends CActiveRecord
 					    ->from('organization')
 					    ->where('organization_id <>'.$orgid.' and organization_name='.$orgname)
 				    	    ->queryAll();
-				
+
 				if($organization_name)
 				  {
-				 	$this->addError('organization_name',"Already Exists.");	
-					 return false;	
+				 	$this->addError('organization_name',"Ya existe.");
+					 return false;
 				  }
 				else
 			          {
 					return true;
 				  }
-			}	
+			}
 		}
 
 }

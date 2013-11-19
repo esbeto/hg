@@ -8,7 +8,7 @@
         'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php //echo $form->errorSummary($model); ?>
 
@@ -72,7 +72,7 @@
 	</div>
 
 	<div class="row buttons" style="width: 20%;">
-		<?php echo CHtml::submitButton('Install', array('class'=>'submit btnblue')); ?>
+		<?php echo CHtml::submitButton('Instalar', array('class'=>'submit btnblue')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
