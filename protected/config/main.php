@@ -6,6 +6,8 @@ return array(
 
 	// preloading 'log' component
 	'preload'=>array('log'),
+	'language'=>"es",
+	'sourceLanguage'=>'es',
 
 	// autoloading model and component classes
 	'import'=>array(
