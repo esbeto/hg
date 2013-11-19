@@ -11,19 +11,19 @@ th, td, caption {
 <?php if ($model !== null):?>
 <?$k=1;?>
 
-	
+
 <table border="1">
 
 	<tr>
 		<th width="80px">
-		      SN.		</th>
+		      ID.		</th>
  		<th width="80px">
-		     Department	</th>
+		     Departamento	</th>
 		<th>
-		     Created By		
+		     Creado Por
 		</th>
-		
-	
+
+
  	</tr>
 	<?php foreach($model as $m=>$v)
 	{
@@ -35,16 +35,16 @@ th, td, caption {
 		</td>
 		<td>
 			<?php echo $v['department_name']; ?>
-		</td>	
-			<td>
-		      <?php echo User::model()->findBypk($v['department_created_by'])->user_organization_email_id; ?>	
 		</td>
-		
-	
+			<td>
+		      <?php echo User::model()->findBypk($v['department_created_by'])->user_organization_email_id; ?>
+		</td>
+
+
   	</tr>
 	<?php $k++;?>
 	 <?php  }// end if
-	
+
 	}// end for loop?>
      </table>
 

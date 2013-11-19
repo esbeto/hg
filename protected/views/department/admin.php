@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Departments'=>array('admin'),
-	'Manage',
+	'Departamentos'=>array('admin'),
+	'Administrar',
 );
 
 
@@ -20,7 +20,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Departments</h1>
+<h1>Administrar Departamentos</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/departmentExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/departmentExportToExcel'), array('class'=>'btnblue'));?>
@@ -34,10 +34,10 @@ $('.search-form form').submit(function(){
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Department
+ <div class="portlet-title"> Departamento
  </div>
 
-<?php echo CHtml::link('Add New +', array('department/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('department/create'), array('class'=>'btn green'))?>
 
 <?php
 $dataProvider = $model->search();
@@ -57,7 +57,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		//'department_id',

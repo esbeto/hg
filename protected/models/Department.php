@@ -20,7 +20,7 @@ class Department extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'department_name'
@@ -33,7 +33,7 @@ class Department extends CActiveRecord
 	{
 		return 'department';
 	}
-	
+
 
 	/**
 	 * @return array validation rules for model attributes.
@@ -47,7 +47,7 @@ class Department extends CActiveRecord
 			array('department_organization_id, department_created_by', 'numerical', 'integerOnly'=>true),
 			array('department_name', 'length', 'max'=>60),
 			array('department_name', 'unique'),
-			
+
 			array('department_name','CRegularExpressionValidator','pattern'=>'/^[a-zA-Z& ]+([.][a-zA-Z ]+)*$/','message'=>''),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -74,11 +74,11 @@ class Department extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'department_id' => 'Department',
-			'department_name' => 'Department',
-			'department_organization_id' => 'Department Organization',
-			'department_created_by' => 'Created By',
-			'department_created_date' => 'Creation Date',
+			'department_id' => 'ID',
+			'department_name' => 'Departamento',
+			'department_organization_id' => 'Organización de Departamento',
+			'department_created_by' => 'Creado Por',
+			'department_created_date' => 'Fecha de Creación',
 		);
 	}
 
