@@ -2,8 +2,8 @@
 include realpath('dbconf.php');
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'EduSec College Management System',
-	
+	'name'=>'Sistema Educativo Hansel & Gretel',
+
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -11,13 +11,13 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.extensions.jtogglecolumn.*',
-		
+
 		'application.extensions.AjaxList.AjaxList',
 		'application.components.*',
 
 		'application.modules.rights.*',
 		'application.modules.rights.components.*',
-		
+
 		'application.extensions.EMailTemplate.EMailTemplate',
 
 		'application.modules.student.models.*',
@@ -42,12 +42,12 @@ return array(
 		//'application.modules.importation.models.*',
 		'application.extensions.html2pdf.*',
 		'application.extensions.crontab.*',
-			
+
 	),
-		
+
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		
+
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'secure',
@@ -58,7 +58,7 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1','192.168.0.153','192.168.0.154'),
 		),
 		'mailbox'=>
-		    array(  
+		    array(
 		    'userClass' => 'User',
 		    'userIdColumn' => 'user_id',
 		    'usernameColumn' => 'user_organization_email_id',
@@ -82,7 +82,7 @@ return array(
 		'importation',
 		'library',
 		'hostel',
-		'transport',	
+		'transport',
 		'rights'=>array(
 			'install'=>false,
 			'superuserName'=>'SuperAdmin',
@@ -113,7 +113,7 @@ return array(
 
 		'phpThumb'=>array(
 		    'class'=>'ext.EPhpThumb.EPhpThumb',
-		    
+
 		),
 
 		'authManager'=>array(
@@ -123,14 +123,14 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-		
-				
+
+
 			 'gii'=>'gii',
 		         'gii/<controller:\w+>'=>'gii/<controller>',
 		         'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
 			'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 			'<controller:\w+>/<action:\w+>/<id:\d+>/*'=>'<controller>/<action>',
-			'<controller:\w+>/<action:\w+>'=>'<controller>/<action>', 
+			'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
 
@@ -138,15 +138,15 @@ return array(
 			),
 			'showScriptName'=>false,
 		),
-		
+
 
 	       'db'=>array(
 			'connectionString'=>'mysql:host='.$host.';dbname='.$dbName,
 			'emulatePrepare' => true,
 			'username' => $userName,
 			'password' => $passWord,
-			'charset' => 'utf8',	
-			'tablePrefix' => 'tbl_',		
+			'charset' => 'utf8',
+			'tablePrefix' => 'tbl_',
 		),
 
 		'errorHandler'=>array(
