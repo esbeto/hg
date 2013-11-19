@@ -11,18 +11,21 @@ th, td, caption {
 <?php if ($model !== null):?>
 <?$k=1;?>
 
-	
+
 <table border="1">
 
 	<tr>
 		<th width="80px">
-		      SN.		</th>
+			SN.
+		</th>
  		<th width="80px">
-		      Academic Year	</th>
-		<th width="80px">
-		      Created By	</th>
-		
-	
+		    Año Académico
+		</th>
+		<th width="100px">
+		    Creado Por
+		</th>
+
+
  	</tr>
 	<?php foreach($model as $m=>$v)
 	{
@@ -34,15 +37,15 @@ th, td, caption {
 		</td>
 		<td>
 			<?php echo $v['academic_term_period']; ?>
-		</td>	
+		</td>
 		<td>
-		      <?php echo User::model()->findBypk($v['academic_terms_period_created_by'])->user_organization_email_id; ?>	
-		</td>		
-		 
+		      <?php echo User::model()->findBypk($v['academic_terms_period_created_by'])->user_organization_email_id; ?>
+		</td>
+
 	</tr>
 	<?php $k++;?>
 	 <?php  }// end if
-	
+
 	}// end for loop?>
      </table>
 

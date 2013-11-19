@@ -1,22 +1,22 @@
 <?php
 $this->breadcrumbs=array(
-	'Academic Year'=>array('admin'),
+	'Año Académico'=>array('admin'),
 	$model->academic_term_period,
 );
 
 ?>
 
-<h1>View Academic Year</h1>
+<h1>Vista Año Académico</h1>
 
 <div class="operation">
-<?php echo CHtml::link('Back', array('admin'), array('class'=>'btnback'));?>
-<?php echo CHtml::link('Edit', array('update' ,'id'=>$model->academic_terms_period_id), array('class'=>'btnupdate'));?>
-<?php echo CHtml::link('Delete', array('delete' ,'id'=>$model->academic_terms_period_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
+<?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Editar', array('update' ,'id'=>$model->academic_terms_period_id), array('class'=>'btnupdate'));?>
+<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->academic_terms_period_id), array('class'=>'btndelete','onclick'=>"return confirm('Desea eliminar el registro?');"));?>
 </div>
 
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">View Details
+ <div class="portlet-title">Ver detalles
  </div>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
@@ -32,7 +32,7 @@ $this->breadcrumbs=array(
 		//'academic_terms_period_creation_date',
 		array(
                 'name'=>'academic_terms_period_creation_date',
-                'type'=>'raw',		
+                'type'=>'raw',
                 'value'=>($model->academic_terms_period_creation_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->academic_terms_period_creation_date), 'd-m-Y'),
 	        ),
 	),

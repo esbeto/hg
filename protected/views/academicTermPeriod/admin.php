@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Academic Year'=>array('admin'),
-	'Manage',
+	'Año Académico'=>array('admin'),
+	'Administrar',
 );
 
 
@@ -19,7 +19,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Academic Year</h1>
+<h1>Administrar Año Académico</h1>
 
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/academicTermPeriodExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
@@ -28,10 +28,10 @@ $('.search-form form').submit(function(){
 
 <div class="portlet box blue">
 
- <div class="portlet-title"> Academic Year
+ <div class="portlet-title"> Año Académico
  </div>
 
-<?php echo CHtml::link('Add New +', array('academicTermPeriod/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('academicTermPeriod/create'), array('class'=>'btn green'))?>
 
 <?php
 $dataProvider = $model->search();
@@ -52,7 +52,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 

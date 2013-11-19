@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div>
 <div class="form">
 
@@ -10,7 +10,7 @@
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php //echo $form->errorSummary($model); ?>
 
@@ -21,8 +21,8 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); ?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

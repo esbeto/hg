@@ -8,7 +8,7 @@
 <body oncontextmenu="return false;" >
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-		    'homeLink'=>CHtml::link('Home', array('/dashboard/dashboard'), array('class'=>'home')),
+		    'homeLink'=>CHtml::link('Inicio', array('/dashboard/dashboard'), array('class'=>'home')),
 		    'links'=>$this->breadcrumbs,
 		    'separator'=>'',
 		)); ?>

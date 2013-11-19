@@ -151,6 +151,7 @@ body {
 .portlet.box.blue .row {
   float: left;
   margin-bottom: 20px;
+  margin-top: 20px;
   padding-top: 0px;
   width: 100%;
 }

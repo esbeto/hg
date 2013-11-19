@@ -26,7 +26,7 @@ class AcademicTermPeriod extends CActiveRecord
 		return parent::model($className);
 	}
 
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'academic_term_period'
@@ -78,14 +78,14 @@ class AcademicTermPeriod extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'academic_terms_period_id' => 'Academic Terms Period',
-			'academic_terms_period_name' => 'Period Name',
-			'academic_term_period' => 'Academic Year',
-			'academic_terms_period_start_date' => 'Period Start Date',
-			'academic_terms_period_end_date' => 'Period End Date',
-			'academic_terms_period_organization_id' => 'Period Organization',
-			'academic_terms_period_created_by' => 'Created By',
-			'academic_terms_period_creation_date' => 'Creation Date',
+			'academic_terms_period_id' => 'Período de Término Académico',
+			'academic_terms_period_name' => 'Nombre del Período',
+			'academic_term_period' => 'Año Académico',
+			'academic_terms_period_start_date' => 'Fecha de Inicio de Período',
+			'academic_terms_period_end_date' => 'Fecha de Conclusión de Período',
+			'academic_terms_period_organization_id' => 'Organización de Período',
+			'academic_terms_period_created_by' => 'Creado Por',
+			'academic_terms_period_creation_date' => 'Fecha de Creación',
 		);
 	}
 
@@ -138,5 +138,5 @@ class AcademicTermPeriod extends CActiveRecord
 			foreach($models as $model)
 		  	self::$_items[$model->academic_terms_period_id]=$model->academic_term_period;
 	    	}
-	
+
 }

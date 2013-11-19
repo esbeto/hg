@@ -1,9 +1,9 @@
 <?php
 $this->breadcrumbs=array(
-	'Academic Year'=>array('index'),
+	'Año Académico'=>array('index'),
 	//$model->academic_term_period=>array('view','id'=>$model->academic_terms_period_id),
 	$model->academic_term_period=>array(),
-	'Edit',
+	'Editar',
 );
 
 $this->menu=array(
@@ -14,6 +14,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Edit Academic Year<?php //echo $model->academic_terms_period_id; ?></h1>
+<h1>Editar Año Académico<?php //echo $model->academic_terms_period_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
