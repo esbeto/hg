@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Academic Terms',
+	'Término Académico',
 );
 
 $this->menu=array(
@@ -9,7 +9,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Academic Terms</h1>
+<h1>Término Académico</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

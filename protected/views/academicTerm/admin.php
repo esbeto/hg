@@ -1,14 +1,14 @@
 <?php
 $this->breadcrumbs=array(
-	'Semester'=>array('admin'),
-	'Manage',
+	'Semestre'=>array('admin'),
+	'Administrar',
 );
 
 $this->menu=array(
 //	array('label'=>'', 'url'=>array('index')),
-	array('label'=>'', 'url'=>array('create'),'linkOptions'=>array('class'=>'Create','title'=>'Add')),
-	array('label'=>'', 'url'=>array('ExportToPDFExcel/AcademicTermExportToPdf'),'linkOptions'=>array('class'=>'export-pdf','title'=>'Export To PDF','target'=>'_blank')),
-	array('label'=>'', 'url'=>array('ExportToPDFExcel/AcademicTermExportToExcel'),'linkOptions'=>array('class'=>'export-excel','title'=>'Export To Excel','target'=>'_blank')),
+	array('label'=>'', 'url'=>array('create'),'linkOptions'=>array('class'=>'Create','title'=>'Agregar')),
+	array('label'=>'', 'url'=>array('ExportToPDFExcel/AcademicTermExportToPdf'),'linkOptions'=>array('class'=>'export-pdf','title'=>'Exportar a PDF','target'=>'_blank')),
+	array('label'=>'', 'url'=>array('ExportToPDFExcel/AcademicTermExportToExcel'),'linkOptions'=>array('class'=>'export-excel','title'=>'Exportar a Excel','target'=>'_blank')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -25,7 +25,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Semester</h1>
+<h1>Administrar Semestre</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/academicTermExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/academicTermExportToExcel'), array('class'=>'btnblue'));?>
@@ -33,10 +33,10 @@ $('.search-form form').submit(function(){
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Semesters
+ <div class="portlet-title"> Semestres
  </div>
 
-<?php echo CHtml::link('Add New +', array('academicTerm/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('academicTerm/create'), array('class'=>'btn green'))?>
 
 <?php
 $dataProvider = $model->search();
@@ -75,13 +75,13 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 				'changeMonth'=>'true',
 				'showAnim' =>'slide',
 				'yearRange'=>'1900:'.(date('Y')+1),
-				'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',			
+				'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
 		    ),
 			'htmlOptions'=>array(
 			'id'=>'academic_term_start_date',
 		     ),
-			
-                        ), 
+
+                        ),
                         true),
 
                 ),
@@ -89,7 +89,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
                         'name' => 'academic_term_end_date',
 			 'value'=>'($data->academic_term_end_date == 0000-00-00) ? "Not Set" : date_format(new DateTime($data->academic_term_end_date), "d-m-Y")',
                          'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                                'model' => $model, 
+                                'model' => $model,
                                 'attribute' => 'academic_term_end_date',
                                 'options'=>array(
 				'dateFormat'=>'dd-mm-yy',
@@ -97,23 +97,23 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 				'changeMonth'=>'true',
 				'showAnim' =>'slide',
 				'yearRange'=>'1900:'.(date('Y')+1),
-				'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',			
+				'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
 		    ),
 			'htmlOptions'=>array(
 			'id'=>'academic_term_end_date',
 		     ),
-			
-                        ), 
+
+                        ),
                         true),
 
                 ),
-		
+
 //		'academic_term_period_id',
 		array('name'=>'academic_term_period_id',
 			'value'=>'AcademicTermPeriod::model()->findByPk($data->academic_term_period_id)->academic_term_period',
 			'filter' =>CHtml::listData(AcademicTermPeriod::model()->findAll(),'academic_terms_period_id','academic_term_period'),
 
-		), 
+		),
 		array(
                     'class'=>'JToggleColumn',
                     'name'=>'current_sem', // boolean model attribute (tinyint(1) with values 0 or 1)
@@ -125,7 +125,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
                     'htmlOptions'=>array('style'=>'text-align:center;min-width:60px;')
                 ),
 
-		
+
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',
@@ -141,6 +141,6 @@ function reInstallDatepicker(id, data){
         $('#academic_term_start_date').datepicker({'dateFormat':'dd-mm-yy'});
 	  $('#academic_term_end_date').datepicker({'dateFormat':'dd-mm-yy'});
 }
-"); 
+");
 ?>
 

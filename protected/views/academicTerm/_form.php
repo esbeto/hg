@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div>
 
 <div class="form">
@@ -11,18 +11,18 @@
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
-	<?php 
+	<?php
 		$org_data = Organization::model()->findByPk(Yii::app()->user->getState('org_id'));
 		$semester_array = range(0,$org_data['no_of_semester'],1);
-		$semester_array[0] = 'Select Semester';
+		$semester_array[0] = 'Seleccionar Semestre';
 	?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'academic_term_period_id'); ?>
 		<?php //echo $form->textField($model,'academic_term_period_id'); ?>
-		<?php echo $form->dropDownList($model,'academic_term_period_id',CHtml::listData(AcademicTermPeriod::model()->findAll(),'academic_terms_period_id','academic_term_period'),array('empty' => 'Select  Year')); ?><span class="status">&nbsp;</span>
+		<?php echo $form->dropDownList($model,'academic_term_period_id',CHtml::listData(AcademicTermPeriod::model()->findAll(),'academic_terms_period_id','academic_term_period'),array('empty' => 'Seleccionar Año')); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'academic_term_period_id'); ?>
 	</div>
 	<div class="row">
@@ -31,27 +31,27 @@
 			?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'academic_term_name'); ?>
 
-	</div>	
+	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'academic_term_start_date'); ?>
-	
+
 	        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$model, 
+		    'model'=>$model,
 		    'attribute'=>'academic_term_start_date',
 			'htmlOptions'=>array(
 			'readonly'=>true,
 		    ),
-			
+
 		));
-		
+
 ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'academic_term_start_date'); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'academic_term_end_date'); ?>
-	
+
 	 <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$model, 
+		    'model'=>$model,
 		    'attribute'=>'academic_term_end_date',
 		    'options'=>array(
 			'dateFormat'=>'dd-mm-yy',
@@ -59,12 +59,12 @@
 			'changeMonth'=>'true',
 			'showAnim' =>'slide',
 			'yearRange'=>'1900:'.(date('Y')+1),
-			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',			
+			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
 		    ),
 			'htmlOptions'=>array(
 			'readonly'=>true,
 		    ),
-			
+
 		));
 ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'academic_term_end_date'); ?>
@@ -76,9 +76,9 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); 
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit'));
 		?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

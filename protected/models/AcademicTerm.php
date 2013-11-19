@@ -9,7 +9,7 @@
  * @property integer $academic_term_period_id
 * @property date $academic_term_start_date
 * @property date $academic_term_end_date
-* @property integer $current_sem	
+* @property integer $current_sem
  * @property integer academic_term_organization_id
  * The followings are the available model relations:
  * @property AcademicTermPeriod $academicTermPeriod
@@ -47,12 +47,12 @@ class AcademicTerm extends CActiveRecord
 			array('academic_term_period_id,academic_term_organization_id', 'numerical', 'integerOnly'=>true),
 			array('academic_term_name', 'length', 'max'=>30),
 			array('academic_term_name','unique'),
-			array('academic_term_end_date','comparedate','message'=>'Select Unique From Date and End Date'),
+			array('academic_term_end_date','comparedate','message'=>'Seleccione una fecha única para inicio y conclusión'),
 			array('academic_term_id, academic_term_name, academic_term_period_id,academic_term_period,academic_term_organization_id,academic_term_start_date,academic_term_end_date, current_sem,academic_term_end_date', 'safe', 'on'=>'search'),
 		);
-			
+
 	}
-	 
+
 	/**
 	 * @return array relational rules.
 	 */
@@ -73,18 +73,18 @@ class AcademicTerm extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'academic_term_id' => 'Academic Term id',
-			'academic_term_name' => 'Semester',
-			'academic_term_period_id' => 'Academic Year',
-			'academic_term_start_date'=>'Start Date',
-			'academic_term_end_date'=>'End Date',
-			'current_sem' => 'Current Semester',
-			'academic_term_organization_id' => 'Organization',
+			'academic_term_id' => 'ID Término Académico',
+			'academic_term_name' => 'Semestre',
+			'academic_term_period_id' => 'Año Académico',
+			'academic_term_start_date'=>'Fecha de Inicio',
+			'academic_term_end_date'=>'Fecha de Conclusión',
+			'current_sem' => 'Semestre Actual',
+			'academic_term_organization_id' => 'Organización',
 		);
 	}
 
 	/**
-	 * 
+	 *
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
 	public function search()
@@ -93,20 +93,20 @@ class AcademicTerm extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-		$criteria->with = array('academicTermPeriod'); 
-		$criteria->compare('academicTermPeriod.academic_term_period',$this->academic_term_period,true);  
+		$criteria->with = array('academicTermPeriod');
+		$criteria->compare('academicTermPeriod.academic_term_period',$this->academic_term_period,true);
 		$criteria->compare('academic_term_id',$this->academic_term_id);
 		$criteria->compare('academic_term_name',$this->academic_term_name,true);
 		$criteria->compare('current_sem',$this->current_sem,true);
-		
-				
+
+
 		$criteria->compare('academic_term_period_id',$this->academic_term_period_id);
-		$criteria->compare('academic_term_organization_id',$this->academic_term_organization_id);		
+		$criteria->compare('academic_term_organization_id',$this->academic_term_organization_id);
 		$criteria->compare('academic_term_start_date', $this->dbDateSearch($this->academic_term_start_date), true);
 		$criteria->compare('academic_term_end_date',$this->dbDateSearch($this->academic_term_end_date),true);
 
-		
-		
+
+
 		$academic_term_data = new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'sort'=>array(
@@ -116,7 +116,7 @@ class AcademicTerm extends CActiveRecord
 					'desc'=>'academicTermPeriod.academic_term_period DESC',
 				    ),
 				 '*',
-				   
+
 				),
 			    ),
 		));
@@ -130,24 +130,24 @@ class AcademicTerm extends CActiveRecord
             else
                 return $value;
         }
- 
+
 	public function beforeSave()
 	{
 		if($this->academic_term_start_date<$this->academic_term_end_date)
 		    return true;
 		else
 		{
-		    $this->addError("academic_term_start_date","Start Date must be less than End Date");       
+		    $this->addError("academic_term_start_date","La fecha de inicio debe ser anterior a la final");
 		    return false;
 		}
-	       
+
 	}
 	public function comparedate($attribute,$params)
 	{
-		
+
 		if($this->academic_term_start_date == $this->academic_term_end_date)
 		{
-				$this->addError('academic_term_end_date','Select Unique Start Date and End Date');
+				$this->addError('academic_term_end_date','Seleccione una fecha única para inicio y conclusión');
 		}
 	}
 	private static $_items=array();

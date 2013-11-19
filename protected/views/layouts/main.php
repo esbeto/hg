@@ -21,6 +21,7 @@ $(document).ready(function() {
 		return false;
 	});
 });
+/*
 var timer = 0;
 function set_interval() {
   timer = setInterval("auto_logout()", 300000);
@@ -40,6 +41,7 @@ function reset_interval() {
 function auto_logout() {
   window.location = "<?php echo Yii::app()->baseUrl.'/site/logout'; ?>";
 }
+*/
 </script>
 
 
@@ -111,18 +113,18 @@ function auto_logout() {
 	<i class="icon-cog"></i><li>Configuración <i class="icon-angle-down"></i> </li>
 	<ul>
 		<li><?php echo CHtml::link('Año Académico', array('/academicTermPeriod/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Semester', array('/academicTerm/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Department', array('/department/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Designation', array('/employeeDesignation/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Nationality', array('/nationality/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Country', array('/country/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('State / Province', array('/state/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('City', array('/city/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Languages', array('/languages/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Education Board', array('/eduboard/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Qualification', array('/qualification/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Student Status', array('/studentstatusmaster/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Currency', array('/currencyFormatTable/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Semestre', array('/academicTerm/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Departamento', array('/department/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Designación', array('/employeeDesignation/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Nacionalidad', array('/nationality/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('País', array('/country/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Estado / Provincia', array('/state/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Ciudad', array('/city/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Idiomas', array('/languages/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Consejo de Educación', array('/eduboard/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Calificaciones', array('/qualification/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Estado del Estudiante', array('/studentstatusmaster/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Moneda', array('/currencyFormatTable/admin'), array('class'=>'changeForm')); ?></li>
 
 	</ul>
 	<?php } ?>

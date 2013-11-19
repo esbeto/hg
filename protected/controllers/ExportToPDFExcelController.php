@@ -52,7 +52,7 @@ class ExportToPDFExcelController extends RController
 		$html = $this->renderPartial('/academicTerm/academicTermGeneratePdf', array(
 			'model'=>$model
 		), true);
-		$this->exporttopdf('Semester Report','Semester.pdf',$html);
+		$this->exporttopdf('Reporte de Semestre','Semestre.pdf',$html);
 
 	}
 
@@ -70,7 +70,7 @@ class ExportToPDFExcelController extends RController
 		),
 		'Semester',
 		array(
-		    'creator' => 'Rudrasoftech',
+		    'creator' => 'FIME',
 		),
 		'Excel5'
 	    );
@@ -100,7 +100,7 @@ class ExportToPDFExcelController extends RController
 		$html = $this->renderPartial('/academicTermPeriod/academicTermPeriodGeneratePdf', array(
 			'model'=>$model
 		), true);
-		$this->exporttopdf('Reporte Año Academico','AcademicTermPeriod.pdf',$html);
+		$this->exporttopdf('Reporte Año Academico','Reporte_academico.pdf',$html);
 
 	}
 	public function actionAcademicTermPeriodExportToExcel()
@@ -113,9 +113,9 @@ class ExportToPDFExcelController extends RController
 			'Rel_user.user_organization_email_id::Created By',
 
 		),
-		'Academic Year',
+		'Academico',
 		array(
-		    'creator' => 'Rudrasoftech',
+		    'creator' => 'FIME',
 		),
 		'Excel5'
 	    );

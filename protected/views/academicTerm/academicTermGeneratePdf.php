@@ -11,23 +11,23 @@ th, td, caption {
 <?php if ($model !== null):?>
 <?$k=1;?>
 
-	
+
 <table border="1">
 
 	<tr>
 		<th align="center" >
-		      SN.		</th>
+		      No.		</th>
  		<th align="center" >
-		      Semester 	</th>
+		      Semestre 	</th>
 		<th align="center" >
-		      Start Date	</th>
+		      Fecha Inicio	</th>
 		<th align="center" >
-		      End Date	</th>
+		      Fecha Final	</th>
 		<th align="center" >
-		      Academic Year</th>
+		      Año Académico</th>
 		<th align="center" >
-		     Current Semester</th>
-	
+		     Semestre Actual</th>
+
  	</tr>
 	<?php foreach($model as $m=>$v)
 	{
@@ -39,26 +39,26 @@ th, td, caption {
 		</td>
 		<td>
 			<?php echo "Sem-".$v['academic_term_name']; ?>
-		</td>	
-		<td>	
-			<?php echo ($v['academic_term_start_date'] == 0000-00-00) ? "Not Set" : date_format(new DateTime($v['academic_term_start_date']), "d-m-Y");?>	
-		</td>    
-		<td>	
-			<?php echo ($v['academic_term_end_date'] == 0000-00-00) ? "Not Set" : date_format(new DateTime($v['academic_term_end_date']), "d-m-Y");?>	
-		</td>  
-		<td>	
-			<?php echo AcademicTermPeriod::model()->findByPk($v['academic_term_period_id'])->academic_term_period;?> 	
-		</td> 
+		</td>
+		<td>
+			<?php echo ($v['academic_term_start_date'] == 0000-00-00) ? "Not Set" : date_format(new DateTime($v['academic_term_start_date']), "d-m-Y");?>
+		</td>
+		<td>
+			<?php echo ($v['academic_term_end_date'] == 0000-00-00) ? "Not Set" : date_format(new DateTime($v['academic_term_end_date']), "d-m-Y");?>
+		</td>
+		<td>
+			<?php echo AcademicTermPeriod::model()->findByPk($v['academic_term_period_id'])->academic_term_period;?>
+		</td>
 
-		<td>	
-			<?php echo ($v['current_sem'] == 1) ? "True" : "False";?>	
+		<td>
+			<?php echo ($v['current_sem'] == 1) ? "True" : "False";?>
 
-		</td>  
+		</td>
 
 </tr>
 	<?php $k++;?>
 	 <?php  }// end if
-	
+
 	}// end for loop?>
      </table>
 
