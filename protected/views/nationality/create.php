@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Nationality'=>array('admin'),
-	'Add',
+	'Nacionalidad'=>array('admin'),
+	'Agregar',
 );
 
 $this->menu=array(
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Add Nationality</h1>
+<h1>Agregar Nacionalidad</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Nationality'=>array('admin'),
-	'Manage',
+	'Nacionalidad'=>array('admin'),
+	'Administrar',
 );
 
 
@@ -19,7 +19,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Nationalities</h1>
+<h1>Administrar Nacionalidades</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/NationalityExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/NationalityExportToExcel'), array('class'=>'btnblue'));?>
@@ -39,10 +39,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Nationality
+ <div class="portlet-title"> Nacionalidad
  </div>
 
-<?php echo CHtml::link('Add New +', array('nationality/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('nationality/create'), array('class'=>'btn green'))?>
 
 <?php
 $dataProvider = $model->search();
@@ -62,7 +62,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		//'nationality_id',

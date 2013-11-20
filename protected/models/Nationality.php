@@ -32,7 +32,7 @@ class Nationality extends CActiveRecord
 	{
 		return 'nationality';
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'nationality_name'
@@ -50,7 +50,7 @@ class Nationality extends CActiveRecord
 			array('nationality_organization_id, nationality_created_by', 'numerical', 'integerOnly'=>true,'message'=>''),
 			array('nationality_name', 'length', 'max'=>30),
 			array('nationality_name','CRegularExpressionValidator','pattern'=>'/^([a-zA-Z ]+)$/','message'=>''),
-			array('nationality_name', 'unique','message'=>'Already Exists.'),
+			array('nationality_name', 'unique','message'=>'Ya existe.'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('nationality_id, nationality_name, nationality_organization_id, nationality_created_by, nationality_created_date', 'safe', 'on'=>'search'),
@@ -80,12 +80,11 @@ class Nationality extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'nationality_id' => 'Nationality',
-			'nationality_name' => 'Nationality',
-			'nationality_organization_id' => 'Organization',
-			'nationality_created_by' => 'Created By',
-			'nationality_created_date' => 'Creation
- Date',
+			'nationality_id' => 'ID',
+			'nationality_name' => 'Nacionalidad',
+			'nationality_organization_id' => 'Organización',
+			'nationality_created_by' => 'Creado Por',
+			'nationality_created_date' => 'Fecha de Creación',
 		);
 	}
 
@@ -109,7 +108,7 @@ class Nationality extends CActiveRecord
 		$nationality_data = new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
-		
+
 		$_SESSION['nationality_records'] = $nationality_data;
 		return $nationality_data;
 	}

@@ -1,6 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-	'Nationalities',
+	'Nacionalidades',
 );
 
 $this->menu=array(
@@ -9,7 +9,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Nationalities</h1>
+<h1>Nacionalidades</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

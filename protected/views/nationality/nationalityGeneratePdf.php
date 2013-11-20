@@ -11,20 +11,20 @@ th, td, caption {
 <?php if ($model !== null):?>
 <?$k=1;?>
 
-	
+
 <table border="1">
 
 	<tr>
 		<th width="80px">
-		      SN.		</th>
+		      ID.		</th>
  		<th width="80px">
-		     Nationality	</th>
+		     Nacionalidad	</th>
 		<th>
-		     Created By		
+		     Creado Por
 		</th>
-		
-		
-	
+
+
+
  	</tr>
 	<?php foreach($model as $m=>$v)
 	{
@@ -37,15 +37,15 @@ th, td, caption {
 		<td>
 			<?php echo $v['nationality_name']; ?>
 
-		</td>	
-		<td>
-		      <?php echo User::model()->findBypk($v['nationality_created_by'])->user_organization_email_id; ?>	
 		</td>
-		
+		<td>
+		      <?php echo User::model()->findBypk($v['nationality_created_by'])->user_organization_email_id; ?>
+		</td>
+
   	</tr>
 	<?php $k++;?>
 	 <?php  }// end if
-	
+
 	}// end for loop?>
      </table>
 
