@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div>
 
 <div class="form">
@@ -45,7 +45,7 @@
 		<?php echo $form->error($model,'course_unit_hours'); ?>
 	</div>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); 
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit'));
 		?>
 		<?php echo CHtml::link('Cancel', array('courseMaster/view', 'id'=>$_REQUEST['courseid']), array('class'=>'btnCan')); ?>
 	</div>

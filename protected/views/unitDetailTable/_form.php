@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div>
 <div class="form">
 
@@ -21,9 +21,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'unit_lec_date'); ?>
-	
+
 	 <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$model, 
+		    'model'=>$model,
 		    'attribute'=>'unit_lec_date',
 		    'options'=>array(
 			'dateFormat'=>'dd-mm-yy',
@@ -31,17 +31,17 @@
 			'changeMonth'=>'true',
 			'showAnim' =>'slide',
 			'yearRange'=>'1900:'.(date('Y')+1),
-			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',			
+			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
 		    ),
 			'htmlOptions'=>array(
 			'readonly'=>true,
 		    ),
-			
+
 		));
 ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'unit_lec_date'); ?>
 	</div>
-	
+
 	<?php echo $form->labelEx($model,'unit_detail_desc'); ?>
 	<div class="row">
 
@@ -55,7 +55,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit','onclick'=>'CKEDITOR.instances.UnitDetailTable_unit_detail_desc.updateElement()')); 
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit','onclick'=>'CKEDITOR.instances.UnitDetailTable_unit_detail_desc.updateElement()'));
 		?>
 	</div>
 

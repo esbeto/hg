@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div><div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(

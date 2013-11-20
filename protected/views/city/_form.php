@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div>
 <div class="form">
 
@@ -22,20 +22,20 @@
 			array(
 			'prompt' => 'Select Country',
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('dependent/getstatecity'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('dependent/getstatecity'),
 			'update'=>'#City_state_id', //selector to update
-			 
+
 			),'tabindex'=>21));
-			
-			 
+
+
 			?><span class="status">&nbsp;</span>
         <?php echo $form->error($model,'country_id'); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'state_id'); ?>
-		<?php 
-		
+		<?php
+
 			if(isset($model->state_id))
 				echo $form->dropDownList($model,'state_id', CHtml::listData(State::model()->findAll(array('condition'=>'state_id='.$model->state_id)), 'state_id', 'state_name'));
 			else

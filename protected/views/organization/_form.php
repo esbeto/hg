@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div>
 
 <div class="form">
@@ -41,35 +41,35 @@
 		<?php echo $form->dropDownList($model,'country', Country::items(), 			array(
 			'prompt' => 'Select Country',
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('Organization/UpdateStates'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('Organization/UpdateStates'),
 			'update'=>'#Organization_state', //selector to update
 			)));?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'country'); ?>
 	</div>
 
-	
+
 	<div class="row-right">
 		<?php echo $form->labelEx($model,'state'); ?>
-		<?php 
+		<?php
 			if(isset($model->state))
 			echo $form->dropDownList($model,'state', CHtml::listData(State::model()->findAll(array('condition'=>'country_id='.$model->country)), 'state_id', 'state_name'),
 			array(
 			'prompt' => 'Select State',
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('Organization/UpdateCities'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('Organization/UpdateCities'),
 			'update'=>'#Organization_city', //selector to update
-			
-			
+
+
 			)));
 			else
 			echo $form->dropDownList($model,'state', array(),
 			array(
 			'prompt' => 'Select State',
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('Organization/UpdateCities'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('Organization/UpdateCities'),
 			'update'=>'#Organization_city', //selector to update
 
 			)));?> <span class="status">&nbsp;</span>
@@ -82,7 +82,7 @@
 		<?php
 			 if(isset($model->city))
 			 echo $form->dropDownList($model,'city', CHtml::listData(City::model()->findAll(array('condition'=>'state_id='.$model->state)), 'city_id', 'city_name'));
-			 else			
+			 else
 			 echo $form->dropDownList($model,'city', array(),array('empty' => 'Select City'));?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'city'); ?>
 	</div>
@@ -120,22 +120,22 @@
 
 <div class="row">
 	<div class="row-left">
-		
+
 		 <?php echo $form->labelEx($model,'logo'); ?>
-               <?php echo $form->fileField($model,'logo',array()); ?><span class="status">&nbsp;</span> 
-		<?php echo $form->error($model,'logo'); ?>      
-		 
+               <?php echo $form->fileField($model,'logo',array()); ?><span class="status">&nbsp;</span>
+		<?php echo $form->error($model,'logo'); ?>
+
 	</div>
 
 	<div class="row-right">
-		
+
 		<?php if(isset($model->logo))
 			{
 				echo CHtml::image(Yii::app()->controller->createUrl('site/loadImage', array('id'=>$model->organization_id)), "No Image",array("width"=>"60","height"=>"50"));
 			}
-		?>  
+		?>
 	</div>
-</div>	
+</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); ?>

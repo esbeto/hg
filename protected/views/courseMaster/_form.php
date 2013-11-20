@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div>
 <div class="form">
 
@@ -49,7 +49,7 @@
 		<?php echo $form->textField($model,'course_cost'); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'course_cost'); ?>
 	</div>
-	
+
 	<?php echo $form->labelEx($model,'course_desc'); ?>
 	<div class="row">
 		<?php $this->widget('application.extensions.ckeditor.CKEditor', array(
@@ -63,7 +63,7 @@
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit', 'onclick'=>'CKEDITOR.instances.CourseMaster_course_desc.updateElement()')); 
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit', 'onclick'=>'CKEDITOR.instances.CourseMaster_course_desc.updateElement()'));
 		?>
 		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
 	</div>

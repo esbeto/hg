@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Fill Details
+ <div class="portlet-title">Llenar Detalles
  </div>
 <div class="form">
 
@@ -21,7 +21,7 @@
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'submit')); ?>
 		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
-		
+
 	</div>
 
 <?php $this->endWidget(); ?>
