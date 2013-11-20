@@ -30,7 +30,7 @@ $this->breadcrumbs=array(
 		array(
                 'name'=>'qualification_created_date',
                 'type'=>'raw',
-                'value'=>($model->qualification_created_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->qualification_created_date), 'd-m-Y'),
+                'value'=>($model->qualification_created_date == 0000-00-00) ? 'No Especificado' : date_format(new DateTime($model->qualification_created_date), 'd-m-Y'),
 	        ),
 		//'qualification_created_date',
 		/*

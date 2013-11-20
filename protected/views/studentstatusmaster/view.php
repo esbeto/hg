@@ -31,7 +31,7 @@ $this->breadcrumbs=array(
 		array(
                 'name'=>'creation_date',
                 'type'=>'raw',
-                'value'=>($model->creation_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->creation_date), 'd-m-Y'),
+                'value'=>($model->creation_date == 0000-00-00) ? 'No Especificado' : date_format(new DateTime($model->creation_date), 'd-m-Y'),
 	        ),
 		/*
 		array('name'=>'Organization',

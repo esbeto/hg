@@ -28,7 +28,7 @@ class Eduboard extends CActiveRecord
 	{
 		return 'eduboard';
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'eduboard_name'
@@ -46,7 +46,7 @@ class Eduboard extends CActiveRecord
 			array('eduboard_name, eduboard_created_by, eduboard_created_date', 'required','message'=>''),
 			array('eduboard_organization_id, eduboard_created_by', 'numerical', 'integerOnly'=>true),
 			array('eduboard_name', 'length', 'max'=>30),
-			array('eduboard_name', 'unique','message'=>'Already Exists.'),
+			array('eduboard_name', 'unique','message'=>'Ya existe.'),
 			array('eduboard_name','CRegularExpressionValidator','pattern'=>'/^[a-zA-Z]+([. ][a-zA-Z]+)*$/','message'=>''),
 
 			// The following rule is used by search().
@@ -74,12 +74,12 @@ class Eduboard extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			
-			'eduboard_id' => 'Eduboard id',
-			'eduboard_name' => 'Education Board',
-			'eduboard_organization_id' => 'Organization',
-			'eduboard_created_by' => 'Created By',
-			'eduboard_created_date' => 'Creation Date',
+
+			'eduboard_id' => 'ID',
+			'eduboard_name' => 'Consejo de Educación',
+			'eduboard_organization_id' => 'Organización',
+			'eduboard_created_by' => 'Creado Por',
+			'eduboard_created_date' => 'Fecha de Creación',
 		);
 	}
 

@@ -8,7 +8,7 @@ th, td, caption {
 }
 
 </style>
-<?php 
+<?php
 $k=0;
 if ($model != null):
 ?>
@@ -16,38 +16,38 @@ if ($model != null):
 
 	<tr>
 		<th>
-		      SN.		
+		      ID.
 		</th>
  		<th>
-		      Education Board		
+		      Consejo de Educación
 		</th>
 		<th>
-		      Created By		
+		      Creado Por
 		</th>
- 		
-		
+
+
  	</tr>
-	<?php 
+	<?php
 	foreach($model as $m=>$v) {
           if($m <> 0) {
             ?>	<tr>
 		<td>
-		      <?php echo ++$k; ?>	
+		      <?php echo ++$k; ?>
 		</td>
 		<td>
-		      <?php echo $v['eduboard_name']; ?>	
+		      <?php echo $v['eduboard_name']; ?>
 		</td>
 		<td>
-		      <?php echo User::model()->findByPk($v['eduboard_created_by'])->user_organization_email_id; ?>	
+		      <?php echo User::model()->findByPk($v['eduboard_created_by'])->user_organization_email_id; ?>
 		</td>
-		
-		
- 	   </tr> 
+
+
+ 	   </tr>
        <?php
-    
+
        }// end if
      }// end for loop
-	
+
 ?>
 </table>
 <?php endif; ?>

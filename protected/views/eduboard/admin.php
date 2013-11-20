@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Education Board'=>array('admin'),
-	'Manage',
+	'Consejo de Educación'=>array('admin'),
+	'Administrar',
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Education Boards</h1>
+<h1>Administrar Consejos de Educación</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/EducationExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/EducationExportToExcel'), array('class'=>'btnblue'));?>
@@ -39,7 +39,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Education Board
+ <div class="portlet-title"> Consejo de Educación
  </div>
 
 <?php echo CHtml::link('Agregar +', array('eduboard/create'), array('class'=>'btn green'))?>

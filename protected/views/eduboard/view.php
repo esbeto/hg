@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Education Board'=>array('admin'),
+	'Consejo de Educación'=>array('admin'),
 	$model->eduboard_name,
 );
 
 ?>
 
-<h1>View Education Board <?php //echo $model->eduboard_id; ?></h1>
+<h1>Vista Consejo de Educación <?php //echo $model->eduboard_id; ?></h1>
 <div class="operation">
 <?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 <?php echo CHtml::link('Editar', array('update' ,'id'=>$model->eduboard_id), array('class'=>'btnupdate'));?>
@@ -33,7 +33,7 @@ $this->breadcrumbs=array(
 		array(
                 'name'=>'eduboard_created_date',
                 'type'=>'raw',
-                'value'=>($model->eduboard_created_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->eduboard_created_date), 'd-m-Y'),
+                'value'=>($model->eduboard_created_date == 0000-00-00) ? 'No Especificado' : date_format(new DateTime($model->eduboard_created_date), 'd-m-Y'),
 	        ),
 		/*
 		array('name'=>'Organization:',

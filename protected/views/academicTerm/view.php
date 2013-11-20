@@ -26,12 +26,12 @@ $this->breadcrumbs=array(
 		array(
                 'name'=>'academic_term_start_date',
                 'type'=>'raw',
-                'value'=>($model->academic_term_start_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->academic_term_start_date), 'd-m-Y'),
+                'value'=>($model->academic_term_start_date == 0000-00-00) ? 'No Especificado' : date_format(new DateTime($model->academic_term_start_date), 'd-m-Y'),
 	        ),
 		array(
                 'name'=>'academic_term_end_date',
                 'type'=>'raw',
-                'value'=>($model->academic_term_end_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->academic_term_end_date), 'd-m-Y'),
+                'value'=>($model->academic_term_end_date == 0000-00-00) ? 'No Especificado' : date_format(new DateTime($model->academic_term_end_date), 'd-m-Y'),
 	        ),
 //		'academic_term_period_id',
 		array('name'=>'academic_term_period_id',

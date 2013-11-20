@@ -28,8 +28,8 @@ $this->menu=array(
 		//'user_creation_date',
 		array(
                 'name'=>'user_creation_date',
-                'type'=>'raw',		
-                'value'=>($model->user_creation_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->user_creation_date), 'd-m-Y'),
+                'type'=>'raw',
+                'value'=>($model->user_creation_date == 0000-00-00) ? 'No Especificado' : date_format(new DateTime($model->user_creation_date), 'd-m-Y'),
 	        ),
 	),
 )); ?>

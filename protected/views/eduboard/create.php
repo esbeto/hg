@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Education Board'=>array('admin'),
-	'Add',
+	'Consejo de Educación'=>array('admin'),
+	'Agregar',
 );
 
 $this->menu=array(
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Add Education Board</h1>
+<h1>Agregar Consejo de Educación</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

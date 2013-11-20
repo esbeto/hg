@@ -1,9 +1,9 @@
 <?php
 $this->breadcrumbs=array(
-	'Education Board'=>array('admin'),
+	'Consejo de Educación'=>array('admin'),
 	//$model->eduboard_name=>array('view','id'=>$model->eduboard_id),
-	$model->eduboard_name=>array(),	
-	'Edit',
+	$model->eduboard_name=>array(),
+	'Editar',
 );
 
 $this->menu=array(
@@ -15,6 +15,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Edit Education Board <?php //echo $model->eduboard_id; ?></h1>
+<h1>Editar Consejo de Educación <?php //echo $model->eduboard_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

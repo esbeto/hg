@@ -33,7 +33,7 @@ $this->breadcrumbs=array(
 		array(
                 'name'=>'academic_terms_period_creation_date',
                 'type'=>'raw',
-                'value'=>($model->academic_terms_period_creation_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->academic_terms_period_creation_date), 'd-m-Y'),
+                'value'=>($model->academic_terms_period_creation_date == 0000-00-00) ? 'No Especificado' : date_format(new DateTime($model->academic_terms_period_creation_date), 'd-m-Y'),
 	        ),
 	),
 	'htmlOptions'=> array('class'=>'custom-view'),
