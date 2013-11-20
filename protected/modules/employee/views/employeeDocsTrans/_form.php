@@ -17,9 +17,9 @@ $this->breadcrumbs=array(
 	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
-	<?php // echo $form->errorSummary($model); 
+	<?php // echo $form->errorSummary($model);
 		//$this->layout='receipt_layout';
 	?>
 
@@ -44,7 +44,7 @@ $this->breadcrumbs=array(
 	<div class="row">
 		<?php echo $form->labelEx($emp_doc,'employee_docs_submit_date'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$emp_doc, 
+		    'model'=>$emp_doc,
 		    'attribute'=>'employee_docs_submit_date',
 		    'options'=>array(
 			'dateFormat'=>'dd-mm-yy',
@@ -53,23 +53,23 @@ $this->breadcrumbs=array(
 			'showAnim' =>'slide',
 			'maxDate'=>date('d-m-Y'),
 			'yearRange'=>'1900:'.(date('Y')+1),
-			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',			
+			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
 		    ),
 			'htmlOptions'=>array(
 			'style'=>'width:165px;vertical-align:top',
 			'readonly'=>true,
 		    ),
-			
+
 		));
 		?>
-		
+
 		<span class="status">&nbsp;</span>
 		<?php echo $form->error($emp_doc,'employee_docs_submit_date'); ?>
 	</div>
 	<div class="row">
 	      <?php echo $form->labelEx($emp_doc,'employee_docs_path'); ?>
 	      <?php echo $form->fileField($emp_doc, 'employee_docs_path'); ?>
-	      <?php echo $form->error($emp_doc,'employee_docs_path'); ?><?php CHtml::endForm(); ?>	
+	      <?php echo $form->error($emp_doc,'employee_docs_path'); ?><?php CHtml::endForm(); ?>
 	</div>
 	<div class="hint"><b>Hint:-</b>&nbsp;Upload Only Jpeg, Jpg, Pdf, Txt, Doc, Gif, Png Type Document</div>
 	 <div>&nbsp;</div>
@@ -80,7 +80,7 @@ $this->breadcrumbs=array(
 
 	</div>
 
-<?php $this->endWidget(); 
+<?php $this->endWidget();
 
 ?>
 

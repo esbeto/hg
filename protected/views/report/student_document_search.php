@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array('Report',
 	' Student Document Search',
-	
+
 );?>
 
 <div class="form"></br>
@@ -12,7 +12,7 @@ $this->breadcrumbs=array('Report',
 	'clientOptions'=>array('validateOnSubmit'=>true),
 
 )); ?>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 <?php
 	$org_id=Yii::app()->user->getState('org_id');
 	$acd = Yii::app()->db->createCommand()
@@ -22,9 +22,9 @@ $this->breadcrumbs=array('Report',
 		->queryAll();
 	$acdterm=CHtml::listData($acd,'academic_term_id','academic_term_name');
 	$period=array();
-	if(!empty($acdterm)){	
+	if(!empty($acdterm)){
 	$pe_data = AcademicTermPeriod::model()->findByPk($acd[0]['academic_term_period_id']);
-	$period[$pe_data->academic_terms_period_id] = $pe_data->academic_term_period; 
+	$period[$pe_data->academic_terms_period_id] = $pe_data->academic_term_period;
 	}?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'document_category'); ?>
@@ -45,19 +45,19 @@ $this->breadcrumbs=array('Report',
 		<span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'sem'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'branch'); ?>
 		<?php echo $form->dropDownList($model,'branch',Branch::items(), array('empty' => 'Select Branch'));?>
 		<span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'branch'); ?>
-	</div>	
-	
+	</div>
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search', array('class'=>'submit','name'=>'search')); ?>
-	</div>	
+	</div>
 
-<?php $this->endWidget(); ?>	
+<?php $this->endWidget(); ?>
 
 </div>

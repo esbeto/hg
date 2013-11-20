@@ -16,7 +16,7 @@
 	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php // echo $form->errorSummary($model); ?>
 	<div class="row">
@@ -36,12 +36,12 @@
 		<?php echo $form->textArea($stud_doc,'student_docs_desc',array('rows'=>3,'cols'=>16)); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($stud_doc,'student_docs_desc'); ?>
 	</div>
-	
-	
+
+
 
 	<div class="row">
 		<?php echo $form->labelEx($stud_doc,'student_docs_submit_date'); ?>
-		<?php 
+		<?php
 			    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
 			    'model'=>$stud_doc,
 			    'attribute'=>'student_docs_submit_date',
@@ -51,22 +51,22 @@
 			    'maxDate'=>0,
 			    'changeMonth'=>'true',
 			    'showAnim' =>'slide',
-			    'yearRange'=>'1900:'.(date('Y')+1),	
-			    'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',           
+			    'yearRange'=>'1900:'.(date('Y')+1),
+			    'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
 			    ),
 			    'htmlOptions'=>array(
 			    'style'=>'width:165px;vertical-align:top'
 			    ),
-           
+
 			));
-			
+
 		?>
-		
+
 		<span class="status">&nbsp;</span>
 		<?php echo $form->error($stud_doc,'student_docs_submit_date'); ?>
 	</div>
-	
-	<div class="row">	
+
+	<div class="row">
 		<?php echo $form->labelEx($stud_doc,'student_docs_path'); ?>
 		<?php echo $form->fileField($stud_doc, 'student_docs_path',array('size'=>'15')); ?>
 	      	<?php echo $form->error($stud_doc,'student_docs_path'); ?>

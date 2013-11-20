@@ -10,7 +10,7 @@
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php //echo $form->errorSummary($model); ?>
 	<?php
@@ -28,11 +28,11 @@
                     ->from('qualification')
                     ->where($query)
                     ->queryAll();
-		    
+
 	?>
-	
+
 	<div class="row">
-        <?php echo $form->labelEx($model,'student_academic_record_trans_qualification_id'); ?>  
+        <?php echo $form->labelEx($model,'student_academic_record_trans_qualification_id'); ?>
 	<?php echo $form->dropDownList($model,'student_academic_record_trans_qualification_id',CHtml::listData($remaining_course,'qualification_id','qualification_name'),array('empty' => 'Select Course','tabindex'=>1));?><span class="status">&nbsp;</span>
 	 <?php echo $form->error($model,'student_academic_record_trans_qualification_id'); ?>
 	</div>
@@ -50,7 +50,7 @@
 		<?php echo $form->dropDownList($model,'student_academic_record_trans_record_trans_year_id',$arr, array('empty' => 'Select Year','tabindex'=>3)); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'student_academic_record_trans_record_trans_year_id'); ?>
 	</div>
-	
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'theory_mark_max'); ?>
 		<?php echo $form->textField($model,'theory_mark_max', array('tabindex'=>4,'size'=>3)); ?><span class="status">&nbsp;</span>

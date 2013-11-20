@@ -6,12 +6,12 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 	'options'=>array(
 		'title'=>$name,
 		'autoOpen'=>true,
-		'modal'=>true,	
+		'modal'=>true,
                 'height'=>'auto',
                 'width'=>450,
                 'resizable'=>false,
                 'draggable'=>false,
-		
+
 		'close' => 'js:function(event, ui) { location.href = "'.Yii::app()->createUrl("studentTransaction/update").'"; }'
 	),
 ));*/
@@ -22,7 +22,7 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 	'id'=>'student-photos-form',
 	'enableAjaxValidation'=>true,
 	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
-)); 
+));
 Yii::app()->clientScript->registerScript(
   'myHideEffect',
   '$(".flash-error").animate({opacity: 1.0}, 2000).fadeOut("slow");',
@@ -30,15 +30,15 @@ CClientScript::POS_READY
 );
 ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
-	<?php //echo $form->errorSummary($model); 
+	<?php //echo $form->errorSummary($model);
 if(Yii::app()->user->hasFlash('photo-save')) { ?>
 	<div class="flash-error">
 		<?php echo Yii::app()->user->getFlash('photo-save');
-		
+
 	 ?>
-		
+
 	</div>
 <?php } ?>
 	<!--<div class="row">
@@ -63,9 +63,9 @@ if(Yii::app()->user->hasFlash('photo-save')) { ?>
    	 </div>
 	<div class="hint"><b>Hint:-</b>&nbsp;Upload Only Jpeg, Jpg, Gif, Png Type Image</div>
 	 <div class="row buttons">
-		<?php //echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'submit')); 
-		      echo CHtml::button('Update',array('class'=>'submit', 'submit'=>array('studentTransaction/update','id'=>$_REQUEST['id']), 'name'=>'photoupdate')); 
-		      echo CHtml::button('Go Back',array('class'=>'submit', 'submit'=>array('studentTransaction/update','id'=>$_REQUEST['id']))); 
+		<?php //echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'submit'));
+		      echo CHtml::button('Update',array('class'=>'submit', 'submit'=>array('studentTransaction/update','id'=>$_REQUEST['id']), 'name'=>'photoupdate'));
+		      echo CHtml::button('Go Back',array('class'=>'submit', 'submit'=>array('studentTransaction/update','id'=>$_REQUEST['id'])));
 		?>
 	</div>
 <?php $this->endWidget(); ?>

@@ -7,7 +7,7 @@
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php // echo $form->errorSummary($model); ?>
 
@@ -15,7 +15,7 @@
 		<?php echo Yii::app()->user->getFlash('not-select-attendece'); ?>
 	</div>
 
-	
+
 	<!--<div class="row">
 		<?php echo $form->labelEx($model,'st_id'); ?>
 		<?php echo $form->textField($model,'st_id'); ?>
@@ -97,7 +97,7 @@
 			    'changeYear' => 'true',
 			    'duration'=>'fast',
 			    'showAnim' =>'slide',
-			    
+
 			),
 			'htmlOptions'=>array('tabindex'=>4,
 			'style'=>'height:18px;
@@ -109,7 +109,7 @@
 	?>
 	<span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'attendence_date'); ?>
-	</div> 
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::button('Search', array('class'=>'submit','submit' => array('create'))); ?>
@@ -127,23 +127,23 @@
 )); ?>
 
 
-<?php 
+<?php
 			$count = 0;
 			$count = count($row1);
-			
+
 			for($i=0;$i<count($row1);$i++)
 			{
 			   $stud_id = $row1[$i]['student_transaction_student_id'];
 			   $name_lable = StudentInfo::model()->findByPk($row1[$i]['student_transaction_student_id'])->student_first_name;
 ?>
 		<div class="row">
-			<?php echo $form->labelEx($model,$name_lable); ?>		   			
+			<?php echo $form->labelEx($model,$name_lable); ?>
 			<?php echo $form->checkBox($model, 'st_id[]', array('value'=>$stud_id, 'uncheckValue'=>null,'checked'=>'checked')); ?>
                         <?php //echo CHtml::activeCheckBox($model,'stud_id[]'.$i,array('checked'=>false,'value'=>$stud_id,'uncheckValue' => null)); ?>
 			<?php echo $form->error($model,'stud_id'); ?>
 		</div>
 
-<?php  			
+<?php
 }
 
 ?>

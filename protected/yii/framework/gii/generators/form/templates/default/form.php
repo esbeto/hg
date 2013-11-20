@@ -12,7 +12,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>\n"; ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php echo "<?php echo \$form->errorSummary(\$model); ?>\n"; ?>
 
@@ -26,7 +26,7 @@
 <?php endforeach; ?>
 
 	<div class="row buttons">
-		<?php echo "<?php echo CHtml::submitButton('Submit'); ?>\n"; ?>
+		<?php echo "<?php echo CHtml::submitButton('Enviar'); ?>\n"; ?>
 	</div>
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>

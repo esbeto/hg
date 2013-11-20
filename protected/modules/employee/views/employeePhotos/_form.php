@@ -4,7 +4,7 @@
 	'id'=>'employee-photos-form',
 	'enableAjaxValidation'=>true,
 	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
-)); 
+));
 Yii::app()->clientScript->registerScript(
   'myHideEffect',
   '$(".flash-error").animate({opacity: 1.0}, 2000).fadeOut("slow");',
@@ -12,16 +12,16 @@ CClientScript::POS_READY
 );
 ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-<?php //echo $form->errorSummary($model); 
+<?php //echo $form->errorSummary($model);
 if(Yii::app()->user->hasFlash('photo-save')) { ?>
 	<div class="flash-error">
 		<?php echo Yii::app()->user->getFlash('photo-save');
-		
+
 	 ?>
-		
+
 	</div>
 <?php } ?>
 	<!--<div class="row">
@@ -49,15 +49,15 @@ if(Yii::app()->user->hasFlash('photo-save')) { ?>
 	</div>-->
 	<div class="row">
 	      <?php echo $form->labelEx($model,'employee_photos_path'); ?>
-	 
+
 	      <?php echo $form->fileField($model, 'employee_photos_path'); ?><span class="status">&nbsp;</span>
 	     <?php echo $form->error($model,'employee_photos_path'); ?>
    	 </div>
 	 <div class="hint"><b>Hint:-</b>&nbsp;Upload Only Jpeg, Jpg, Gif, Png Type Images</div>
 	 <div class="row buttons">
-		<?php 
-		      echo CHtml::button('Update',array('class'=>'submit', 'submit'=>array('EmployeeTransaction/Updateprofilephoto','id'=>$_REQUEST['id']), 'name'=>'photoupdate')); 
-		     // echo CHtml::button('Go Back',array('class'=>'submit', 'submit'=>array('EmployeeTransaction/update','id'=>$_REQUEST['id']))); 
+		<?php
+		      echo CHtml::button('Update',array('class'=>'submit', 'submit'=>array('EmployeeTransaction/Updateprofilephoto','id'=>$_REQUEST['id']), 'name'=>'photoupdate'));
+		     // echo CHtml::button('Go Back',array('class'=>'submit', 'submit'=>array('EmployeeTransaction/update','id'=>$_REQUEST['id'])));
 		?>
 	</div>
 

@@ -7,7 +7,7 @@
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php // echo $form->errorSummary($model); ?>
 
@@ -15,7 +15,7 @@
 		<?php echo Yii::app()->user->getFlash('not-select-attendece'); ?>
 	</div>
 
-	
+
 	<!--<div class="row">
 		<?php echo $form->labelEx($model,'st_id'); ?>
 		<?php echo $form->textField($model,'st_id'); ?>
@@ -58,27 +58,27 @@
 			array(
 			'prompt' => '---------------Select-------------','tabindex'=>21,
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('Attendence/getItemName'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('Attendence/getItemName'),
 			'update'=>'#Attendence_sem_name_id', //selector to update
-			
-			))); 
-			 
+
+			)));
+
 			?><span class="status">&nbsp;</span>
         <?php echo $form->error($model,'sem_id'); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'sem_name_id'); ?>
 	        <?php //echo $form->dropDownList($model,'student_academic_term_name_id',array()); ?>
-		<?php 
-			
+		<?php
+
 			if(isset($model->sem_name_id))
 				echo $form->dropDownList($model,'sem_name_id', CHtml::listData(AcademicTerm::model()->findAll(array('condition'=>'academic_term_id='.$model->sem_name_id)), 'academic_term_id', 'academic_term_name'));
 			else
-				echo $form->dropDownList($model,'sem_name_id',array('prompt' => '---------------Select-------------'),array('tabindex'=>22)); 
+				echo $form->dropDownList($model,'sem_name_id',array('prompt' => '---------------Select-------------'),array('tabindex'=>22));
 		?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'sem_name_id'); ?>
-	</div>	
+	</div>
 
 
     </div>
@@ -114,7 +114,7 @@
         <?php echo $form->dropDownList($model,'batch_id',Batch::items(), array('empty' => '---------------Select-------------','tabindex'=>19)); ?><span class="status">&nbsp;</span>
         <?php echo $form->error($model,'batch_id'); ?>
     </div>
-		
+
 	<!--<div class="row">
 		<?php echo $form->labelEx($model,'timetable_id'); ?>
 		<?php echo $form->textField($model,'timetable_id'); ?>
@@ -122,8 +122,8 @@
 	</div> -->
 <?php // var_dump($row1); ?>
 	  <div class="row">
-	  <?php 
-		$date = date('Y/m/d');		
+	  <?php
+		$date = date('Y/m/d');
 		echo $form->labelEx($model,'attendence_date'); ?>
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker',
@@ -131,7 +131,7 @@
 			'model'=>$model,
 			'attribute'=>'attendence_date',
 			'language' => 'en',
-			
+
 			'options' => array(
 			    'dateFormat'=>'yy-mm-dd',
 			    'changeMonth' => 'true',
@@ -147,11 +147,11 @@
 			)
 		    )
 		);
-		 
+
 	?>
 	<span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'attendence_date'); ?>
-	</div> 
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::button('Search', array('class'=>'submit','submit' => array('updatecreate'))); ?>
@@ -169,7 +169,7 @@
 )); ?>
 
 
-<?php 
+<?php
 			$count = 0;
 			$count = count($row1);
 
@@ -180,35 +180,35 @@
 			     $date = $row1[$i]['attendence_date'];
 
 			   $name_lable = StudentInfo::model()->findByPk($row1[$i]['st_id'])->student_first_name;
-			   $branch_name = Branch::model()->findByPk($row1[$i]['branch_id'])->branch_name; 
+			   $branch_name = Branch::model()->findByPk($row1[$i]['branch_id'])->branch_name;
 			   $academic_name = AcademicTerm::model()->findByPk($row1[$i]['sem_name_id'])->academic_term_name;
 			   $academic_term = AcademicTermPeriod::model()->findByPk($row1[$i]['sem_id'])->academic_term_period;
 			   $subject_name = SubjectMaster::model()->findByPk($row1[$i]['sub_id'])->subject_master_name;
 //			   $attendence = model()->attendence;
-			
+
 //			echo $name_lable;
-//			echo $branch_name; 
+//			echo $branch_name;
 //			echo $academic_name;
 //			echo $academic_term;
 //			echo $subject_name;
 //			echo $attendence;
 //			echo $date;
-			
-			
+
+
 ?>
 		<div class="row">
 			<?php echo $form->labelEx($model,$name_lable); ?>		   				<?php echo $form->labelEx($model,$branch_name); ?>
 			<?php echo $form->labelEx($model,$academic_name); ?>
 			<?php echo $form->labelEx($model,$academic_term); ?>
 			<?php echo $form->labelEx($model,$subject_name); ?>
-			<?php echo $form->labelEx($model,$attendence); ?>	
+			<?php echo $form->labelEx($model,$attendence); ?>
 			<?php echo $form->labelEx($model,$date); ?>
 			<?php //echo $form->checkBox($model, 'st_id[]', array('value'=>$stud_id, 'uncheckValue'=>null,'checked'=>'checked')); ?>
                         <?php //echo CHtml::activeCheckBox($model,'stud_id[]'.$i,array('checked'=>false,'value'=>$stud_id,'uncheckValue' => null)); ?>
 			<?php echo $form->error($model,'stud_id'); ?>
 		</div>
 
-<?php  			
+<?php
 }
 
 ?>

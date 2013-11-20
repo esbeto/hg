@@ -2,7 +2,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Generating Student Identity Card',
-	
+
 );
 
 $this->menu=array(
@@ -21,7 +21,7 @@ $this->menu=array(
 	'clientOptions'=>array('validateOnSubmit'=>true),
 
 )); ?>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 	<?php
 	$org_id=Yii::app()->user->getState('org_id');
 	$acd = Yii::app()->db->createCommand()
@@ -31,9 +31,9 @@ $this->menu=array(
 		->queryAll();
 	$acdterm=CHtml::listData($acd,'academic_term_id','academic_term_name');
 	$period=array();
-	if(!empty($acdterm)){	
+	if(!empty($acdterm)){
 	$pe_data = AcademicTermPeriod::model()->findByPk($acd[0]['academic_term_period_id']);
-	$period[$pe_data->academic_terms_period_id] = $pe_data->academic_term_period; 
+	$period[$pe_data->academic_terms_period_id] = $pe_data->academic_term_period;
 	}?>
 	<div class="row">
 		<?php echo $form->labelEx($model,'template_name'); ?>
@@ -55,10 +55,10 @@ $this->menu=array(
 		array(
 			'prompt' => 'Select Branch','tabindex'=>4,
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('dependent/getIdDivision'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('dependent/getIdDivision'),
 			'update'=>'#div_name', //selector to update
-			
+
 			))); ?>
 	</div>
 	<div class="row">

@@ -12,7 +12,7 @@
 	 'clientOptions'=>array('validateOnSubmit'=>true),
 ));
 ?>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 <div class="row">
 	<div class="row-left">

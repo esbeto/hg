@@ -22,18 +22,18 @@ $this->menu=array(
 
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-	
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
+
 	<?php echo $form->errorSummary($model); ?>
-		
-	
+
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'sem_id'); ?>
 		<?php echo $form->dropDownList($model,'sem_id',AcademicTermPeriod::items(), array('empty' => 'Select Year','tabindex'=>1)); ?>
-		
+
 	</div>
-	
-	
+
+
 
 <?php $this->endWidget(); ?>
 

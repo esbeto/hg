@@ -17,7 +17,7 @@ $this->breadcrumbs=array(
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php //echo $form->errorSummary($model); ?>
 	<?php
@@ -36,7 +36,7 @@ $this->breadcrumbs=array(
                     ->queryAll();
 	?>
 	<div class="row">
-        <?php echo $form->labelEx($model,'employee_academic_record_trans_qualification_id'); ?>  
+        <?php echo $form->labelEx($model,'employee_academic_record_trans_qualification_id'); ?>
 	<?php echo $form->dropDownList($model,'employee_academic_record_trans_qualification_id',CHtml::listData($remaining_course,'qualification_id','qualification_name'),array('empty' => 'Select Course','tabindex'=>1));?><span class="status">&nbsp;</span>
 	 <?php echo $form->error($model,'employee_academic_record_trans_qualification_id'); ?>
 	</div>

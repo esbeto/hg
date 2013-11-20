@@ -1,5 +1,5 @@
 <div class = "test" style="display:none;">
-<?php        
+<?php
 
 $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 	'id'=>'mydialog',
@@ -7,7 +7,7 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 	'options'=>array(
 		'title'=>'Add Admin',
 		'autoOpen'=>true,
-		'modal'=>true,	
+		'modal'=>true,
                 'height'=>'auto',
                 'width'=>400,
                 'resizable'=>false,
@@ -26,7 +26,7 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
 			      ),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php //echo $form->errorSummary($model); ?>
 

@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 <div class="form">
 <?php
 echo "&nbsp;";
-echo CHtml::link("GO BACK",Yii::app()->createUrl('studentTransaction/notify'),array('title'=>'Go Back'))."</br></br>";  
+echo CHtml::link("GO BACK",Yii::app()->createUrl('studentTransaction/notify'),array('title'=>'Go Back'))."</br></br>";
 ?>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'student-registration-form-form',
@@ -14,21 +14,21 @@ echo CHtml::link("GO BACK",Yii::app()->createUrl('studentTransaction/notify'),ar
 	'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 <table  class="table_data">
 <th colspan="3" style="font-size: 18px; color: rgb(255, 255, 255);">
-Selected Students 
+Selected Students
 </th>
 	<tr class="table_header">
 		<th>SI No.</th>
 		<th>Name</th>
 		<th>Enrollment No.</th>
 		</tr>
-	<?php	
+	<?php
 	$i=1;
-	$m=1;  
+	$m=1;
 	foreach($list as $value)
-	  {	
+	  {
 		if(($m%2) == 0)
 		{
 		  $class = "odd";
@@ -44,7 +44,7 @@ Selected Students
 	<td class="col2"><?php echo $info->student_first_name;?></td>
 	<td class="col2"><?php echo $info->student_enroll_no;?></td>
 	</tr>
-<?php	
+<?php
 	$i++;$m++;}
 
 ?>
@@ -55,13 +55,13 @@ Selected Students
 	<?php echo CHtml::label(Yii::t('demo', 'Title'), 'Title'); ?>
 	<?php echo CHtml::textArea('title', '',array()); ?>
 	</div>
-	
-	
+
+
 	<div class="row">
 	<?php echo CHtml::label(Yii::t('demo','Content'), 'Content'); ?>
 	<?php echo CHtml::textArea('content', '',array()); ?>
 	</div>
-	
+
 	<div class="row buttons">
 		<?php echo CHtml::button('Send Notification', array('submit' => array('sendNotification'))); ?>
 	</div>

@@ -7,7 +7,7 @@
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php // echo $form->errorSummary($model); ?>
 
@@ -15,7 +15,7 @@
 		<?php echo Yii::app()->user->getFlash('not-select-attendece'); ?>
 	</div>
 
-	
+
 	<!--<div class="row">
 		<?php echo $form->labelEx($model,'st_id'); ?>
 		<?php echo $form->textField($model,'st_id'); ?>
@@ -58,27 +58,27 @@
 			array(
 			'prompt' => '---------------Select-------------','tabindex'=>2,
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('Attendence/getItemName'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('Attendence/getItemName'),
 			'update'=>'#Attendence_sem_name_id', //selector to update
-			
-			))); 
-			 
+
+			)));
+
 			?><span class="status">&nbsp;</span>
         <?php echo $form->error($model,'sem_id'); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'sem_name_id'); ?>
 	        <?php //echo $form->dropDownList($model,'student_academic_term_name_id',array()); ?>
-		<?php 
-			
+		<?php
+
 			if(isset($model->sem_name_id))
 				echo $form->dropDownList($model,'sem_name_id', CHtml::listData(AcademicTerm::model()->findAll(array('condition'=>'academic_term_id='.$model->sem_name_id)), 'academic_term_id', 'academic_term_name'));
 			else
-				echo $form->dropDownList($model,'sem_name_id',array('prompt' => '---------------Select-------------'),array('tabindex'=>3)); 
+				echo $form->dropDownList($model,'sem_name_id',array('prompt' => '---------------Select-------------'),array('tabindex'=>3));
 		?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'sem_name_id'); ?>
-	</div>	
+	</div>
 
 
     </div>
@@ -114,7 +114,7 @@
         <?php echo $form->dropDownList($model,'batch_id',Batch::items(), array('empty' => '---------------Select-------------','tabindex'=>7)); ?><span class="status">&nbsp;</span>
         <?php echo $form->error($model,'batch_id'); ?>
     </div>
-		
+
 	<!--<div class="row">
 		<?php echo $form->labelEx($model,'timetable_id'); ?>
 		<?php echo $form->textField($model,'timetable_id'); ?>
@@ -122,8 +122,8 @@
 	</div> -->
 <?php // var_dump($row1); ?>
 	  <div class="row">
-	  <?php 
-		$date = date('Y/m/d');		
+	  <?php
+		$date = date('Y/m/d');
 		echo $form->labelEx($model,'attendence_date'); ?>
 		<?php
 		$this->widget('zii.widgets.jui.CJuiDatePicker',
@@ -131,7 +131,7 @@
 			'model'=>$model,
 			'attribute'=>'attendence_date',
 			'language' => 'en',
-			
+
 			'options' => array(
 			    'dateFormat'=>'yy-mm-dd',
 			    'changeMonth' => 'true',
@@ -147,11 +147,11 @@
 			)
 		    )
 		);
-		 
+
 	?>
 	<span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'attendence_date'); ?>
-	</div> 
+	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::button('Search', array('class'=>'submit','submit' => array('updatecreate'),'tabindex'=>9)); ?>
@@ -160,17 +160,17 @@
 <?php $this->endWidget(); ?>
 
 <?php
-	
+
 
 ?>
 
 <?php if(!empty($row1)) {
-	$shift = $model->shift_id; 
-	$branch = $model->branch_id; 
-	$sem_name = $model->sem_name_id; 
-	$div_id = $model->div_id; 
-	$sub_id = $model->sub_id; 
-	$sem_period_id = $model->sem_id; 
+	$shift = $model->shift_id;
+	$branch = $model->branch_id;
+	$sem_name = $model->sem_name_id;
+	$div_id = $model->div_id;
+	$sub_id = $model->sub_id;
+	$sem_period_id = $model->sem_id;
 
 
 
@@ -193,35 +193,35 @@
 		//'sem_id',
 		array(
 		'name'=>'student_first_name',
-//                'type'=>'raw',		
+//                'type'=>'raw',
                 'value'=> 'StudentInfo::model()->findByPk($data->st_id)->student_first_name',
-	          ),	
+	          ),
 		'attendence',
 		array(
 		'name'=>'branch_id',
-//                'type'=>'raw',		
+//                'type'=>'raw',
                 'value'=> 'Branch::model()->findByPk($data->branch_id)->branch_name',
 	          ),
 		array(
 		'name'=>'Sem_name',
-//                'type'=>'raw',		
+//                'type'=>'raw',
                 'value'=> 'AcademicTerm::model()->findByPk($data->sem_name_id)->academic_term_name;',
-	          ),	
+	          ),
 		array(
 		'name'=>'Sem_period',
-//                'type'=>'raw',		
+//                'type'=>'raw',
                 'value'=> 'AcademicTermPeriod::model()->findByPk($data->sem_id)->academic_term_period',
 	          ),
 		array(
 		'name'=>'subject_name',
-//                'type'=>'raw',		
+//                'type'=>'raw',
                 'value'=> 'SubjectMaster::model()->findByPk($data->sub_id)->subject_master_name',
 	          ),
 //		'div_id',
 //		'sub_id',
 //		'batch_id',
 //		'timetable_id',
-		
+
 		'attendence_date',
 		array(
 			'class'=>'CButtonColumn',

@@ -13,9 +13,9 @@ $(document).ready(function () {
 	$('input:text').attr('disabled',true);
 	$('input:checkbox').attr('disabled',true);
 	$('textarea').attr('disabled',true);
-	
+
 	$('#ckbox').click(function () {
-			
+
 		if ($("#ckbox").is(":checked"))
 		{
 			$('#p_add').hide();
@@ -194,12 +194,12 @@ CClientScript::POS_READY
 	'clientOptions'=>array('validateOnSubmit'=>true),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php // echo $form->errorSummary(array($info,$model,$photo,$address,$lang)); ?>
 	<?php if(Yii::app()->user->hasFlash('data-save') && $flag==1) {?>
 	<div class="flash-success">
-			
+
 			<?php echo Yii::app()->user->getFlash('data-save'); ?>
 	</div>
 	<?php } ?>
@@ -208,16 +208,16 @@ CClientScript::POS_READY
 	<?php
 		if($model->Rel_Photo->employee_photos_path != null)
 			echo CHtml::link(CHtml::image(Yii::app()->baseUrl.'/emp_images/'.$photo->employee_photos_path,"",array("width"=>"178px","height"=>"176px")),array('/emp_images/'.$photo->employee_photos_path),array('id'=>'imagelink'))."</br></br>";
-	
-		if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) 
+
+		if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*'))
 		{
 		echo CHtml::link('Edit',array('EmployeeTransaction/Updateprofilephoto','id'=>$model->employee_transaction_id),array('id'=>'photoid','title'=>'Update Photo','style'=>'padding-right:50px;'));
 		}
-		$config = array( 
+		$config = array(
 		    'scrolling' => 'no',
 		    'autoDimensions' => false,
 		    'width' => '795',
-		    'height' => '250', 
+		    'height' => '250',
 		    'titleShow' => false,
 		    'overlayColor' => '#000',
 		    'padding' => '0',
@@ -233,7 +233,7 @@ CClientScript::POS_READY
 		$this->widget('application.extensions.fancybox.EFancyBox', array('target'=>'#imagelink', 'config'=>$config));
 
 ?>
-	
+
 	</div></br>
 	<div id="divlink1" class="info-link">
 	<a href="#form1"  id="link1">Personal Info</a>
@@ -259,13 +259,13 @@ CClientScript::POS_READY
 	<div id="divlink7" class="info-link">
 	<a href="#form7" id="link7">Experience</a>
 	</div>
-	
-	<?php 
+
+	<?php
 	$emp_id = $_REQUEST['id'];
 
 	$emp_type = EmployeeInfo::model()->findByAttributes(array('employee_info_transaction_id'=>$emp_id));
 
-	if($emp_type['employee_type'] == 1)	
+	if($emp_type['employee_type'] == 1)
 	{
 	?>
 	<div id="divlink8" class="info-link">
@@ -304,19 +304,19 @@ CClientScript::POS_READY
 </div>
 <?php echo $form->error($info,'employee_attendance_card_id'); ?>
 <div id="form1" class="info-form">
-	
+
 	<fieldset >
 		<legend>Personal Info</legend>
-	
+
 	<div class="row">
-	
+
 		<div class="row-left">
-		      <?php echo $form->labelEx($info,'employee_no'); ?> 
+		      <?php echo $form->labelEx($info,'employee_no'); ?>
 		      <?php echo $form->textField($info,'employee_no',array('size'=>13)); ?><span class="status">&nbsp;</span>
-		      <?php echo $form->error($info,'employee_no'); ?> 
+		      <?php echo $form->error($info,'employee_no'); ?>
 
 		</div>
-	
+
 
 		<div class="row-right">
 			<?php echo $form->labelEx($info,'employee_name_alias'); ?>
@@ -325,14 +325,14 @@ CClientScript::POS_READY
 		</div>
 	</div>
 	<div class="row">
-	
+
 		<div class="row-left">
-		      <?php echo $form->labelEx($info,'employee_aicte_id'); ?> 
+		      <?php echo $form->labelEx($info,'employee_aicte_id'); ?>
 		      <?php echo $form->textField($info,'employee_aicte_id',array('size'=>13)); ?><span class="status">&nbsp;</span>
-		      <?php echo $form->error($info,'employee_aicte_id'); ?> 
+		      <?php echo $form->error($info,'employee_aicte_id'); ?>
 
 		</div>
-	
+
 
 		<div class="row-right">
 			<?php echo $form->labelEx($info,'employee_gtu_id'); ?>
@@ -345,7 +345,7 @@ CClientScript::POS_READY
 			<?php $info->employee_joining_date= date('d-m-Y',strtotime($info->employee_joining_date));?>
 			<?php  echo $form->labelEx($info,'employee_joining_date'); ?>
 			<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$info, 
+		    'model'=>$info,
 		    'attribute'=>'employee_joining_date',
 		    'options'=>array(
 			'dateFormat'=>'dd-mm-yy',
@@ -354,13 +354,13 @@ CClientScript::POS_READY
 			'maxDate'=>0,
 			'showAnim' =>'slide',
 			'yearRange'=>'1900:'.(date('Y')+1),
-			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',			
+			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
 		    ),
 			'htmlOptions'=>array(
 			'size'=>13,
 			'readonly'=>true,
 		    ),
-			
+
 		));
 		?><span class="status">&nbsp;</span>
 			<?php echo $form->error($info,'employee_joining_date'); ?>
@@ -395,7 +395,7 @@ CClientScript::POS_READY
 		</div>
 
 	<div class="row-right">
-			<?php echo $form->labelEx($info,'title'); ?>   
+			<?php echo $form->labelEx($info,'title'); ?>
 			<?php echo $form->dropdownList($info,'title',$info->getTitleOptions(), array('empty' => 'Select Title')); ?><span class="status">&nbsp;</span>
 			<?php echo $form->error($info,'title'); ?>
 	</div>
@@ -435,7 +435,7 @@ CClientScript::POS_READY
 				$info->employee_dob= date('d-m-Y',strtotime($info->employee_dob));?>
 			<?php  echo $form->labelEx($info,'employee_dob'); ?>
 			<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-		    'model'=>$info, 
+		    'model'=>$info,
 		    'attribute'=>'employee_dob',
 		    'options'=>array(
 			'dateFormat'=>'dd-mm-yy',
@@ -444,13 +444,13 @@ CClientScript::POS_READY
 			'showAnim' =>'slide',
 			'maxDate'=>0,
 			'yearRange'=>'1900:'.(date('Y')+1),
-			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',			
+			'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
 		    ),
 			'htmlOptions'=>array(
 			'size'=>13,
 			'readonly'=>true,
 		    ),
-			
+
 		));
 			?><span class="status">&nbsp;</span>
 			<?php echo $form->error($info,'employee_dob'); ?>
@@ -547,10 +547,10 @@ CClientScript::POS_READY
 		      <?php echo $form->error($info,'employee_private_email'); ?>
 		</div>
 	</div>
-<?php if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) {?>	
+<?php if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) {?>
 	<div class="row buttons">
-		<?php echo CHtml::button('Save',array('id'=>'submitbut1','class'=>'submit','submit'=>array('Updateprofiletab1','id'=>$_REQUEST['id']))); 
-		      echo CHtml::button('Edit',array('class'=>'submit', 'id'=>'edit1')); 
+		<?php echo CHtml::button('Save',array('id'=>'submitbut1','class'=>'submit','submit'=>array('Updateprofiletab1','id'=>$_REQUEST['id'])));
+		      echo CHtml::button('Edit',array('class'=>'submit', 'id'=>'edit1'));
 		?>
         </div>
 <?php } ?>
@@ -602,9 +602,9 @@ CClientScript::POS_READY
 		      </div>
 	</div>
 
-	
+
 	<div class="row">
-		     <div class="row-left">           
+		     <div class="row-left">
 		      <?php echo $form->labelEx($info,'employee_guardian_mobile1'); ?>
 		      <?php echo $form->textField($info,'employee_guardian_mobile1',array('size'=>13)); ?><span class="status">&nbsp;</span>
 		      <?php echo $form->error($info,'employee_guardian_mobile1'); ?>
@@ -629,7 +629,7 @@ CClientScript::POS_READY
 		      <?php echo $form->textField($info,'employee_guardian_occupation_address',array('size'=>59)); ?><span class="status">&nbsp;</span>
 		      <?php echo $form->error($info,'employee_guardian_occupation_address'); ?>
 	</div>
-	
+
 	<div class="row">
 
 		     <div class="row-left">
@@ -646,12 +646,12 @@ CClientScript::POS_READY
 		     </div>
 
 	</div>
-	 
+
 <?php if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) {
-?>       
+?>
 	<div class="row buttons">
-		<?php echo CHtml::button('Save',array('id'=>'submitbut2','class'=>'submit','submit'=>array('Updateprofiletab2','id'=>$_REQUEST['id']))); 
-		      echo CHtml::button('Edit',array('class'=>'submit', 'id'=>'edit2')); 
+		<?php echo CHtml::button('Save',array('id'=>'submitbut2','class'=>'submit','submit'=>array('Updateprofiletab2','id'=>$_REQUEST['id'])));
+		      echo CHtml::button('Edit',array('class'=>'submit', 'id'=>'edit2'));
 		?>
 	</div>
 <?php } ?>
@@ -673,7 +673,7 @@ CClientScript::POS_READY
                <?php echo $form->error($info,'employee_faculty_of'); ?>
 	      </div>
 	</div>
-		       
+
 	<div class="row-textarea">
 		      <div class="row-left">
 		       <?php echo $form->labelEx($info,'employee_curricular'); ?>
@@ -732,7 +732,7 @@ CClientScript::POS_READY
 		      </div>
 
 
-	</div>	
+	</div>
 	<div class="row">
 		      <div class="row-left">
 		       <?php echo $form->labelEx($info,'employee_reference'); ?>
@@ -750,15 +750,15 @@ CClientScript::POS_READY
 		       <?php $org=Organization::model()->findByPk($model->employee_transaction_organization_id)->organization_name;?>
 		       <?php echo $form->textField($model,'organization_id',array('value'=>$org,'ReadOnly'=>true,'size'=>13)); ?><span class="status">&nbsp;</span>
 		       <?php echo $form->error($model,'employee_transaction_organization_id'); ?>
-		     
+
 		      </div>
-	
-	</div> 
+
+	</div>
 <?php if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) {
-?>  
+?>
 	<div class="row buttons">
-		<?php echo CHtml::button('Save',array('id'=>'submitbut3','class'=>'submit','submit'=>array('Updateprofiletab3','id'=>$_REQUEST['id']))); 
-			echo CHtml::button('Edit',array('class'=>'submit', 'id'=>'edit3'));  
+		<?php echo CHtml::button('Save',array('id'=>'submitbut3','class'=>'submit','submit'=>array('Updateprofiletab3','id'=>$_REQUEST['id'])));
+			echo CHtml::button('Edit',array('class'=>'submit', 'id'=>'edit3'));
 		?>
     	</div>
 <?php } ?>
@@ -782,7 +782,7 @@ CClientScript::POS_READY
 		 <?php echo $form->error($address,'employee_address_c_line1'); ?>
 	</div>
 
-	   
+
 	<div class="row">
 		 <?php echo $form->labelEx($address,'employee_address_c_line2'); ?>
 		 <?php echo $form->textField($address,'employee_address_c_line2',array('size'=>59)); ?><span class="status">&nbsp;</span>
@@ -812,37 +812,37 @@ CClientScript::POS_READY
 				array(
 				'prompt' => 'Select Country',
 				'ajax' => array(
-				'type'=>'POST', 
-				'url'=>CController::createUrl('dependent/UpdateEmpCStates'), 
+				'type'=>'POST',
+				'url'=>CController::createUrl('dependent/UpdateEmpCStates'),
 				'update'=>'#EmployeeAddress_employee_address_c_state', //selector to update
-			
-				))); 
+
+				)));
 		 ?><span class="status">&nbsp;</span>
 		 <?php echo $form->error($address,'employee_address_c_country'); ?>
 	   	</div>
 
 		<div class="row-left">
 		 <?php echo $form->labelEx($address,'employee_address_c_state'); ?>
-		 <?php 
+		 <?php
 				if(!empty($address->employee_address_c_state))
 				echo $form->dropDownList($address,'employee_address_c_state', CHtml::listData(State::model()->findAll(array('condition'=>'country_id='.$address->employee_address_c_country)), 'state_id', 'state_name'),
 				array(
 				'prompt' => 'Select State',
 				'ajax' => array(
-				'type'=>'POST', 
-				'url'=>CController::createUrl('dependent/UpdateEmpCCities'), 
+				'type'=>'POST',
+				'url'=>CController::createUrl('dependent/UpdateEmpCCities'),
 				'update'=>'#EmployeeAddress_employee_address_c_city', //selector to update
-			
+
 				)));
-				else	
+				else
 				echo $form->dropDownList($address,'employee_address_c_state',array(),
 				array(
 				'prompt' => 'Select State',
 				'ajax' => array(
-				'type'=>'POST', 
-				'url'=>CController::createUrl('dependent/UpdateEmpCCities'), 
+				'type'=>'POST',
+				'url'=>CController::createUrl('dependent/UpdateEmpCCities'),
 				'update'=>'#EmployeeAddress_employee_address_c_city', //selector to update
-			
+
 				)));?><span class="status">&nbsp;</span>
 		 <?php echo $form->error($address,'employee_address_c_state'); ?>
 	   	</div>
@@ -854,8 +854,8 @@ CClientScript::POS_READY
 
 		<div class="row-left">
 		<?php echo $form->labelEx($address,'employee_address_c_city'); ?>
-		<?php 
-		
+		<?php
+
 			if($address->employee_address_c_city!=null)
 			echo $form->dropDownList($address,'employee_address_c_city', CHtml::listData(City::model()->findAll(array('condition'=>'state_id='.$address->employee_address_c_state)), 'city_id', 'city_name'));
 			else
@@ -873,13 +873,13 @@ CClientScript::POS_READY
 	   	</div>
 
 	</div>
-<div class="row">	
+<div class="row">
 
 	   		<!--<input type="checkbox" name="address" id="ckbox">
 			<em>Check this box if Current Address and Permanent Address are the same.</em>
 	<br />
 	<br />-->
-	<?php  echo $form->checkBox($address,'address_chkbox',array('value'=>1, 'uncheckValue'=>0,'id'=>'ckbox')); 
+	<?php  echo $form->checkBox($address,'address_chkbox',array('value'=>1, 'uncheckValue'=>0,'id'=>'ckbox'));
 	      echo '&nbsp;&nbsp;Check this box if Current Address and Permanent Address are the same.';
 	?>
 </div>
@@ -892,14 +892,14 @@ CClientScript::POS_READY
 		<?php echo ('&nbsp;'); ?>
 	    </div>
 
-	   
+
 	<div class="row">
 		 <?php echo $form->labelEx($address,'employee_address_p_line1'); ?>
 		 <?php echo $form->textField($address,'employee_address_p_line1',array('size'=>59)); ?><span class="status">&nbsp;</span>
 		 <?php echo $form->error($address,'employee_address_p_line1'); ?>
 	</div>
 
-	   
+
 	<div class="row">
 		 <?php echo $form->labelEx($address,'employee_address_p_line2'); ?>
 		 <?php echo $form->textField($address,'employee_address_p_line2',array('size'=>59)); ?><span class="status">&nbsp;</span>
@@ -921,59 +921,59 @@ CClientScript::POS_READY
 	   	</div>
 
 	</div>
-  
+
 	<div class="row">
 
 		 <div class="row-right">
 		 <?php echo $form->labelEx($address,'employee_address_p_country'); ?>
-		 <?php //echo $form->dropDownList($address,'employee_address_p_country',Country::items(), array('empty' => '-----------Select---------','tabindex'=>12)); 
+		 <?php //echo $form->dropDownList($address,'employee_address_p_country',Country::items(), array('empty' => '-----------Select---------','tabindex'=>12));
 			echo $form->dropDownList($address,'employee_address_p_country' ,Country::items(),
 				array(
 				'prompt' => 'Select Country',
 				'ajax' => array(
-				'type'=>'POST', 
-				'url'=>CController::createUrl('dependent/UpdateEmpPStates'), 
+				'type'=>'POST',
+				'url'=>CController::createUrl('dependent/UpdateEmpPStates'),
 				'update'=>'#EmployeeAddress_employee_address_p_state', //selector to update
-			
-				))); 
+
+				)));
 		 ?><span class="status">&nbsp;</span>
 		 <?php echo $form->error($address,'employee_address_p_country'); ?>
 	   	 </div>
-		 
+
 		 <div class="row-left">
 		 <?php echo $form->labelEx($address,'employee_address_p_state'); ?>
-		 <?php 
+		 <?php
 				if(!empty($address->employee_address_p_state))
 				echo $form->dropDownList($address,'employee_address_p_state', CHtml::listData(State::model()->findAll(array('condition'=>'country_id='.$address->employee_address_p_country)), 'state_id', 'state_name'),
 				array(
 				'prompt' => 'Select State',
 				'ajax' => array(
-				'type'=>'POST', 
-				'url'=>CController::createUrl('dependent/UpdateEmpPCities'), 
+				'type'=>'POST',
+				'url'=>CController::createUrl('dependent/UpdateEmpPCities'),
 				'update'=>'#EmployeeAddress_employee_address_p_city', //selector to update
-			
+
 				)));
-				else			
+				else
 				echo $form->dropDownList($address,'employee_address_p_state',array(),
 				array(
 				'prompt' => 'Select State',
 				'ajax' => array(
-				'type'=>'POST', 
-				'url'=>CController::createUrl('dependent/UpdateEmpPCities'), 
+				'type'=>'POST',
+				'url'=>CController::createUrl('dependent/UpdateEmpPCities'),
 				'update'=>'#EmployeeAddress_employee_address_p_city', //selector to update
-			
+
 				)));?><span class="status">&nbsp;</span>
 		 <?php echo $form->error($address,'employee_address_p_state'); ?>
 	   	 </div>
 
-	   
+
 	</div>
-	 
+
 	<div class="row">
 		<div class="row-left">
 		<?php echo $form->labelEx($address,'employee_address_p_city'); ?>
-		<?php 
-		
+		<?php
+
 			if($address->employee_address_p_city!=null)
 			echo $form->dropDownList($address,'employee_address_p_city', CHtml::listData(City::model()->findAll(array('condition'=>'state_id='.$address->employee_address_p_state)), 'city_id', 'city_name'));
 			else
@@ -991,13 +991,13 @@ CClientScript::POS_READY
 		</div>
 
 	</div>
-</div> <!-- p_add is finish here-->	
-	
+</div> <!-- p_add is finish here-->
+
 <?php if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) {
-?>  	
+?>
 	<div class="row buttons">
-		<?php echo CHtml::button('Save',array('id'=>'submitbut4','class'=>'submit','submit'=>array('Updateprofiletab4','id'=>$_REQUEST['id'])));  
-			 echo CHtml::button('Edit',array('class'=>'submit', 'id'=>'edit4')); 
+		<?php echo CHtml::button('Save',array('id'=>'submitbut4','class'=>'submit','submit'=>array('Updateprofiletab4','id'=>$_REQUEST['id'])));
+			 echo CHtml::button('Edit',array('class'=>'submit', 'id'=>'edit4'));
 		?>
         </div>
 <?php } ?>
@@ -1009,15 +1009,15 @@ CClientScript::POS_READY
 	<legend>Documents</legend>
 
 <?php
- 
+
 ?>
 
 <?php /*
-$config = array( 
+$config = array(
 		    'scrolling' => 'no',
 		    'autoDimensions' => false,
 		    'width' => '755',
-		    'height' => '325', 
+		    'height' => '325',
 		    'titleShow' => false,
 		    'overlayColor' => '#000',
 		    'padding' => '0',
@@ -1073,9 +1073,9 @@ $config = array(
 			'class'=>'CButtonColumn',
 			'template' => '{delete}',
 			'buttons'=>array(
-                        
+
                         'delete' => array(
-				
+
 				'url'=>'Yii::app()->createUrl("employeeDocsTrans/delete", array("id"=>$data->employee_docs_trans_id))',
 
                         ),
@@ -1109,7 +1109,7 @@ $config = array(
 			'name'=>'employee_first_name',
 			'value'=>'$data->cer_employee_id->employee_first_name',
 			//'value'=>'$data->a.\' \'.$data->b.\' \'.$data->c',
-		),		
+		),
 
 		array('name'=>'employee_certificate_type_id',
 			'value'=>'Certificate::model()->findByPk($data->employee_certificate_type_id)->certificate_title',
@@ -1146,14 +1146,14 @@ $config = array(
 
 
  if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) {
- 
+
 echo CHtml::link('Add',array('EmployeeAcademicRecordTrans/create', 'id'=>$model->employee_transaction_id),array('id'=>'quaid','class'=>'submit','style'=>'text-decoration:none;'));
 }
-$config = array( 
+$config = array(
 		    'scrolling' => 'no',
 		    'autoDimensions' => false,
 		    'width' => '755',
-		    'height' => '430', 
+		    'height' => '430',
 		    'titleShow' => false,
 		    'overlayColor' => '#000',
 		    'padding' => '0',
@@ -1178,7 +1178,7 @@ $config = array(
 		'header'=>'SI No',
 		'class'=>'IndexColumn',
 		),
-		
+
 		array('name' => 'employee_academic_record_trans_qualification_id',
 	              'value' => '$data->Rel_employee_qualification->qualification_name',
                      ),
@@ -1206,7 +1206,7 @@ $config = array(
 		array('name' => 'practical_percentage',
 			'value' => '$data->practical_percentage',
                      ),
-		
+
 		array(
 			'class'=>'CButtonColumn',
 			'template' => '{update}{delete}',
@@ -1231,11 +1231,11 @@ $config = array(
 		'header'=>''
 	    ),
 ));
-$config = array( 
+$config = array(
 		    'scrolling' => 'no',
 		    'autoDimensions' => false,
 		    'width' => '755',
-		    'height' => '430', 
+		    'height' => '430',
 		    'titleShow' => false,
 		    'overlayColor' => '#000',
 		    'padding' => '0',
@@ -1257,18 +1257,18 @@ $config = array(
 <div id="form7" class="info-form">
 <fieldset>
 	<legend>Experience</legend>
-	
+
 <?php
 
 if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) {
- 
+
 echo CHtml::link('Add',array('EmployeeExperienceTrans/create', 'id'=>$model->employee_transaction_id),array('id'=>'expid','class'=>'submit','style'=>'text-decoration:none;'));
 	}
-$config = array( 
+$config = array(
 		    'scrolling' => 'no',
 		    'autoDimensions' => false,
 		    'width' => '790',
-		    'height' => '330', 
+		    'height' => '330',
 		    'titleShow' => false,
 		    'overlayColor' => '#000',
 		    'padding' => '0',
@@ -1311,8 +1311,8 @@ $config = array(
 			 'header'=>'To Date',
 			'value' => 'date_format(date_create($data->Rel_Emp_exp->employee_experience_to), "d-m-Y")',
                      ),
-		
-		
+
+
 		array('name' => 'employee_experience',
 			 'header'=>'Total Experience',
 			'value' => '$data->Rel_Emp_exp->employee_experience',
@@ -1327,9 +1327,9 @@ $config = array(
 			'update' => array(
 				'url'=>'Yii::app()->createUrl("employeeExperienceTrans/update", array("id"=>$data->employee_experience_trans_id))',
 				'options'=>array('id'=>'update_exp'),
-				
+
                         ),
-			                        
+
                         'delete' => array(
 				'url'=>'Yii::app()->createUrl("employeeExperienceTrans/delete", array("id"=>$data->employee_experience_trans_id))',
                         ),
@@ -1343,13 +1343,13 @@ $config = array(
 		'maxButtonCount'=>$model->count(),
 		'header'=>''
 	    ),
-)); 
+));
 
-$config = array( 
+$config = array(
 		    'scrolling' => 'no',
 		    'autoDimensions' => false,
 		    'width' => '795',
-		    'height' => '250', 
+		    'height' => '250',
 		    'titleShow' => false,
 		    'overlayColor' => '#000',
 		    'padding' => '0',

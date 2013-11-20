@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Generating Employee Identity Card',
-	
+
 );
 
 $this->menu=array(
@@ -19,17 +19,17 @@ $this->menu=array(
 	'clientOptions'=>array('validateOnSubmit'=>true),
 
 )); ?>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 	<!--<div class="row">
 		<?php echo CHtml::label('Term Period',''); ?>
 		<?php echo CHtml::dropDownList('acdm_period', null, AcademicTermPeriod::items(),
 		array(
 			'prompt' => '-----------Select-----------','tabindex'=>1,
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('Report/getAcademicterm'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('Report/getAcademicterm'),
 			'update'=>'#acdm_name', //selector to update
-			
+
 			))); ?>
 	</div>
 	<div class="row">
@@ -48,7 +48,7 @@ $this->menu=array(
 	</div>
 	<div class="row">
 		<?php echo CHtml::label('Card Id',''); ?>
-		<?php echo CHtml::textField('employee_card_id', null, array('empty' => '---------------Select-------------','tabindex'=>5));?><span class="status">&nbsp;</span>&nbsp;&nbsp;		
+		<?php echo CHtml::textField('employee_card_id', null, array('empty' => '---------------Select-------------','tabindex'=>5));?><span class="status">&nbsp;</span>&nbsp;&nbsp;
 	</div>
 <div class="row buttons">
 	<?php echo CHtml::submitButton('Generate', array('class'=>'submit','name'=>'search','tabindex'=>3)); ?>

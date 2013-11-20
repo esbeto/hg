@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array('Report',
 	'Employee Document Search',
-	
+
 );?>
 
 <div class="form">
@@ -9,11 +9,11 @@ $this->breadcrumbs=array('Report',
 <h1> Employee Document Search</h1></br>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'document-search-emp',
-	'enableAjaxValidation'=>true,	
+	'enableAjaxValidation'=>true,
 	'clientOptions'=>array('validateOnSubmit'=>true),
 
 )); ?>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 	<div class="row">
 		<?php echo $form->labelEx($model,'department'); ?>
 		<?php echo $form->dropDownList($model,'department',Department::items(), array('empty' => 'Select Department'));?>
@@ -30,8 +30,8 @@ $this->breadcrumbs=array('Report',
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search', array('class'=>'submit','name'=>'search')); ?>
-	</div>	
+	</div>
 
-<?php $this->endWidget(); ?>	
+<?php $this->endWidget(); ?>
 
 </div>

@@ -5,7 +5,7 @@
 	'enableAjaxValidation'=>true,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -19,7 +19,7 @@
 		<?php echo $form->labelEx($model,'employee_docs_path'); ?>
 		<?php echo $form->textField($model,'employee_docs_path',array('size'=>60,'maxlength'=>150)); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'employee_docs_path'); ?>
-		
+
 	</div>
 
 	<div class="row buttons">

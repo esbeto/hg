@@ -5,7 +5,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son obligatorios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 <?php
@@ -19,14 +19,14 @@
 		$shift=new Shift;
 		$emp_designation=new EmployeeDesignation;
 	//	$user=new User;
-		
-		
+
+
 	?>
 
 	<?php
-            $personal_info  = $form->labelEx($model,'employee_no'); 
+            $personal_info  = $form->labelEx($model,'employee_no');
             $personal_info .= $form->textField($model,'employee_no',array('size'=>10,'maxlength'=>10));
-            $personal_info .= $form->error($model,'employee_no'); 
+            $personal_info .= $form->error($model,'employee_no');
 
 
             $personal_info .= $form->labelEx($model,'employee_first_name');
@@ -49,7 +49,7 @@
             $personal_info .= $form->labelEx($model,'employee_name_alias');
             $personal_info .= $form->textField($model,'employee_name_alias',array('size'=>10,'maxlength'=>10));
             $personal_info .= $form->error($model,'employee_name_alias');
-	
+
 /*
             $personal_info .= $form->labelEx($user,'user_organization_email_id');
             $personal_info .= $form->textField($user,'user_organization_email_id',array('size'=>30,'maxlength'=>30));
@@ -310,7 +310,7 @@
                     'content'=>$other_info,
 
                 ),
-                       
+
             ),
 
         ));
