@@ -1,21 +1,21 @@
 <?php
 $this->breadcrumbs=array(
-	'State'=>array('admin'),
+	'Estado'=>array('admin'),
 	$model->state_name,
 );
 
 ?>
 
-<h1>View State </h1>
+<h1>Vista Estado </h1>
 <div class="operation">
-<?php echo CHtml::link('Back', array('admin'), array('class'=>'btnback'));?>
-<?php echo CHtml::link('Edit', array('update' ,'id'=>$model->state_id), array('class'=>'btnupdate'));?>
-<?php echo CHtml::link('Delete', array('delete' ,'id'=>$model->state_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
+<?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Editar', array('update' ,'id'=>$model->state_id), array('class'=>'btnupdate'));?>
+<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->state_id), array('class'=>'btndelete','onclick'=>"return confirm('Eliminar el registro?');"));?>
 </div>
 
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">View Details
+ <div class="portlet-title">Ver Detalles
  </div>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
@@ -29,6 +29,6 @@ $this->breadcrumbs=array(
         	),
 
 	),
-	'htmlOptions'=> array('class'=>'custom-view'),		
+	'htmlOptions'=> array('class'=>'custom-view'),
 )); ?>
 </div>

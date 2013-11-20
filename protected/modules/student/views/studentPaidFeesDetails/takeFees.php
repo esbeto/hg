@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 <h1>Student Fees Collection</h1>
 
 <div class="operation">
-<?php echo CHtml::link('Back', array('admin'), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 </div>
 
 <div class="portlet box blue">

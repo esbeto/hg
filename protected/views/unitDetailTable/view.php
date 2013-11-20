@@ -5,9 +5,9 @@ $this->breadcrumbs=array(
 );
 ?>
 <div class="operation">
-<?php echo CHtml::link('Back', array('/courseUnitTable/view','id'=>$model->unit_detail_unit_master_id), array('class'=>'btnback'));?>
-<?php echo CHtml::link('Edit', array('update' ,'id'=>$model->unit_detail_id), array('class'=>'btnupdate'));?>
-<?php echo CHtml::link('Delete', array('delete' ,'id'=>$model->unit_detail_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
+<?php echo CHtml::link('Regresar', array('/courseUnitTable/view','id'=>$model->unit_detail_unit_master_id), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Editar', array('update' ,'id'=>$model->unit_detail_id), array('class'=>'btnupdate'));?>
+<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->unit_detail_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
 </div>
 
 <div class="portlet box blue">

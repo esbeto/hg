@@ -24,11 +24,11 @@ function updateCourseUnit()
 		    $('#updateCourseUnit').dialog('close');
 		    window.location='admin?id='+$course;
                 }
- 
+
             } ",
             ))?>;
-    return false; 
- 
+    return false;
+
 }
 
 function addLessonUnit()
@@ -50,13 +50,13 @@ function addLessonUnit()
 		    $('#addLesson').dialog('close');
 		    window.location='admin?id='+$course;
                 }
- 
+
             } ",
             ))?>;
-    return false; 
- 
+    return false;
+
 }
- 
+
 </script>
 <?php
 $this->breadcrumbs=array(
@@ -74,31 +74,31 @@ $this->breadcrumbs=array(
         'onclick'=>"{addLessonUnit(); $('#addLesson').dialog('open');}"));
 ?>
 
-<?php echo CHtml::link('Edit', "",  array(
+<?php echo CHtml::link('Editar', "",  array(
         'style'=>'cursor: pointer; text-decoration: underline;',
         'onclick'=>"{updateCourseUnit(); $('#updateCourseUnit').dialog('open');}"));
 ?>
 
-<?php echo CHtml::link('Delete', array('delete','id'=>$model->course_unit_id, 'courseId'=>$model->course_unit_master_id), array("onclick" => "return (confirm('Are you sure want to delete this units ?'))")); ?>
+<?php echo CHtml::link('Eliminar', array('delete','id'=>$model->course_unit_id, 'courseId'=>$model->course_unit_master_id), array("onclick" => "return (confirm('Are you sure want to delete this units ?'))")); ?>
 
 </div>
 -->
-<?php 
-	
+<?php
+
 ?>
 
 <h1>View Course Unit Details</h1>
 
 
 <div class="operation">
-<?php echo CHtml::link('Back', array('/courseMaster/view','id'=>$model->course_unit_master_id), array('class'=>'btnback'));?>
-<?php echo CHtml::link('Edit', array('update' ,'id'=>$model->course_unit_id), array('class'=>'btnupdate'));?>
-<?php echo CHtml::link('Delete', array('delete' ,'id'=>$model->course_unit_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
+<?php echo CHtml::link('Regresar', array('/courseMaster/view','id'=>$model->course_unit_master_id), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Editar', array('update' ,'id'=>$model->course_unit_id), array('class'=>'btnupdate'));?>
+<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->course_unit_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
 </div>
 
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">View Details
+ <div class="portlet-title">Ver Detalles
  </div>
 
 
@@ -117,10 +117,10 @@ $this->breadcrumbs=array(
 
 <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
         'tabs'=>array(
-          
+
          'Course Lessons' =>$this->renderPartial("application.views.unitDetailTable.admin", array('lesson'=>$unitLesson,'unitid'=>$model->course_unit_id), $this),
 
-        ),        
+        ),
         'options'=>array(
             'collapsible'=>true,
         ),
@@ -132,7 +132,7 @@ $this->breadcrumbs=array(
 
 <!--
 <?php
-$this->beginWidget('zii.widgets.jui.CJuiDialog', array( 
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     'id'=>'updateCourseUnit',
     'options'=>array(
         'title'=>'Add Course Units',
@@ -145,11 +145,11 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     ),
 ));?>
 <div class="divUpdateForm"></div>
- 
+
 <?php $this->endWidget();?>
 
 <?php
-$this->beginWidget('zii.widgets.jui.CJuiDialog', array( 
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     'id'=>'addLesson',
     'options'=>array(
         'title'=>'Add Course Units',
@@ -162,7 +162,7 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog', array(
     ),
 ));?>
 <div class="divLessonForm"></div>
- 
+
 <?php $this->endWidget();?>
 
 

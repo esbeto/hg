@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 
 <h1>View Paid Fees Details</h1>
 <div class="operation">
-<?php echo CHtml::link('Back', array('admin'), array('class'=>'btnback'));?>
-<?php echo CHtml::link('Edit', array('update' ,'id'=>$model->student_paid_fees_id), array('class'=>'btnupdate'));?>
-<?php echo CHtml::link('Delete', array('delete' ,'id'=>$model->student_paid_fees_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
+<?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Editar', array('update' ,'id'=>$model->student_paid_fees_id), array('class'=>'btnupdate'));?>
+<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->student_paid_fees_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
 </div>
 
 
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">View Details
+ <div class="portlet-title">Ver Detalles
  </div>
 
 
@@ -38,6 +38,6 @@ $this->breadcrumbs=array(
 		),
 		'student_paid_date',
 	),
-	'htmlOptions'=> array('class'=>'custom-view'),	
+	'htmlOptions'=> array('class'=>'custom-view'),
 )); ?>
 </div>

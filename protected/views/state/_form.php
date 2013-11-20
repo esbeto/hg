@@ -23,7 +23,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'country_id'); ?>
 		<?php //echo $form->textField($model,'country_id',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->dropDownList($model,'country_id', Country::items(), array('empty' => 'Select Country')); ?><span class="status">&nbsp;</span>
+		<?php echo $form->dropDownList($model,'country_id', Country::items(), array('empty' => 'Seleccionar País')); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'country_id'); ?>
 	</div>
 

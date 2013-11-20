@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'State'=>array('admin'),
-	'Add',
+	'Estado'=>array('admin'),
+	'Agregar',
 );
 
 $this->menu=array(
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Add State</h1>
+<h1>Agregar Estado</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

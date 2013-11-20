@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'City'=>array('admin'),
-	'Manage',
+	'Ciudad'=>array('admin'),
+	'Administrar',
 );
 
 ?>
 
-<h1>Manage Cities</h1>
+<h1>Administrar Ciudades</h1>
 
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/CityExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
@@ -14,7 +14,7 @@ $this->breadcrumbs=array(
 </div>
 
 <div class="portlet box blue">
- <div class="portlet-title"> City
+ <div class="portlet-title"> Ciudad
  </div>
 
 <?php echo CHtml::link('Agregar +', array('city/create'), array('class'=>'btn green'))?>

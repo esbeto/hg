@@ -18,7 +18,7 @@ class State extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-	
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -56,7 +56,7 @@ class State extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 		'Rel_country' => array(self::BELONGS_TO, 'Country','country_id'),
-		
+
 		);
 	}
 
@@ -66,9 +66,9 @@ class State extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'state_id' => 'State id',
-			'state_name' => 'State',
-			'country_id' => 'Country',
+			'state_id' => 'ID',
+			'state_name' => 'Estado',
+			'country_id' => 'País',
 		);
 	}
 
@@ -93,7 +93,7 @@ class State extends CActiveRecord
 		$_SESSION['state_data']=$state_data;
 		return $state_data;
 	}
-	
+
 	public function checkstate()
 		{
 			if($this->isNewRecord)
@@ -105,11 +105,11 @@ class State extends CActiveRecord
 					    ->from('state')
 					    ->where('country_id="'.$country.'"'.' and state_name='.$state)
 				    	    ->queryAll();
-				
+
 				if($acdm_term_name)
 				{
-					$this->addError('state_name',"Already Exists.");	
-					 return false;	
+					$this->addError('state_name',"Ya existe.");
+					 return false;
 				}
 				else
 				{
@@ -127,17 +127,17 @@ class State extends CActiveRecord
 					    ->from('state')
 					    ->where('state_id <>'.$state_id.' and country_id="'.$country.'"'.' and state_name='.$state)
 				    	    ->queryAll();
-				
+
 				if($acdm_term_name)
 				  {
-				 	$this->addError('state_name',"Already Exists.");	
-					 return false;	
+				 	$this->addError('state_name',"Ya existe.");
+					 return false;
 				  }
 				else
 			          {
 					return true;
 				  }
-			}	
+			}
 		}
 	private static $_items = array();
 
@@ -159,5 +159,5 @@ class State extends CActiveRecord
         foreach ($models as $model)
             self::$_items[$model->state_id] = $model->state_name;
     	}
-	
+
 }

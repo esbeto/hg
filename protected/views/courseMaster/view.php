@@ -1,15 +1,15 @@
 <h1>View Course </h1>
 <div class="operation">
-<?php echo CHtml::link('Back', array('admin'), array('class'=>'btnback'));?>
-<?php echo CHtml::link('Edit', array('update' ,'id'=>$model->course_master_id), array('class'=>'btnupdate'));?>
-<?php echo CHtml::link('Delete', array('delete' ,'id'=>$model->course_master_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
+<?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Editar', array('update' ,'id'=>$model->course_master_id), array('class'=>'btnupdate'));?>
+<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->course_master_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
 </div>
 
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">View Details
+ <div class="portlet-title">Ver Detalles
  </div>
- 
+
 <table id="yw0" class="custom-view">
   <tbody>
     <tr class="odd">
@@ -56,7 +56,7 @@
           'Course Units' =>$this->renderPartial("application.views.courseUnitTable.admin", array('unit'=>$unit), $this),
          // 'Course Lessons' =>$this->renderPartial("application.views.unitDetailTable.admin", array('lesson'=>$lesson), $this),
 
-        ),        
+        ),
         'options'=>array(
             'collapsible'=>true,
         ),

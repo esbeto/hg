@@ -39,7 +39,7 @@
 			if(isset($model->state_id))
 				echo $form->dropDownList($model,'state_id', CHtml::listData(State::model()->findAll(array('condition'=>'state_id='.$model->state_id)), 'state_id', 'state_name'));
 			else
-				echo $form->dropDownList($model,'state_id',array('empty' => 'Select State')); ?><span class="status">&nbsp;</span>
+				echo $form->dropDownList($model,'state_id',array('empty' => 'Seleccionar Estado')); ?><span class="status">&nbsp;</span>
 			<?php echo $form->error($model,'state_id'); ?>
 	</div>
 	<div class="row">

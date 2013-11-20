@@ -5,13 +5,13 @@ $this->breadcrumbs=array(
 );
 ?>
 <div class="operation">
-<?php echo CHtml::link('Back', array('admin'), array('class'=>'btnback'));?>
-<?php echo CHtml::link('Edit', array('updateprofiletab1' ,'id'=>$model->student_transaction_id), array('class'=>'btnupdate'));?>
+<?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Editar', array('updateprofiletab1' ,'id'=>$model->student_transaction_id), array('class'=>'btnupdate'));?>
 </div>
 
 <div class="portlet box green">
 <i class="icon-reorder"></i>
- <div class="portlet-title">View Details
+ <div class="portlet-title">Ver Detalles
  </div>
 <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
 	'headerTemplate'=>'<li><a href="{url}" title="{title}">{title}</a></li>',
@@ -22,8 +22,8 @@ $this->breadcrumbs=array(
 	 'Academic Record'=>$this->renderPartial("viewAcademicRecord", array('stud_qua'=>$stud_qua), $this),
 	'Documents'=>$this->renderPartial("viewDocs", array('studentdocstrans'=>$studentdocstrans), $this),
         ),
-	 
-                
+
+
 
 	'htmlOptions'=>array('class'=>'profile-tab'),
     ));

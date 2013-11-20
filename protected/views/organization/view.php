@@ -7,18 +7,18 @@ $this->breadcrumbs=array(
 
 <h1>View Institute </h1>
 <div class="operation">
-<?php echo CHtml::link('Edit', array('update' ,'id'=>$model->organization_id), array('class'=>'btnupdate'));?>
+<?php echo CHtml::link('Editar', array('update' ,'id'=>$model->organization_id), array('class'=>'btnupdate'));?>
 </div>
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">View Details
+ <div class="portlet-title">Ver Detalles
  </div>
 
 <table id="yw0" class="custom-view">
   <tbody>
 	<tr class="odd">
 		<td class="col2"><span class="detail-label">Name  :</span><span class="detail-value"><?php echo $model->organization_name; ?></span></td>
-		
+
 	</tr>
 
 	<tr class="even">

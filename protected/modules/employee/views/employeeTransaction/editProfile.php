@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 
 <div class="operation">
-<?php echo CHtml::link('Back', array('admin'), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 
 </div>
 
@@ -22,7 +22,7 @@ $this->breadcrumbs=array(
           'Personal Profile' =>$this->renderPartial("tabs/_tab1", array('model' => $model, 'info'=>$info), $this),
           'Guardian Info'=>$this->renderPartial("tabs/_tab2", array('model' => $model, 'info'=>$info), $this),
           'Address Info'=>$this->renderPartial("tabs/_tab3", array('address'=>$address, 'model' => $model, 'info'=>$info), $this),
-        ),        
+        ),
         'options'=>array(
             'collapsible'=>true,
         ),

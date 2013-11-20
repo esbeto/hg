@@ -27,7 +27,7 @@ class City extends CActiveRecord
 	{
 		return 'city';
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'city_name'
@@ -72,10 +72,10 @@ class City extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'city_id' => 'City id',
-			'city_name' => 'City',
-			'country_id' => 'Country',
-			'state_id' => 'State',
+			'city_id' => 'ID',
+			'city_name' => 'Ciudad',
+			'country_id' => 'País',
+			'state_id' => 'Estado',
 		);
 	}
 
@@ -91,7 +91,7 @@ class City extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		
+
 		$criteria->compare('city_id',$this->city_id);
 		$criteria->compare('city_name',$this->city_name,true);
 		$criteria->compare('country_id',$this->country_id);
@@ -103,7 +103,7 @@ class City extends CActiveRecord
 		$_SESSION['city_data']=$city_data;
 		return $city_data;
 	}
-	
+
 	public function checkcity()
 		{
 			if($this->isNewRecord)
@@ -115,11 +115,11 @@ class City extends CActiveRecord
 					    ->from('city')
 					    ->where('state_id="'.$state.'"'.' and city_name='.$city)
 				    	    ->queryAll();
-				
+
 				if($acdm_term_name)
 				{
-					$this->addError('city_name',"Already Exists.");	
-					 return false;	
+					$this->addError('city_name',"Ya existe.");
+					 return false;
 				}
 				else
 				{
@@ -136,17 +136,17 @@ class City extends CActiveRecord
 					    ->from('city')
 					    ->where('city_id <>'.$city_id.' and state_id="'.$state.'"'.' and city_name='.$city)
 				    	    ->queryAll();
-				
+
 				if($acdm_term_name)
 				  {
-				 	$this->addError('city_name',"Already Exists.");	
-					 return false;	
+				 	$this->addError('city_name',"Ya existe.");
+					 return false;
 				  }
 				else
 			          {
 					return true;
 				  }
-			}	
+			}
 		}
 	private static $_items=array();
 

@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 );
 ?>
 <div class="operation">
-<?php echo CHtml::link('Back', array('admin'), array('class'=>'btnback'));?>
+<?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 
 </div>
 <div class="portlet box green">
