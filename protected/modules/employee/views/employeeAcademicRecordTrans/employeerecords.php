@@ -27,7 +27,7 @@ $this->breadcrumbs=array(
 
 <div class="ui-tabs-panel form">
 
-<?php  if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData')  && (Yii::app()->user->getState('emp_id') == $_REQUEST['id']) || Yii::app()->user->checkAccess('EmployeeTransaction.UpdateAllEmployeeData')) { 
+<?php  if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData')  && (Yii::app()->user->getState('emp_id') == $_REQUEST['id']) || Yii::app()->user->checkAccess('EmployeeTransaction.UpdateAllEmployeeData')) {
 
 echo CHtml::link('Add New+',array('/employee/employeeAcademicRecordTrans/create','id'=>$_REQUEST['id']),array('class'=>'btn green','style'=>'text-decoration:none;'));
 }
@@ -39,10 +39,10 @@ echo CHtml::link('Add New+',array('/employee/employeeAcademicRecordTrans/create'
 	'enableSorting'=>false,
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-		
+
 		array('name' => 'employee_academic_record_trans_qualification_id',
 	              'value' => '$data->Rel_employee_qualification->qualification_name',
                      ),

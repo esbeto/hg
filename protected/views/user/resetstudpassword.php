@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Reset Student Password',
-	
+
 );?>
 <?php
 
@@ -48,7 +48,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'columns'=>array(
 
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 
@@ -68,15 +68,15 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 			'value'=>'AcademicTermPeriod::model()->findByPk($data->student_academic_term_period_tran_id)->academic_term_period',
 			'filter' =>CHtml::listData(AcademicTermPeriod::model()->findAll(), 'academic_terms_period_id','academic_term_period'),
 
-		), 
+		),
 		array('name'=>'student_transaction_course_id',
 		      'value'=>'CourseMaster::model()->findByPk($data->student_transaction_course_id)->course_name',
 		      'filter' =>CHtml::listData(CourseMaster::model()->findAll(), 'course_master_id','course_name'),
-		), 
+		),
  		array('name'=>'student_transaction_user_id',
 		      'value'=>'User::model()->findByPk($data->student_transaction_user_id)->user_organization_email_id',
 		      'filter' =>CHtml::listData(User::model()->findAll(array('condition'=>' 	user_type="student"')), 'user_id','user_organization_email_id'),
-		), 
+		),
 
 
 		array(
@@ -84,9 +84,9 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 			'template' => '{Reset Password}',
 	                'buttons'=>array(
                         'Reset Password' => array(
-                                'label'=>'Reset Password', 
+                                'label'=>'Reset Password',
 				  'url'=>'Yii::app()->createUrl("user/update_stud_password", array("id"=>$data->student_transaction_user_id))',
-                                'imageUrl'=> Yii::app()->baseUrl.'/images/Reset Password.png',  
+                                'imageUrl'=> Yii::app()->baseUrl.'/images/Reset Password.png',
 				'options'=>array('id'=>'update-student-status'),
                         ),
 	            ),

@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Reset Employee Login ID',
-	
+
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -42,7 +42,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'ajaxUpdate'=>false,
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		array(
@@ -66,7 +66,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 		      'name' => 'employee_last_name',
 	              'value' => '$data->Rel_Emp_Info->employee_last_name',
                      ),
-		 
+
 		 array(
 			'header' => 'Designation',
 			'name'=>'employee_transaction_designation_id',
@@ -76,24 +76,24 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 
 		),
 		array(
-			'header' => 'Department',		
+			'header' => 'Department',
 			'name'=>'employee_transaction_department_id',
 			'value'=>'Department::model()->findByPk($data->employee_transaction_department_id)->department_name',
 			'filter' =>CHtml::listData(Department::model()->findAll(), 'department_id', 'department_name'),
 
-		), 
-	
+		),
+
 		array('class'=>'CButtonColumn',
 			'template' => '{Reset Loginid}',
 	                'buttons'=>array(
                         'Reset Loginid' => array(
-                                'label'=>'Reset login id', 
+                                'label'=>'Reset login id',
 				'url'=>'Yii::app()->createUrl("user/updateemploginid", array("id"=>$data->Rel_user1->user_id))',
-                                'imageUrl'=> Yii::app()->baseUrl.'/images/Reset Password.png', 
+                                'imageUrl'=> Yii::app()->baseUrl.'/images/Reset Password.png',
                         ),
 		   ),
 
-		),		
+		),
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',

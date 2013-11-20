@@ -66,11 +66,11 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'ajaxUpdate'=>false,
 	'selectionChanged'=>"function(id){
 		window.location='" . Yii::app()->urlManager->createUrl('student/studentTransaction/update', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);
-	}",	
+	}",
 
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		 array(
@@ -79,7 +79,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
                      ),
 
 		 array(
-			'name' => 'student_first_name', 
+			'name' => 'student_first_name',
  	                'value' => '$data->Rel_Stud_Info->student_first_name',
                      ),
 
@@ -90,7 +90,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 		array(
 			'name'=>'student_academic_term_period_tran_id',
 			'value'=>'AcademicTermPeriod::model()->findByPk($data->student_academic_term_period_tran_id)->academic_term_period',
-		), 
+		),
 
 
 		array(

@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array('Report',
 	'Employee Document Search',
-	
+
 );
 echo CHtml::link('GO BACK',Yii::app()->createUrl('report/documentsearch'));
 
@@ -34,7 +34,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		//'employee_docs_trans_user_id',
 		//'employee_docs_trans_emp_docs_id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		'employee_attendance_card_id',
@@ -56,7 +56,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	        'value'=>'date_format(new DateTime($data->employee_docs_submit_date), "d-m-Y")',
           	),
 
-	
+
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',

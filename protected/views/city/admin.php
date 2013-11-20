@@ -29,7 +29,7 @@ $pageSize = Yii::app()->params['pageSize'];
 $dataProvider->getPagination()->setPageSize($pageSize);
 ?>
 
-<?php 
+<?php
 
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'city-grid',
@@ -40,7 +40,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		'city_name',
@@ -50,7 +50,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	    	    'filter'=>  State::items(),
 		),
 	),
-	
+
 	'pager'=>array(
 		'class'=>'AjaxList',
 		'maxButtonCount'=>$model->count(),

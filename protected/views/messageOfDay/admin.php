@@ -53,10 +53,10 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'columns'=>array(
 //		'id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-		
+
 		'message',
 		array(
                     'class'=>'JToggleColumn',

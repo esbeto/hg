@@ -6,10 +6,10 @@
 	'summaryText'=>'',
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-		
+
 		array('name' => 'employee_academic_record_trans_qualification_id',
 	              'value' => '$data->Rel_employee_qualification->qualification_name',
                      ),

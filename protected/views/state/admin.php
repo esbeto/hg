@@ -63,11 +63,11 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-	
-		'state_name',           
+
+		'state_name',
 		//'country_id',
 		array(
             		'name'=>'country_id',

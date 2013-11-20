@@ -34,7 +34,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'ajaxUpdate'=>false,
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		array(
@@ -57,7 +57,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 		      'name' => 'employee_last_name',
 	              'value' => '$data->Rel_Emp_Info->employee_last_name',
                      ),
-		 
+
 		 array(
 			'header' => 'Designation',
 			'name'=>'employee_transaction_designation_id',
@@ -67,12 +67,12 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 
 		),
 		array(
-			'header' => 'Department',		
+			'header' => 'Department',
 			'name'=>'employee_transaction_department_id',
 			'value'=>'Department::model()->findByPk($data->employee_transaction_department_id)->department_name',
 				'filter' =>CHtml::listData(Department::model()->findAll(array('condition'=>'	department_organization_id='.Yii::app()->user->getState('org_id'))),'department_id','department_name'),
 
-		), 
+		),
 		array(
 			'header'=>'Organization Number',
 			'name'=>'employee_organization_mobile',
@@ -85,7 +85,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 			'value'=>'$data->Rel_Emp_Info->employee_private_mobile',
 			'filter'=>false,
 		),
-		
+
 	),
 
 	'pager'=>array(

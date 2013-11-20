@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Reset Admin Password',
-	
+
 );
 
 $this->menu=array(
@@ -55,16 +55,16 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'columns'=>array(
 		//'user_id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		'user_organization_email_id',
 		//'user_organization_id',
-		
-		
+
+
 		array(
                 'name'=>'organization_name',
-//                'type'=>'raw',		
+//                'type'=>'raw',
                 'value'=> '$data->rel_user_organization->organization_name',
 	          ),
 		array(
@@ -90,7 +90,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 			'template' => '{Reset Admin Password}',
 	                'buttons'=>array(
                         'Reset Admin Password' => array(
-                                'label'=>'Reset Admin Password', 
+                                'label'=>'Reset Admin Password',
 
 				'url'=>'Yii::app()->createUrl("user/update_admin_password", array("id"=>$data->user_id))',
                                 'imageUrl'=> Yii::app()->baseUrl.'/images/Reset Password.png',  // image URL of the button. If not set or false, a text link is used

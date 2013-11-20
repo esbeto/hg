@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'', 'url'=>array('ExportToPDFExcel/OrganizationExportToPdf'),'linkOptions'=>array('class'=>'export-pdf','title'=>'Export To Pdf','target'=>'_blank')),
 	array('label'=>'', 'url'=>array('ExportToPDFExcel/OrganizationExportToExcel'),'linkOptions'=>array('class'=>'export-excel','title'=>'Export To Excel','target'=>'_blank')),
-	
+
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -60,30 +60,30 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		//'organization_id',
 		'organization_name',
 		'address_line1',
 //		'address_line2',
-				
+
 		array('name'=>'city',
 			'value'=>'City::model()->findByPk($data->city)->city_name',
 			'filter' =>CHtml::listData(City::model()->findAll(),'city_id','city_name'),
 
-		), 
+		),
 		array('name'=>'state',
 			'value'=>'State::model()->findByPk($data->state)->state_name',
 		'filter' =>CHtml::listData(State::model()->findAll(),'state_id','state_name'),
 
-		), 
+		),
 		array('name'=>'country',
 			'value'=>'Country::model()->findByPk($data->country)->name',
 			'filter' =>CHtml::listData(Country::model()->findAll(),'id','name'),
 
-		), 
-	
+		),
+
 /*		'city',
 		'state',
 		'country',
@@ -102,10 +102,10 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 		'filter'=>false,
                 'value'=>  'CHtml::image(Yii::app()->controller->createUrl("site/loadImage", array("id"=>$data->organization_id)), "No Image",array("width"=>"20px","height"=>"20px"))',
                  ),
-		
+
 		//'organization_created_by',
 		//'organization_creation_date',
-		
+
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',

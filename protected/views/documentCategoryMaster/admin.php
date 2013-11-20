@@ -54,7 +54,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'columns'=>array(
 		//'doc_category_id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		'doc_category_name',
@@ -62,7 +62,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 		//'creation_date',
 		//'docs_category_organization_id',
 
-		
+
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',

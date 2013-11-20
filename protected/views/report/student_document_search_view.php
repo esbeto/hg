@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array('Report',
 	'Student Document Search',
-	
+
 );?>
 
 <?php
@@ -37,7 +37,7 @@ $dataProvider =$model->newsearch($branch_id,$cat_id,$acdm_period,$sem);
 $pageSize = Yii::app()->user->getState("pageSize",@$_GET["pageSize"]);
 $dataProvider->getPagination()->setPageSize($pageSize);
 ?>
-<?php 
+<?php
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-docs-search-grid',
 	'dataProvider'=>$dataProvider,
@@ -48,10 +48,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
 		//'employee_docs_trans_user_id',
 		//'employee_docs_trans_emp_docs_id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-		'student_roll_no',		
+		'student_roll_no',
 		'student_enroll_no',
 		'student_first_name',
 		//'student_docs_path',
@@ -70,7 +70,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                 'name'=>'Submit Date',
 	        'value'=>'date_format(new DateTime($data->student_docs_submit_date), "d-m-Y")',
           	),
-	
+
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',

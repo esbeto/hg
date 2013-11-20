@@ -82,10 +82,10 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'ajaxUpdate'=>false,
 	'selectionChanged'=>"function(id){
 		window.location='" . Yii::app()->urlManager->createUrl('employee/employeeTransaction/update', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);
-	}",		
+	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		array(
@@ -109,7 +109,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 		      'name' => 'employee_last_name',
 	              'value' => '$data->Rel_Emp_Info->employee_last_name',
                      ),
-		 
+
 		 array(
 			'header' => 'Designation',
 			'name'=>'employee_transaction_designation_id',
@@ -119,12 +119,12 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 
 		),
 		array(
-			'header' => 'Department',		
+			'header' => 'Department',
 			'name'=>'employee_transaction_department_id',
 			'value'=>'Department::model()->findByPk($data->employee_transaction_department_id)->department_name',
 				'filter' =>CHtml::listData(Department::model()->findAll(), 'department_id','department_name'),
 
-		), 
+		),
 
 		array(
 		'type'=>'raw',

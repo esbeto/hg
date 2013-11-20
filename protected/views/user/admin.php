@@ -54,7 +54,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'columns'=>array(
 		//'user_id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		'user_organization_email_id',

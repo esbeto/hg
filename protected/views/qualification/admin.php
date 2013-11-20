@@ -62,7 +62,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		//'qualification_id',
@@ -75,7 +75,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 			'value'=>'Organization::model()->findByPk($data->qualification_organization_id)->organization_name',
 			'filter' => false,
 		),
-		
+
 		array(
 			'name'=>'qualification_organization_id',
                 	'value'=>'Organization::item($data->qualification_organization_id)',

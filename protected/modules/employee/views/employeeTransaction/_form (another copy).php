@@ -1043,7 +1043,7 @@ $config = array(
 		//'employee_docs_trans_user_id',
 		//'employee_docs_trans_emp_docs_id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		array(
@@ -1101,7 +1101,7 @@ $config = array(
 	//'filter'=>$model,
 	'columns'=>array(
 	array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		array(
@@ -1175,7 +1175,7 @@ $config = array(
 	'enableSorting'=>false,
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 
@@ -1292,7 +1292,7 @@ $config = array(
 		//'employee_experience_trans_user_id',
 		//'employee_experience_trans_emp_experience_id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		array('name' => 'employee_experience_organization_name',

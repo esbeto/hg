@@ -32,7 +32,7 @@ $this->breadcrumbs=array(
 echo CHtml::link('Add New+',array('studentAcademicRecordTrans/create', 'id'=>$_REQUEST['id']),array('class'=>'btn green'));
 }
 ?>
-	
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-academic-record-trans-grid',
 	'dataProvider'=>$stud_qua->mysearch(),
@@ -40,12 +40,12 @@ echo CHtml::link('Add New+',array('studentAcademicRecordTrans/create', 'id'=>$_R
 	'enableSorting'=>false,
 	'nullDisplay'=>'N/A',
 	'columns'=>array(
-	
+
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-		
+
 		array('name' => 'student_academic_record_trans_qualification_id',
 	              'value' => '$data->Rel_student_qualification->qualification_name',
                      ),
@@ -73,16 +73,16 @@ echo CHtml::link('Add New+',array('studentAcademicRecordTrans/create', 'id'=>$_R
 		array('name' => 'practical_percentage',
 			'value' => '$data->practical_percentage',
                      ),
-		
-		
+
+
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',
 		'maxButtonCount'=>$stud_qua->count(),
 		'header'=>''
 	    ),
-	
-)); 
+
+));
 
 ?>
 </div>

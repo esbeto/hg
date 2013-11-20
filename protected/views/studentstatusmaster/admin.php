@@ -60,7 +60,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'columns'=>array(
 		//'id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		'status_name',

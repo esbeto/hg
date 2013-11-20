@@ -31,10 +31,10 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'columns'=>array(
 
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-		
+
 		 array('name' => 'student_enroll_no',
 		       'value' => '$data->Rel_Stud_Info->student_enroll_no',
                      ),
@@ -49,11 +49,11 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 
 		array('name'=>'student_academic_term_period_tran_id',
 		      'value'=>'AcademicTermPeriod::model()->findByPk($data->student_academic_term_period_tran_id)->academic_term_period',
-		     ), 
+		     ),
 		array('name'=>'student_academic_term_name_id',
 		      'value'=>'isset($data->student_academic_term_name_id) ? AcademicTerm::model()->findByPk($data->student_academic_term_name_id)->academic_term_name :  "N/A" ',
 		      'filter' =>CHtml::listData(AcademicTerm::model()->findAll(array('condition'=>'current_sem=1')),'academic_term_id','academic_term_name'),
-   		     ), 
+   		     ),
 
 		array('name' => 'status_name',
 		      'value' => '$data->Rel_Status->status_name',
@@ -64,7 +64,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 			'template' => '{Add Fees}',
 	                'buttons'=>array(
                         'Add Fees' => array(
-                                'label'=>'Take Fees', 
+                                'label'=>'Take Fees',
 				'url'=>'Yii::app()->createUrl("student/studentPaidFeesDetails/create", array("id"=>$data->student_transaction_id))',
                                 'imageUrl'=> Yii::app()->baseUrl.'/images/add.jpeg',
                                 'options' => array('class'=>'fees'),

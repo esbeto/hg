@@ -115,7 +115,7 @@ function auto_logout() {
 		<li><?php echo CHtml::link('Año Académico', array('/academicTermPeriod/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Semestre', array('/academicTerm/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Departamento', array('/department/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Designaciones', array('/employeeDesignation/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Designación', array('/employeeDesignation/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Nacionalidad', array('/nationality/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('País', array('/country/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Estado / Provincia', array('/state/admin'), array('class'=>'changeForm')); ?></li>

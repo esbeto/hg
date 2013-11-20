@@ -8,7 +8,7 @@ th, td, caption {
 }
 
 </style>
-<?php 
+<?php
 $k=0;
 if ($model != null):
 
@@ -17,31 +17,31 @@ if ($model != null):
 
 	<tr>
 		<th>
-		     SN.
+		     ID.
 		</th>
  		<th>
-		     Country		
+		     País
 		</th>
-		
-		
+
+
  	</tr>
-	<?php 
+	<?php
 	foreach($model as $m=>$v) {
           if($m <> 0) {
             ?>	<tr>
 		<td>
-		      <?php echo ++$k; ?>	
+		      <?php echo ++$k; ?>
 		</td>
 		<td>
-		     <?php echo $v['name']; ?>		
+		     <?php echo $v['name']; ?>
 		</td>
-		
- 	   </tr> 
+
+ 	   </tr>
        <?php
-    
+
        }// end if
      }// end for loop
-	
+
 ?>
 </table>
 <?php endif; ?>

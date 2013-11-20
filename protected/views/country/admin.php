@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Country'=>array('admin'),
-	'Manage',
+	'País'=>array('admin'),
+	'Administrar',
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Countries</h1>
+<h1>Administrar Países</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/CountryExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/CountryExportToExcel'), array('class'=>'btnblue'));?>
@@ -39,10 +39,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Countries
+ <div class="portlet-title"> Países
  </div>
 
-<?php echo CHtml::link('Add New +', array('country/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('country/create'), array('class'=>'btn green'))?>
 
 
 <?php
@@ -63,7 +63,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		//'id',

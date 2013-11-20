@@ -65,7 +65,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'columns'=>array(
 		//'languages_id',
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		'languages_name',

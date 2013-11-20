@@ -1,9 +1,9 @@
 <?php
 $this->breadcrumbs=array(
-	'Country'=>array('admin'),
+	'País'=>array('admin'),
 	//$model->name=>array('view','id'=>$model->id),
 	$model->name=>array(),
-	'Edit',
+	'Editar',
 );
 
 $this->menu=array(
@@ -14,6 +14,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Edit Country <?php //echo $model->id; ?></h1>
+<h1>Editar País <?php //echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

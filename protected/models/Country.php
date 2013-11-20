@@ -25,7 +25,7 @@ class Country extends CActiveRecord
 	{
 		return 'country';
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'name'
@@ -66,8 +66,8 @@ class Country extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Country id',
-			'name' => 'Country',
+			'id' => 'ID',
+			'name' => 'País',
 		);
 	}
 

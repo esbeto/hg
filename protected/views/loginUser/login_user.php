@@ -21,7 +21,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	//'filter'=>$model,
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		array('name'=>'user_id',
@@ -40,7 +40,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 		'type'=>'raw',
 		'value'=>'($data->status == 1) ? CHtml::image("../images/success.png") : CHtml::image("../images/error.png")',
                  ),
-		
+
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',

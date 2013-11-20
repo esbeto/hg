@@ -7,12 +7,12 @@
 	'enableSorting'=>false,
 	'nullDisplay'=>'N/A',
 	'columns'=>array(
-	
+
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-		
+
 		array('name' => 'student_academic_record_trans_qualification_id',
 	              'value' => '$data->Rel_student_qualification->qualification_name',
                      ),
@@ -28,16 +28,16 @@
 		array('name' => 'practical_percentage',
 			'value' => '$data->practical_percentage',
                      ),
-		
-		
+
+
 	),
 	'pager'=>array(
 		'class'=>'AjaxList',
 		'maxButtonCount'=>$stud_qua->count(),
 		'header'=>''
 	    ),
-	
-)); 
+
+));
 
 ?>
 

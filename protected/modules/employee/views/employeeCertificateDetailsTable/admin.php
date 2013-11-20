@@ -54,13 +54,13 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	'filter'=>$model,
 	'columns'=>array(
 	array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		array('name'=>'employee_first_name',
 			'value'=>'$data->cer_employee_id->employee_first_name.\'----\'.$data->cer_employee_id->employee_attendance_card_id',
 			//'value'=>'$data->a.\' \'.$data->b.\' \'.$data->c',
-		),		
+		),
 
 		array('name'=>'employee_certificate_type_id',
 			'value'=>'Certificate::model()->findByPk($data->employee_certificate_type_id)->certificate_title',

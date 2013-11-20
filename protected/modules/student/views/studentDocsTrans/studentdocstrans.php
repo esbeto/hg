@@ -31,7 +31,7 @@ echo CHtml::link('Add New+',array('StudentDocsTrans/Create','id'=>$_REQUEST['id'
 }
 ?>
 
-	
+
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-docs-final_view',
 	'dataProvider'=>$studentdocstrans->mysearch(),
@@ -39,12 +39,12 @@ echo CHtml::link('Add New+',array('StudentDocsTrans/Create','id'=>$_REQUEST['id'
 	'enableSorting'=>false,
 	'nullDisplay'=>'N/A',
 	'columns'=>array(
-		
+
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
-		
+
 		array(
                 'name'=>'Title',
                 'type'=>'raw',
@@ -73,7 +73,7 @@ echo CHtml::link('Add New+',array('StudentDocsTrans/Create','id'=>$_REQUEST['id'
 		'maxButtonCount'=>$studentdocstrans->count(),
 		'header'=>''
 	    ),
-	
+
 )); ?>
 </fieldset>
 </div>
