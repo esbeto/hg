@@ -8,7 +8,7 @@ th, td, caption {
 }
 
 </style>
-<?php 
+<?php
 
 if ($model != null):
 $k=0;
@@ -17,42 +17,42 @@ $k=0;
 
 	<tr>
 		<th>
-		    SN.	
+		    ID.
 		</th>
  		<th>
-		     City		
+		     Ciudad
 		</th>
 		<th>
-		     State	
+		     Estado
 		</th>
 		<th>
-		     Country		
+		     País
 		</th>
-		
+
  	</tr>
-	<?php 
+	<?php
 	foreach($model as $m=>$v) {
           if($m <> 0) {
             ?>	<tr>
 		<td>
-		      <?php echo ++$k; ?>	
+		      <?php echo ++$k; ?>
 		</td>
 		<td>
-		      <?php echo $v['city_name']; ?>	
+		      <?php echo $v['city_name']; ?>
 		</td>
 		<td>
-		      <?php echo State::model()->findBypk($v['state_id'])->state_name; ?>	
+		      <?php echo State::model()->findBypk($v['state_id'])->state_name; ?>
 		</td>
 		<td>
-		     <?php echo Country::model()->findBypk($v['country_id'])->name; ?>		
+		     <?php echo Country::model()->findBypk($v['country_id'])->name; ?>
 		</td>
-		
- 	   </tr> 
+
+ 	   </tr>
        <?php
-    
+
        }// end if
      }// end for loop
-	
+
 ?>
 </table>
 <?php endif; ?>
