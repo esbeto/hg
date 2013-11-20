@@ -129,67 +129,69 @@ function auto_logout() {
 	</ul>
 	<?php } ?>
 	<?php if(Yii::app()->user->checkAccess('Employee.EmployeeTransaction.Admin')) { ?>
-	<i class="icon-user"></i><li>Employee <i class="icon-angle-down"></i> </li>
+	<i class="icon-user"></i><li>Empleados <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Manage Employee', array('/employee/employeeTransaction/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Administrar Empleados', array('/employee/employeeTransaction/admin'), array('class'=>'changeForm')); ?></li>
 	</ul>
 	<?php } ?>
 	<?php if(Yii::app()->user->checkAccess('Student.StudentTransaction.Admin')) { ?>
-	<i class="icon-male"></i><li>Student <i class="icon-angle-down"></i> </li>
+	<i class="icon-male"></i><li>Alumnos <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Registered Students', array('/student/studentTransaction/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Alumnos Registrados', array('/student/studentTransaction/admin'), array('class'=>'changeForm')); ?></li>
 	</ul>
 	<?php } ?>
-	<i class="icon-user"></i><li>All Courses <i class="icon-angle-down"></i> </li>
+	<i class="icon-user"></i><li>Cursos <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Manage Course', array('courseMaster/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Course Category', array('qualificationType/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Administrar Cursos', array('courseMaster/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Categorías de Cursos', array('qualificationType/admin'), array('class'=>'changeForm')); ?></li>
 	</ul>
+	<!--
 	<i class="icon-user"></i><li>Messages <i class="icon-angle-down"></i> </li>
 	<ul>
 		<li><?php echo CHtml::link('Mail', array('/mailbox'), array('class'=>'changeForm')); ?></li>
 	</ul>
+	-->
 	<?php if(Yii::app()->user->checkAccess('Organization.Admin')) { ?>
-	<i class="icon-th"></i><li>Control Panel <i class="icon-angle-down"></i> </li>
+	<i class="icon-th"></i><li>Panel de Control <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Manage Institute', array('/organization/view', 'id'=>1), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('User Management', array('/rights'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Administrar Instituto', array('/organization/view', 'id'=>1), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Administración de Usuarios', array('/rights'), array('class'=>'changeForm')); ?></li>
 	</ul>
 	<?php } ?>
 	<?php if(Yii::app()->user->checkAccess('Document')) { ?>
-	<i class="icon-file-alt"></i><li>Document <i class="icon-angle-down"></i> </li>
+	<i class="icon-file-alt"></i><li>Documentos <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Category', array('/documentCategoryMaster/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Categorías', array('/documentCategoryMaster/admin'), array('class'=>'changeForm')); ?></li>
 
 	</ul>
 	<?php } ?>
 	<?php if(Yii::app()->user->checkAccess('Resetlogin')) { ?>
-	<i class="icon-repeat"></i><li>Reset Login <i class="icon-angle-down"></i> </li>
+	<i class="icon-repeat"></i><li>Restaurar Login <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Student', array('/user/resetstudloginid'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Employee', array('/user/resetemploginid'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Alumno', array('/user/resetstudloginid'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Empleado', array('/user/resetemploginid'), array('class'=>'changeForm')); ?></li>
 	</ul>
 	<?php } ?>
 	<?php if(Yii::app()->user->checkAccess('Report')) { ?>
-	<i class="icon-bar-chart"></i><li>Reports <i class="icon-angle-down"></i> </li>
+	<i class="icon-bar-chart"></i><li>Reportes <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Student', array('/report/StudInfoReport'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Employee', array('/report/EmployeeInfoReport'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Alumno', array('/report/StudInfoReport'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Empleado', array('/report/EmployeeInfoReport'), array('class'=>'changeForm')); ?></li>
 	</ul>
 	<?php } ?>
 	<?php if(Yii::app()->user->checkAccess('Resetpassword')) { ?>
-	<i class="icon-user-md"></i><li>Reset Password <i class="icon-angle-down"></i> </li>
+	<i class="icon-user-md"></i><li>Restaurar Contraseña <i class="icon-angle-down"></i> </li>
 	<ul>
-		<li><?php echo CHtml::link('Student', array('/user/resetstudpassword'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Employee', array('/user/resetemppassword'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Alumno', array('/user/resetstudpassword'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Empleado', array('/user/resetemppassword'), array('class'=>'changeForm')); ?></li>
 
 	</ul>
 	<?php } ?>
 	<?php if(Yii::app()->user->checkAccess('LoginUser.login_user')) { ?>
-	<i class="icon-h-sign"></i><li><?php echo CHtml::link('Login History', array('/loginUser/login_user'), array('class'=>'changeForm', 'style'=>'padding:0; color: #FFF;')); ?> </li><ul><li></li></ul>
+	<i class="icon-h-sign"></i><li><?php echo CHtml::link('Historial de Acceso', array('/loginUser/login_user'), array('class'=>'changeForm', 'style'=>'padding:0; color: #FFF;')); ?> </li><ul><li></li></ul>
 	<?php } ?>
 	<?php if(Yii::app()->user->checkAccess('Student.StudentPaidFeesDetails.admin')) { ?>
-	<i class="icon-inr"></i><li><?php echo CHtml::link('Fees', array('/student/studentPaidFeesDetails/admin'), array('class'=>'changeForm', 'style'=>'padding:0; color: #FFF;')); ?> </li><ul><li></li></ul>
+	<i class="icon-inr"></i><li><?php echo CHtml::link('Cuotas', array('/student/studentPaidFeesDetails/admin'), array('class'=>'changeForm', 'style'=>'padding:0; color: #FFF;')); ?> </li><ul><li></li></ul>
 	<?php } ?>
 
 </ul>
