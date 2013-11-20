@@ -34,7 +34,7 @@
 	</div>
 -->
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
