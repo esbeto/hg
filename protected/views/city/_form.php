@@ -20,7 +20,7 @@
 	<?php
 			echo $form->dropDownList($model,'country_id', Country :: items(),
 			array(
-			'prompt' => 'Select Country',
+			'prompt' => 'Seleccionar País',
 			'ajax' => array(
 			'type'=>'POST',
 			'url'=>CController::createUrl('dependent/getstatecity'),
@@ -51,7 +51,7 @@
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit')); ?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

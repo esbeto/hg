@@ -19,8 +19,8 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'submit')); ?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar', array('class'=>'submit')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 
 	</div>
 

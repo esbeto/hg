@@ -52,39 +52,39 @@ $this->breadcrumbs=array(
 
 	<div class="row-right">
 	<?php echo $form->labelEx($address,'student_address_c_country'); ?>
-	<?php 
+	<?php
 		echo $form->dropDownList($address,'student_address_c_country',Country::items(), array(
 			'prompt' => '-----------Select-----------',
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('dependent/UpdateStudCStates'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('dependent/UpdateStudCStates'),
 			'update'=>'#StudentAddress_student_address_c_state', //selector to update
-			
+
 			))); ?><span class="status">&nbsp;</span>
 	<?php echo $form->error($address,'student_address_c_country'); ?>
 	</div>
 
 	<div class="row-left">
 	<?php echo $form->labelEx($address,'student_address_c_state'); ?>
-	<?php 
+	<?php
 			if(isset($address->student_address_c_state))
 			echo $form->dropDownList($address,'student_address_c_state', CHtml::listData(State::model()->findAll(array('condition'=>'country_id='.$address->student_address_c_country)), 'state_id', 'state_name'),
 			array(
 			'prompt' => '-----------Select-----------',
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('dependent/UpdateStudCCities'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('dependent/UpdateStudCCities'),
 			'update'=>'#StudentAddress_student_address_c_city', //selector to update
-			
+
 			)));
 			else
 			echo $form->dropDownList($address,'student_address_c_state',array(), 			array(
 			'prompt' => '-----------Select-----------',
 			'ajax' => array(
-			'type'=>'POST', 
-			'url'=>CController::createUrl('dependent/UpdateStudCCities'), 
+			'type'=>'POST',
+			'url'=>CController::createUrl('dependent/UpdateStudCCities'),
 			'update'=>'#StudentAddress_student_address_c_city', //selector to update
-			
+
 			))); ?><span class="status">&nbsp;</span>
 	<?php echo $form->error($address,'student_address_c_state'); ?>
 	</div>
@@ -95,7 +95,7 @@ $this->breadcrumbs=array(
 
 	<div class="row-left">
 	<?php echo $form->labelEx($address,'student_address_c_city'); ?>
-	<?php 
+	<?php
 		if(isset($address->student_address_c_city))
 		echo $form->dropDownList($address,'student_address_c_city', CHtml::listData(City::model()->findAll(array('condition'=>'state_id='.$address->student_address_c_state)), 'city_id', 'city_name'));
 		else
@@ -113,8 +113,8 @@ $this->breadcrumbs=array(
 </div>
 
 	<div class="row buttons last">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); 
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit'));
 		?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 <?php  $this->endWidget(); ?>

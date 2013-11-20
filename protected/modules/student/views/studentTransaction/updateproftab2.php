@@ -43,7 +43,7 @@ $this->breadcrumbs=array(
         <?php echo $form->textField($info,'student_guardian_name',array('size'=>18,'maxlength'=>100)); ?><span class="status">&nbsp;</span>
         <?php echo $form->error($info,'student_guardian_name'); ?>
 	</div>
-	
+
 	<div class="row-right">
         <?php echo $form->labelEx($info,'student_guardian_relation'); ?>
 	<?php echo $form->textField($info,'student_guardian_relation',array('size'=>18,'maxlength'=>20)); ?><span class="status">&nbsp;</span>
@@ -57,7 +57,7 @@ $this->breadcrumbs=array(
         <?php echo $form->textField($info,'student_guardian_occupation',array('size'=>18,'maxlength'=>100)); ?><span class="status">&nbsp;</span>
         <?php echo $form->error($info,'student_guardian_occupation'); ?>
 	</div>
-	
+
 	<div class="row-right">
         <?php echo $form->labelEx($info,'student_guardian_income'); ?>
 	<?php echo $form->textField($info,'student_guardian_income',array('size'=>18,'maxlength'=>20)); ?><span class="status">&nbsp;</span>
@@ -86,9 +86,9 @@ $this->breadcrumbs=array(
         <?php echo $form->error($info,'student_guardian_home_address'); ?>
 </div>
 	<div class="row buttons last">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); 
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit'));
 		?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 
 <?php  $this->endWidget(); ?>

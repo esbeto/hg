@@ -22,7 +22,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'course_category_id'); ?>
-		<?php echo $form->dropDownList($model,'course_category_id', CHtml::listData(QualificationType::model()->findAll(),'qualification_type_id','qualification_type_name'), array('empty'=>'Select Category')); ?><span class="status">&nbsp;</span>
+		<?php echo $form->dropDownList($model,'course_category_id', CHtml::listData(QualificationType::model()->findAll(),'qualification_type_id','qualification_type_name'), array('empty'=>'Seleccionar Categoría')); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'course_category_id'); ?>
 	</div>
 
@@ -63,9 +63,9 @@
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit', 'onclick'=>'CKEDITOR.instances.CourseMaster_course_desc.updateElement()'));
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit', 'onclick'=>'CKEDITOR.instances.CourseMaster_course_desc.updateElement()'));
 		?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 
 

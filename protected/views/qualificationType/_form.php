@@ -32,10 +32,10 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit', 'onclick'=>'CKEDITOR.instances.QualificationType_qualification_type_desc.updateElement()',
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit', 'onclick'=>'CKEDITOR.instances.QualificationType_qualification_type_desc.updateElement()',
         ));
 		?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

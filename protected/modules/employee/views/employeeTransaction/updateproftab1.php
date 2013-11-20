@@ -35,20 +35,20 @@ $this->breadcrumbs=array(
 
 <div class="row">
 	<div class="row-left">
-	      <?php echo $form->labelEx($info,'employee_no'); ?> 
+	      <?php echo $form->labelEx($info,'employee_no'); ?>
               <?php echo $form->textField($info,'employee_no',array('size'=>11, 'tabindex'=>1)); ?><span class="status">&nbsp;</span>
-              <?php echo $form->error($info,'employee_no'); ?> 
+              <?php echo $form->error($info,'employee_no'); ?>
 	</div>
 	<div class="row-left">
-	      <?php echo $form->labelEx($info,'employee_attendance_card_id'); ?> 
+	      <?php echo $form->labelEx($info,'employee_attendance_card_id'); ?>
               <?php echo $form->textField($info,'employee_attendance_card_id',array('size'=>11, 'tabindex'=>2)); ?><span class="status">&nbsp;</span>
-              <?php echo $form->error($info,'employee_attendance_card_id'); ?> 
+              <?php echo $form->error($info,'employee_attendance_card_id'); ?>
 	</div>
 </div>
 
 <div class="row">
 	<div class="row-col1">
-		<?php echo $form->labelEx($info,'title'); ?>   
+		<?php echo $form->labelEx($info,'title'); ?>
 		<?php echo $form->dropdownList($info,'title',$info->getTitleOptions(), array('empty' => '-----------Select---------','tabindex'=>10)); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($info,'title'); ?>
 	</div>
@@ -84,7 +84,7 @@ $this->breadcrumbs=array(
 	<div class="row-left">
 		<?php  echo $form->labelEx($info,'employee_dob'); ?>
 		<?php  $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model'=>$info, 
+			    'model'=>$info,
 			    'attribute'=>'employee_dob',
 			    'options'=>array(
 				'dateFormat'=>'dd-mm-yy',
@@ -93,7 +93,7 @@ $this->breadcrumbs=array(
 				'showAnim' =>'slide',
 				'yearRange'=>'1900:'.date('Y'),
 				'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
-						
+
 			    ),
 				'htmlOptions'=>array(
 				'style'=>'width:80px;vertical-align:top',
@@ -132,7 +132,7 @@ $this->breadcrumbs=array(
 	<div class="row-left">
 		<?php  echo $form->labelEx($info,'employee_joining_date'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-			    'model'=>$info, 
+			    'model'=>$info,
 			    'attribute'=>'employee_joining_date',
 			    'options'=>array(
 				'dateFormat'=>'dd-mm-yy',
@@ -141,11 +141,11 @@ $this->breadcrumbs=array(
 				'showAnim' =>'slide',
 				'yearRange'=>'1900:'.date('Y'),
 				'buttonImage'=>Yii::app()->request->baseUrl.'/images/calendar.png',
-						
+
 			    ),
 				'htmlOptions'=>array(
 				'style'=>'width:80px;vertical-align:top',
-				
+
 				'value'=>date("d-m-Y", strtotime($info->employee_joining_date)),
 			    ),
 		));
@@ -194,18 +194,18 @@ $this->breadcrumbs=array(
                <?php echo $form->textField($info,'employee_private_mobile',array('size'=>18,'maxlength'=>15,'tabindex'=>27)); ?><span class="status">&nbsp;</span>
                <?php echo $form->error($info,'employee_private_mobile'); ?>
 	</div>
-	
+
 </div>
 	<div class="row">
 	      <?php echo $form->labelEx($photo,'employee_photos_path'); ?>
 	      <?php echo $form->fileField($photo, 'employee_photos_path',array('tabindex'=>1)); ?><span class="status">&nbsp;</span>
-	      
+
    	 </div>
 
 	<div class="row buttons last">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); 
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit'));
 		?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -75,7 +75,7 @@ $this->breadcrumbs=array(
 
 
 <div class="row last">
-             <div class="row-left">           
+             <div class="row-left">
 	      <?php echo $form->labelEx($info,'employee_guardian_mobile1'); ?>
               <?php echo $form->textField($info,'employee_guardian_mobile1',array('size'=>18,'maxlength'=>15,'tabindex'=>10)); ?><span class="status">&nbsp;</span>
               <?php echo $form->error($info,'employee_guardian_mobile1'); ?>
@@ -89,9 +89,9 @@ $this->breadcrumbs=array(
 </div>
 
 	<div class="row buttons last">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class'=>'submit')); 
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guardar',array('class'=>'submit'));
 		?>
-		<?php echo CHtml::link('Cancel', array('admin'), array('class'=>'btnCan')); ?>
+		<?php echo CHtml::link('Cancelar', array('admin'), array('class'=>'btnCan')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
