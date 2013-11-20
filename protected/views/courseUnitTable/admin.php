@@ -1,4 +1,4 @@
-<?php echo CHtml::link('Add New +', array('courseUnitTable/create', 'courseid'=>$_REQUEST['id']), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('courseUnitTable/create', 'courseid'=>$_REQUEST['id']), array('class'=>'btn green'))?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'course-unit-table-grid',
 	'dataProvider'=>$unit->coursewisesearch(),

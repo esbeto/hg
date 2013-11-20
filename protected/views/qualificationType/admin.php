@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
  <div class="portlet-title"> Course Category
  </div>
 
-<?php echo CHtml::link('Add New +', array('qualificationType/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('qualificationType/create'), array('class'=>'btn green'))?>
 
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(

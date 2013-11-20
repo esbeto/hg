@@ -17,7 +17,7 @@ $this->breadcrumbs=array(
  <div class="portlet-title"> City
  </div>
 
-<?php echo CHtml::link('Add New +', array('city/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('city/create'), array('class'=>'btn green'))?>
 
 
 <?php

@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'State'=>array('admin'),
-	'Manage',
+	'Estado'=>array('admin'),
+	'Administrar',
 );
 
 
@@ -19,7 +19,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage States</h1>
+<h1>Administrar Estados</h1>
 
 <!--<p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -40,10 +40,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> States
+ <div class="portlet-title"> Estados
  </div>
 
-<?php echo CHtml::link('Add New +', array('state/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('state/create'), array('class'=>'btn green'))?>
 
 <?php
 $dataProvider = $model->search();

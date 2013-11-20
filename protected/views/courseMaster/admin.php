@@ -12,7 +12,7 @@ $this->breadcrumbs=array(
 <div class="portlet box blue">
  <div class="portlet-title"> Course Master
  </div>
-<?php echo CHtml::link('Add New +', array('courseMaster/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('courseMaster/create'), array('class'=>'btn green'))?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'course-master-grid',
@@ -20,18 +20,18 @@ $this->breadcrumbs=array(
 	'filter'=>$model,
 	'selectionChanged'=>"function(id){
 		window.location='" . Yii::app()->urlManager->createUrl('courseMaster/view', array('id'=>'')) . "' + $.fn.yiiGridView.getSelection(id);
-	}",	
+	}",
 
 	'columns'=>array(
 		array(
 		'header'=>'No',
 		'class'=>'IndexColumn',
-		),	
+		),
 		'course_name',
 		array(
 		  'name'=>'course_category_id',
 		  'value'=>'$data->relCat->qualification_type_name',
-		  'filter'=>CHtml::listData(QualificationType::model()->findAll(), 'qualification_type_id', 'qualification_type_name'), 
+		  'filter'=>CHtml::listData(QualificationType::model()->findAll(), 'qualification_type_id', 'qualification_type_name'),
 		),
 		'course_level',
 		'course_completion_hours',

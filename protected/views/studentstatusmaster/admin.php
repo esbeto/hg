@@ -38,7 +38,7 @@ $('.search-form form').submit(function(){
  <div class="portlet-title"> Student Status
  </div>
 
-<?php echo CHtml::link('Add New +', array('studentstatusmaster/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('studentstatusmaster/create'), array('class'=>'btn green'))?>
 
 
 <?php

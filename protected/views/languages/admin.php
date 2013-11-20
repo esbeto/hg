@@ -44,7 +44,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
  <div class="portlet-title"> Languages
  </div>
 
-<?php echo CHtml::link('Add New +', array('languages/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('languages/create'), array('class'=>'btn green'))?>
 
 <?php
 $dataProvider = $model->search();

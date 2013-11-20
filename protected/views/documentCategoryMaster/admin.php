@@ -33,7 +33,7 @@ $('.search-form form').submit(function(){
  <div class="portlet-title"> Document Type
  </div>
 
-<?php echo CHtml::link('Add New +', array('documentCategoryMaster/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('documentCategoryMaster/create'), array('class'=>'btn green'))?>
 
 <?php
 $dataProvider = $model->search();
