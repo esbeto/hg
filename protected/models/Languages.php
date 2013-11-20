@@ -28,7 +28,7 @@ class Languages extends CActiveRecord
 	{
 		return 'languages';
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'languages_name'
@@ -44,10 +44,10 @@ class Languages extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('languages_name, languages_created_by, languages_created_date', 'required','message'=>''),
-			
+
 			array('languages_organization_id, languages_created_by', 'numerical', 'integerOnly'=>true),
 			array('languages_name', 'length', 'max'=>60),
-			array('languages_name', 'unique','message'=>'Already Exists.'),
+			array('languages_name', 'unique','message'=>'Ya existe.'),
 			array('languages_name','CRegularExpressionValidator','pattern'=>'/^([A-Za-z  ]+)$/','message'=>''),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -74,11 +74,11 @@ class Languages extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'languages_id' => 'Languages id',
-			'languages_name' => 'Language',
-			'languages_organization_id' => 'Organization',
-			'languages_created_by' => 'Created By',
-			'languages_created_date' => 'Creation Date',
+			'languages_id' => 'ID',
+			'languages_name' => 'Idioma',
+			'languages_organization_id' => 'Organización',
+			'languages_created_by' => 'Creado Por',
+			'languages_created_date' => 'Fecha de Creación',
 		);
 	}
 

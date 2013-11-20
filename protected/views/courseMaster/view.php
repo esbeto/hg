@@ -2,7 +2,7 @@
 <div class="operation">
 <?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 <?php echo CHtml::link('Editar', array('update' ,'id'=>$model->course_master_id), array('class'=>'btnupdate'));?>
-<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->course_master_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
+<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->course_master_id), array('class'=>'btndelete','onclick'=>"return confirm('Eliminar el registro?');"));?>
 </div>
 
 <div class="portlet box blue">

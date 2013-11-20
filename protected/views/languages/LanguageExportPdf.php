@@ -8,7 +8,7 @@ th, td, caption {
 }
 
 </style>
-<?php 
+<?php
 
 if ($model != null):
 $k=0;
@@ -17,37 +17,37 @@ $k=0;
 
 	<tr>
 		<th>
-		 	SN.
+		 	ID.
 		</th>
  		<th>
-		     Language		
+		     Idioma
 		</th>
 		<th>
-		    Created By	
+		    Creado Por
 		</th>
-		
-		
+
+
  	</tr>
-	<?php 
+	<?php
 	foreach($model as $m=>$v) {
           if($m <> 0) {
             ?>	<tr>
 		<td>
-		      <?php echo ++$k; ?>	
+		      <?php echo ++$k; ?>
 		</td>
 		<td>
-		      <?php echo $v['languages_name']; ?>	
+		      <?php echo $v['languages_name']; ?>
 		</td>
 		<td>
-		      <?php echo User::model()->findBypk($v['languages_created_by'])->user_organization_email_id; ?>	
+		      <?php echo User::model()->findBypk($v['languages_created_by'])->user_organization_email_id; ?>
 		</td>
-		
- 	   </tr> 
+
+ 	   </tr>
        <?php
-    
+
        }// end if
      }// end for loop
-	
+
 ?>
 </table>
 <?php endif; ?>

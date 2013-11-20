@@ -1,16 +1,16 @@
 <?php
 $this->breadcrumbs=array(
-	'Languages'=>array('admin'),
+	'Idiomas'=>array('admin'),
 	$model->languages_name,
 );
 
 ?>
 
-<h1>View Language  <?php //echo $model->languages_id; ?></h1>
+<h1>Vista Idioma  <?php //echo $model->languages_id; ?></h1>
 <div class="operation">
 <?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 <?php echo CHtml::link('Editar', array('update' ,'id'=>$model->languages_id), array('class'=>'btnupdate'));?>
-<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->languages_id), array('class'=>'btndelete','onclick'=>"return confirm('Are you sure want to delete?');"));?>
+<?php echo CHtml::link('Eliminar', array('delete' ,'id'=>$model->languages_id), array('class'=>'btndelete','onclick'=>"return confirm('Eliminar el registro?');"));?>
 </div>
 
 <div class="portlet box blue">
@@ -32,7 +32,7 @@ $this->breadcrumbs=array(
 		array(
                 'name'=>'languages_created_date',
                 'type'=>'raw',
-                'value'=>($model->languages_created_date == 0000-00-00) ? 'Not Set' : date_format(new DateTime($model->languages_created_date), 'd-m-Y'),
+                'value'=>($model->languages_created_date == 0000-00-00) ? 'No Especificado' : date_format(new DateTime($model->languages_created_date), 'd-m-Y'),
 	        ),
 		/*
 		array('name'=>'Organization:',

@@ -1,9 +1,9 @@
 <?php
 $this->breadcrumbs=array(
-	'Languages'=>array('admin'),
+	'Idiomas'=>array('admin'),
 	//$model->languages_name=>array('view','id'=>$model->languages_id),
 	$model->languages_name=>array(),
-	'Edit',
+	'Editar',
 );
 
 $this->menu=array(
@@ -14,6 +14,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Edit Language  <?php //echo $model->languages_id; ?></h1>
+<h1>Editar Idioma  <?php //echo $model->languages_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

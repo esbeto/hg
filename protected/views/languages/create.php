@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Languages'=>array('admin'),
-	'Add',
+	'Idiomas'=>array('admin'),
+	'Agregar',
 );
 
 $this->menu=array(
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Add Language</h1>
+<h1>Agregar Idioma</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

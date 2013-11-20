@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Languages'=>array('admin'),
-	'Manage',
+	'Idiomas'=>array('admin'),
+	'Administrar',
 );
 
 
@@ -19,7 +19,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Languages</h1>
+<h1>Administrar Idiomas</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/LanguageExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/LanguageExportToExcel'), array('class'=>'btnblue'));?>
@@ -41,7 +41,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Languages
+ <div class="portlet-title"> Idiomas
  </div>
 
 <?php echo CHtml::link('Agregar +', array('languages/create'), array('class'=>'btn green'))?>
