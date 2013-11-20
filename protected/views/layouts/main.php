@@ -47,7 +47,7 @@ function auto_logout() {
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
-<body class="page-header-fixed" oncontextmenu="return false;" onload="set_interval()" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
+<body class="page-header-fixed">
 <div class="header navbar navbar-inverse navbar-fixed-top">
 	<div id="logo" class="navbar-inner">
 	<div id="site-name">
@@ -115,7 +115,7 @@ function auto_logout() {
 		<li><?php echo CHtml::link('Año Académico', array('/academicTermPeriod/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Semestre', array('/academicTerm/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Departamento', array('/department/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Designación', array('/employeeDesignation/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Designaciones', array('/employeeDesignation/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Nacionalidad', array('/nationality/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('País', array('/country/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Estado / Provincia', array('/state/admin'), array('class'=>'changeForm')); ?></li>

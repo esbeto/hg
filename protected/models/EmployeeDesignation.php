@@ -10,7 +10,7 @@
  * @property integer $employee_designation_level
  * @property integer $employee_designation_created_by
  * @property string $employee_designation_created_date
-	
+
  */
 class EmployeeDesignation extends CActiveRecord
 {
@@ -30,7 +30,7 @@ class EmployeeDesignation extends CActiveRecord
 	{
 		return 'employee_designation';
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'employee_designation_name'
@@ -75,12 +75,12 @@ class EmployeeDesignation extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'employee_designation_id' => 'Employee Designation',
-			'employee_designation_name' => 'Designation',
-			'employee_designation_organization_id' => 'Employee Designation Organization',
-			'employee_designation_created_by' => 'Created By',
-			'employee_designation_created_date' => 'Creation Date',
-			'employee_designation_level' => 'Designation Level',
+			'employee_designation_id' => 'Designación de Empleado',
+			'employee_designation_name' => 'Designación',
+			'employee_designation_organization_id' => 'Organización de Designación de Empleado',
+			'employee_designation_created_by' => 'Creado Por',
+			'employee_designation_created_date' => 'Fecha de Creación',
+			'employee_designation_level' => 'Nivel de Designación',
 		);
 	}
 

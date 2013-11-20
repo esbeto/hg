@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Designations'=>array('admin'),
-	'Manage',
+	'Designaciones'=>array('admin'),
+	'Administrar',
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Designations</h1>
+<h1>Administrar Designaciones de Empleados</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/EmployeeDesignationExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/EmployeeDesignationExportToExcel'), array('class'=>'btnblue'));?>
@@ -38,10 +38,10 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Designations
+ <div class="portlet-title"> Designaciones
  </div>
 
-<?php echo CHtml::link('Add New +', array('employeeDesignation/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('employeeDesignation/create'), array('class'=>'btn green'))?>
 
 
 <?php
@@ -61,7 +61,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 	}",
 	'columns'=>array(
 		array(
-		'header'=>'SI No',
+		'header'=>'ID',
 		'class'=>'IndexColumn',
 		),
 		'employee_designation_name',

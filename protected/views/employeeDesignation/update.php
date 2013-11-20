@@ -1,9 +1,9 @@
 <?php
 $this->breadcrumbs=array(
-	'Designations'=>array('admin'),
+	'Designaciones'=>array('admin'),
 	//$model->employee_designation_name=>array('view','id'=>$model->employee_designation_id),
 	$model->employee_designation_name=>array(),
-	'Edit',
+	'Editar',
 );
 
 $this->menu=array(
@@ -14,6 +14,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Edit Designation  <?php //echo $model->employee_designation_id; ?></h1>
+<h1>Editar Designación  <?php //echo $model->employee_designation_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

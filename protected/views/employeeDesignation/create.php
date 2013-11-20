@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Designations'=>array('admin'),
-	'Add',
+    'Designaciones'=>array('admin'),
+	'Agregar',
 );
 
 $this->menu=array(
@@ -10,6 +10,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Add Designation</h1>
+<h1>Agregar Designación</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
