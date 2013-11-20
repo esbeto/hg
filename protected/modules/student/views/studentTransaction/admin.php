@@ -46,7 +46,7 @@ $this->breadcrumbs=array(
  <div class="portlet-title"> Student List
  </div>
 
-<?php echo CHtml::link('Add New +', array('studentTransaction/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('studentTransaction/create'), array('class'=>'btn green'))?>
 
 
 <?php

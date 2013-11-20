@@ -62,7 +62,7 @@ $('.search-form form').submit(function(){
  <div class="portlet-title"> Employee List
  </div>
 
-<?php echo CHtml::link('Add New +', array('employeeTransaction/create'), array('class'=>'btn green'))?>
+<?php echo CHtml::link('Agregar +', array('employeeTransaction/create'), array('class'=>'btn green'))?>
 
 <?php
 $dataProvider = $model->search();
