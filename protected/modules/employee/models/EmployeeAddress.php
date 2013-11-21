@@ -80,7 +80,7 @@ class EmployeeAddress extends CActiveRecord
 		'Rel_p_state'=> array(self::BELONGS_TO, 'State', 'employee_address_p_state'),
 		'Rel_c_country'=> array(self::BELONGS_TO, 'Country', 'employee_address_c_country'),
 		'Rel_p_country'=> array(self::BELONGS_TO, 'Country', 'employee_address_p_country'),
-		
+
 		);
 	}
 
@@ -90,21 +90,21 @@ class EmployeeAddress extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'employee_address_id' => 'Employee Address',
-			'employee_address_c_line1' => 'Line1',
-			'employee_address_c_line2' => 'Line2',
-			'employee_address_c_city' => 'City',
-			'employee_address_c_pincode' => 'Pincode',
-			'employee_address_c_state' => 'State',
-			'employee_address_c_country' => 'Country',
-			'employee_address_p_line1' => 'Line1',
-			'employee_address_p_line2' => 'Line2',
-			'employee_address_p_city' => 'City',
-			'employee_address_p_pincode' => 'Pincode',
-			'employee_address_p_state' => 'State',
-			'employee_address_p_country' => 'Country',
-			'employee_address_phone' => 'Phone No',
-			'employee_address_mobile' => 'Mobile No',
+			'employee_address_id' => 'ID',
+			'employee_address_c_line1' => 'Dirección',
+			'employee_address_c_line2' => 'Dirección 2',
+			'employee_address_c_city' => 'Ciudad',
+			'employee_address_c_pincode' => 'Código Postal',
+			'employee_address_c_state' => 'Estado',
+			'employee_address_c_country' => 'País',
+			'employee_address_p_line1' => 'Dirección',
+			'employee_address_p_line2' => 'Dirección 2',
+			'employee_address_p_city' => 'Ciudad',
+			'employee_address_p_pincode' => 'Código Postal',
+			'employee_address_p_state' => 'Estado',
+			'employee_address_p_country' => 'País',
+			'employee_address_phone' => 'Teléfono',
+			'employee_address_mobile' => 'Celular',
 			'employee_address_c_taluka'=>'Taluka',
 			'employee_address_c_district'=>'District',
 			'employee_address_p_taluka'=>'Taluka',

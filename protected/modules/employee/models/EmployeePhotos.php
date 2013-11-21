@@ -42,7 +42,7 @@ class EmployeePhotos extends CActiveRecord
 			array('employee_photos_path', 'file','maxSize'=>1024*1024*2, 'tooLarge'=>'The Photo was larger than 2MB. Please upload a smaller photo.',  'types'=>'jpg, jpeg, gif, png, JPG', 'allowEmpty'=>true,'message'=>'File is not valid'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			
+
 			array('employee_photos_id, employee_photos_desc, employee_photos_path', 'safe', 'on'=>'search'),
 		);
 	}
@@ -64,9 +64,9 @@ class EmployeePhotos extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'employee_photos_id' => 'Employee Photos',
-			'employee_photos_desc' => 'Employee Photos Desc',
-			'employee_photos_path' => 'Photos',
+			'employee_photos_id' => 'ID',
+			'employee_photos_desc' => 'Descripción de Foto',
+			'employee_photos_path' => 'Foto',
 		);
 	}
 

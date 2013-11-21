@@ -61,10 +61,10 @@ class LanguagesKnown extends CActiveRecord
 		'Rel_Langs3'=>array(self::BELONGS_TO, 'Languages', 'languages_known3'),
 		'Rel_Langs4'=>array(self::BELONGS_TO, 'Languages', 'languages_known4'),
 
-		'Rel_language_known1' => array(self::BELONGS_TO, 'Languages', 'languages_known1'),	
-		'Rel_language_known2' => array(self::BELONGS_TO, 'Languages', 'languages_known2'),	
-		'Rel_language_known3' => array(self::BELONGS_TO, 'Languages', 'languages_known3'),	
-		'Rel_language_known4' => array(self::BELONGS_TO, 'Languages', 'languages_known4'),	
+		'Rel_language_known1' => array(self::BELONGS_TO, 'Languages', 'languages_known1'),
+		'Rel_language_known2' => array(self::BELONGS_TO, 'Languages', 'languages_known2'),
+		'Rel_language_known3' => array(self::BELONGS_TO, 'Languages', 'languages_known3'),
+		'Rel_language_known4' => array(self::BELONGS_TO, 'Languages', 'languages_known4'),
 
 		);
 	}
@@ -75,11 +75,11 @@ class LanguagesKnown extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'languages_known_id' => 'Languages Known',
-			'languages_known1' => 'Languages Known1',
-			'languages_known2' => 'Languages Known2',
-			'languages_known3' => 'Languages Known3',
-			'languages_known4' => 'Languages Known4',
+			'languages_known_id' => 'Idiomas Hablados',
+			'languages_known1' => 'Idioma Hablado 1',
+			'languages_known2' => 'Idioma Hablado 2',
+			'languages_known3' => 'Idioma Hablado 3',
+			'languages_known4' => 'Idioma Hablado 4',
 		);
 	}
 

@@ -7,16 +7,16 @@ $this->layout='//layouts/personal-profile';
 	<?php
 		if($model->Rel_Photo->employee_photos_path != null)
 			echo CHtml::link(CHtml::image(Yii::app()->baseUrl.'/college_data//emp_images/'.$photo->employee_photos_path,"",array("width"=>"178px","height"=>"176px")),array('/college_data/emp_images/'.$photo->employee_photos_path),array('id'=>'imagelink'))."</br></br>";
-	
-		if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*')) 
+
+		if(Yii::app()->user->checkAccess('EmployeeTransaction.UpdateEmployeeData') || Yii::app()->user->checkAccess('EmployeeTransaction.*'))
 		{
 		echo CHtml::link('Edit',array('EmployeeTransaction/Updateprofilephoto','id'=>$model->employee_transaction_id),array('id'=>'photoid','title'=>'Update Photo','style'=>'padding-right:50px;'));
 		}
-		$config = array( 
+		$config = array(
 		    'scrolling' => 'no',
 		    'autoDimensions' => false,
 		    'width' => '795',
-		    'height' => '250', 
+		    'height' => '250',
 		    'titleShow' => false,
 		    'overlayColor' => '#000',
 		    'padding' => '0',
@@ -25,18 +25,20 @@ $this->layout='//layouts/personal-profile';
 				return window.location.reload();
 			    },);
 		$this->widget('application.extensions.fancybox.EFancyBox', array('target'=>'#imagelink', 'config'=>$config));?>
-	
+
 	</div></br>
-	
+
 	<div id="divlink1" class="info-link">
-	<?php echo CHtml::link('Personal Info',array('employeeTransaction/updateprofiletab1', 'id'=>$model->employee_transaction_id),array('title'=>'Personal Info','style'=>'text-decoration:none;color:white;'));?>
+	<?php echo CHtml::link('Info Personal',array('employeeTransaction/updateprofiletab1', 'id'=>$model->employee_transaction_id),array('title'=>'Personal Info','style'=>'text-decoration:none;color:white;'));?>
 	</div>
+    <!--
 	<div id="divlink2" class="info-link">
 	<?php echo CHtml::link('Guardian Info',array('employeeTransaction/updateprofiletab2', 'id'=>$model->employee_transaction_id),array('title'=>'Guardian Info','style'=>'text-decoration:none;color:white;'));?>
 	</div>
 	<div id="divlink3" class="info-link">
 	<?php echo CHtml::link('Other Info',array('employeeTransaction/updateprofiletab3', 'id'=>$model->employee_transaction_id),array('title'=>'Other Info','style'=>'text-decoration:none;color:white;'));?>
 	</div>
+    -->
 	<div id="divlink4" class="info-link">
 	<?php echo CHtml::link('Address Info',array('employeeTransaction/updateprofiletab4', 'id'=>$model->employee_transaction_id),array('title'=>'Address Info','style'=>'text-decoration:none;color:white;'));?>
 	</div>
@@ -55,7 +57,7 @@ $this->layout='//layouts/personal-profile';
 	<div id="divlink7" class="info-link">
 		<?php echo CHtml::link('Holidays',array('/report/myholidays', 'id'=>$_REQUEST['id']),array('title'=>'Current Year Holidays','style'=>'text-decoration:none;color:white;'));?>
 	</div>
-	<?php 
+	<?php
 	if($info->employee_type == 1){ ?>
 	<div id="divlink8" class="info-link">
 	<?php echo CHtml::link('TimeTable',array('/timetable/TimeTable/FacultyPersonalTimetable', 'faculty_id'=>$model->employee_transaction_id),array('title'=>'My Timetable','style'=>'text-decoration:none;color:white;'));?>
@@ -94,7 +96,7 @@ switch ($n)
    break;
 
    case 'updateprofiletab3':
-       echo $this->renderPartial('updateproftab3', array('model'=>$model,'info'=>$info,'lang'=>$lang)); 
+       echo $this->renderPartial('updateproftab3', array('model'=>$model,'info'=>$info,'lang'=>$lang));
    break;
 
    case 'updateprofiletab4':
@@ -119,6 +121,6 @@ switch ($n)
 
    default:
       echo $this->renderPartial('profile_form', array('model'=>$model,'info'=>$info,'photo'=>$photo,'address'=>$address,'lang'=>$lang));
-} 
+}
 ?>
 </div>

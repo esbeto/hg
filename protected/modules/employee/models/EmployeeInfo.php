@@ -56,8 +56,8 @@
 class EmployeeInfo extends CActiveRecord
 {
 
-	const TYPE_MALE='MALE';
-	const TYPE_FEMALE='FEMALE';
+	const TYPE_MALE='M';
+	const TYPE_FEMALE='F';
 	const TYPE_APLUS='A+';
 	const TYPE_AMINUS='A-';
 	const TYPE_BPLUS='B+';
@@ -67,8 +67,8 @@ class EmployeeInfo extends CActiveRecord
 	const TYPE_OPLUS='O+';
 	const TYPE_OMINUS='O-';
 	const TYPE_NPLUS='N+';
-	const TYPE_MARRIED='MARRIED';
-	const TYPE_UNMARRIED='UNMARRIED';
+	const TYPE_MARRIED='Casado';
+	const TYPE_UNMARRIED='Soltero';
 	const TYPE_MR='Sr.';
 	const TYPE_MRS='Sra.';
 	const TYPE_MISS='Srita.';
@@ -123,7 +123,7 @@ class EmployeeInfo extends CActiveRecord
 
 			array('employee_name_alias, employee_first_name, employee_middle_name, employee_last_name, employee_birthplace, employee_reference', 'length', 'max'=>25),
 			array('employee_hobbies, employee_technical_skills, employee_project_details, employee_curricular', 'length', 'max'=>200, 'message'=>''),
-			array('employee_gender', 'length', 'max'=>6),
+			array('employee_gender', 'length', 'max'=>10),
 			array('employee_bloodgroup', 'length', 'max'=>3),
 			array('employee_private_email','CRegularExpressionValidator','pattern'=>'/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]+)$/','message'=>''),
 			array('employee_private_email', 'length', 'max'=>60, 'message'=>''),
@@ -173,7 +173,7 @@ class EmployeeInfo extends CActiveRecord
 	{
 		return array(
 			'employee_id' => 'Id',
-			'title' => 'Saludo',
+			'title' => 'Título',
 			'employee_no' => 'No. de Empleado',
 			'employee_first_name' => 'Nombre',
 			'employee_middle_name' => 'Husband/Father Name',
@@ -182,13 +182,13 @@ class EmployeeInfo extends CActiveRecord
 			'employee_mother_name' => 'Mother Name',
 			'employee_dob' => 'Fecha de Nacimiento',
 			'employee_birthplace' => 'Lugar de Nacimiento',
-			'employee_gender' => 'Gender',
+			'employee_gender' => 'Sexo',
 			'employee_type'=>'Tipo',
-			'employee_bloodgroup' => 'Blood Group',
-			'employee_marital_status' => 'Marital Status',
+			'employee_bloodgroup' => 'Grupo Sanguíneo',
+			'employee_marital_status' => 'Estado Civil',
 			'employee_private_email' => 'Email Personal',
 			'employee_organization_mobile' => 'Organization Mobile',
-			'employee_private_mobile' => 'Teléfono Móvil Personal',
+			'employee_private_mobile' => 'Teléfono Personal',
 			'employee_pancard_no' => 'Pancard No',
 			'employee_account_no' => 'Bank Account No',
 			'employee_joining_date' => 'Fecha de Ingreso',
@@ -211,7 +211,7 @@ class EmployeeInfo extends CActiveRecord
 			'employee_guardian_phone_no' => 'Phone No',
 			'employee_guardian_mobile1' => 'Mobile No 1',
 			'employee_guardian_mobile2' => 'Mobile No 2',
-			'employee_faculty_of' => 'Faculty of',
+			'employee_faculty_of' => 'Escuela de',
 			'employee_attendance_card_id' => 'No. de Credencial',
 			'employee_tally_id' => 'Tally',
 			'employee_created_by' => 'Created By',
@@ -289,8 +289,8 @@ class EmployeeInfo extends CActiveRecord
 	public function getGenderOptions()
 	{
 		return array(
-		self::TYPE_MALE=>'MALE',
-		self::TYPE_FEMALE=>'FEMALE',
+		self::TYPE_MALE=>'Masculino',
+		self::TYPE_FEMALE=>'Femenino',
 		);
 	}
 
@@ -312,8 +312,8 @@ class EmployeeInfo extends CActiveRecord
 	public function getMaritialStatus()
 	{
 		return array(
-		self::TYPE_MARRIED=>'MARRIED',
-		self::TYPE_UNMARRIED=>'UNMARRIED',
+		self::TYPE_MARRIED=>'Casado',
+		self::TYPE_UNMARRIED=>'Soltero',
 		);
 	}
 

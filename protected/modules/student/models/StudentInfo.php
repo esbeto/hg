@@ -5,7 +5,7 @@
  *
  * The followings are the available columns in table 'student_info':
  * @property integer $student_id
- * @property string $title 
+ * @property string $title
  * @property string $student_roll_no
  * @property string $student_merit_no
  * @property string $student_enroll_no
@@ -55,7 +55,7 @@ class StudentInfo extends CActiveRecord
 	const TYPE_OMINUS='O-';
 	const TYPE_NPLUS='N+';
 	const TYPE_MR='Mr.';
-	const TYPE_MRS='Mrs.'; 
+	const TYPE_MRS='Mrs.';
 	const TYPE_MISS='Ms.';
         const TYPE_HOSTEL='HOSTEL';
 	const TYPE_HOME='HOME';
@@ -106,7 +106,7 @@ class StudentInfo extends CActiveRecord
 			array('student_enroll_no','unique', 'message'=>'Enrollment number must be unique'),
 			array('student_guardian_relation', 'length', 'max'=>20),
 			array('student_guardian_mobile,student_mobile_no', 'length', 'max'=>10,'min'=>10),
-			
+
 			array('student_guardian_qualification, student_guardian_occupation', 'length', 'max'=>50),
 			array('student_guardian_occupation_address, student_guardian_home_address', 'length', 'max'=>100),
 
@@ -115,13 +115,13 @@ class StudentInfo extends CActiveRecord
 
 			array('student_email_id_1, student_email_id_2', 'length', 'max'=>60, 'message'=>''),
 			array('student_bloodgroup', 'length', 'max'=>3),
-			
+
 			array('student_living_status', 'length', 'max'=>20),
-			
-			array('student_guardian_name,student_guardian_relation,student_birthplace', 
+
+			array('student_guardian_name,student_guardian_relation,student_birthplace',
 				'CRegularExpressionValidator', 'pattern'=>'/^([A-Za-z  ]+)$/','message'=>''),
 			array('student_first_name,student_middle_name,student_last_name,
-                               student_father_name,student_mother_name', 
+                               student_father_name,student_mother_name',
 				'CRegularExpressionValidator', 'pattern'=>'/^([A-Za-z]+)$/','message'=>''),
 			//array('student_guardian_occupation','CRegularExpressionValidator','pattern'=>'/^([A-Za-z-.  ]+)$/','message'=>''),
 			array('student_email_id_1, student_email_id_2','CRegularExpressionValidator','pattern'=>'/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]+)$/','message'=>''),
@@ -141,7 +141,7 @@ class StudentInfo extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 		'Rel_gardian_city' => array(self::BELONGS_TO, 'City', 'student_guardian_occupation_city'),
-		
+
 		);
 	}
 
@@ -235,7 +235,7 @@ class StudentInfo extends CActiveRecord
 		$criteria->compare('student_tally_ledger_name',$this->student_tally_ledger_name);
 		$criteria->compare('student_created_by',$this->student_created_by);
 		$criteria->compare('student_creation_date',$this->student_creation_date,true);
-			
+
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -246,7 +246,7 @@ class StudentInfo extends CActiveRecord
     {
 	$curr_date = date('d-m-Y');
 	if(empty($this->student_adm_date)) {
-		//$this->addError('student_dob',"Select Admission date first");	
+		//$this->addError('student_dob',"Select Admission date first");
 		return true;
 	}
 	else {
@@ -254,10 +254,10 @@ class StudentInfo extends CActiveRecord
 	  $adm = date('Y-m-d',strtotime($this->student_adm_date));
 	  $diff = $adm-$dob;
 	   if($diff <= 14) 	{
-			
-		$this->addError('student_dob',"Birth date must be less than Admission date.");	
-		return false;	
-	
+
+		$this->addError('student_dob',"Birth date must be less than Admission date.");
+		return false;
+
 	   }
 
 	   else
@@ -271,9 +271,9 @@ class StudentInfo extends CActiveRecord
 	$curr_date = date('d-m-Y');
 
 	if(strtotime($this->student_adm_date) > strtotime($curr_date))
-	{					
-			$this->addError('student_adm_date',"Admission date must be less than current date.");	
-			 return false;	
+	{
+			$this->addError('student_adm_date',"Admission date must be less than current date.");
+			 return false;
 	}
 	else
 			return true;
@@ -297,8 +297,8 @@ class StudentInfo extends CActiveRecord
 	public function getGenderOptions()
 	{
 		return array(
-		self::TYPE_MALE=>'MALE',
-		self::TYPE_FEMALE=>'FEMALE',
+		self::TYPE_MALE=>'Masculino',
+		self::TYPE_FEMALE=>'Femenino',
 		);
 	}
 
@@ -306,11 +306,11 @@ class StudentInfo extends CActiveRecord
 	{
 		return array(
 		self::TYPE_MR=>'Mr.',
-		self::TYPE_MRS=>'Mrs.', 
+		self::TYPE_MRS=>'Mrs.',
 		self::TYPE_MISS=>'Ms.',
 		);
 	}
-		
+
 	public function getLivingOptions()
 	{
 		return array(

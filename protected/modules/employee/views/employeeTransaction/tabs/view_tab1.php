@@ -3,15 +3,13 @@
 		<?php echo CHtml::label('# de Empleado :', 'employee_no'); ?>
 		<?php echo $info->employee_no;?>
 	</div>
-      	<div class="row-column1">
-      	      <?php echo CHtml::label('No. de Credencial :', '' , '' ); ?>
-              <?php echo $info->employee_attendance_card_id;?>
-     	</div>
-
+	<div class="row-column1">
+		<?php echo CHtml::label('No. de Credencial :', '' , '' ); ?>
+		<?php echo $info->employee_attendance_card_id;?>
+	</div>
 </div>
 
 <div class="row">
-
 	<div class="row-column2">
 		<?php echo CHtml::label('Nombre :','title'); ?>
 		<?php echo $info->title.' '.$info->employee_first_name.' '.$info->employee_last_name;?>
