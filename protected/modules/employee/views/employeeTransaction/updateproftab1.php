@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Employee List'=>array('admin'),
-	'Update Details',
+	'Lista de Empleados'=>array('admin'),
+	'Actualizar Detalles',
 );?>
 
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Update Details
+ <div class="portlet-title">Actualizar Detalles
  </div>
 
 <div class="profile-tab profile-edit ui-tabs ui-widget ui-widget-content ui-corner-all ui-tabs-collapsible">
@@ -49,7 +49,7 @@ $this->breadcrumbs=array(
 <div class="row">
 	<div class="row-col1">
 		<?php echo $form->labelEx($info,'title'); ?>
-		<?php echo $form->dropdownList($info,'title',$info->getTitleOptions(), array('empty' => '-----------Select---------','tabindex'=>10)); ?><span class="status">&nbsp;</span>
+		<?php echo $form->dropdownList($info,'title',$info->getTitleOptions(), array('empty' => 'Seleccionar','tabindex'=>10)); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($info,'title'); ?>
 	</div>
 	<div class="row-col2">

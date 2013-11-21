@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'qualification'=>array('admin'),
+	'Calificación'=>array('admin'),
 	$model->qualification_name,
 );
 ?>
 
-<h1>View Qualification <?php //echo $model->qualification_id; ?></h1>
+<h1>Vista Calificación <?php //echo $model->qualification_id; ?></h1>
 <div class="operation">
 <?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 <?php echo CHtml::link('Editar', array('update' ,'id'=>$model->qualification_id), array('class'=>'btnupdate'));?>

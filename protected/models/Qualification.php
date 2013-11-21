@@ -28,7 +28,7 @@ class Qualification extends CActiveRecord
 	{
 		return 'qualification';
 	}
-	public function defaultScope() 
+	public function defaultScope()
 	{
        		return array(
            		'order' => 'qualification_name'
@@ -73,11 +73,11 @@ array('qualification_name','CRegularExpressionValidator','pattern'=>'/^[a-zA-Z\/
 	public function attributeLabels()
 	{
 		return array(
-			'qualification_id' => 'Qualification id',
-			'qualification_name' => 'Qualification',
-			'qualification_organization_id' => 'Organization',
-			'qualification_created_by' => 'Created By',
-			'qualification_created_date' => 'Creation Date',
+			'qualification_id' => 'ID',
+			'qualification_name' => 'Calificación',
+			'qualification_organization_id' => 'Organización',
+			'qualification_created_by' => 'Creada Por',
+			'qualification_created_date' => 'Fecha de Creación',
 		);
 	}
 

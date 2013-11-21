@@ -10,9 +10,9 @@ th, td, caption {
 </style>
 <table border="1">
 		<tr>
-			<th>SN.</th>
-			<th>Status</th>
-			<th>Created By</th>				
+			<th>ID.</th>
+			<th>Estado</th>
+			<th>Creado Por</th>
 		</tr>
 <?php
 $k=0;
@@ -20,20 +20,20 @@ foreach($model as $m=>$v) {
           if($m <> 0) {
             ?>	<tr>
 		<td>
-		      <?php echo ++$k; ?>		
+		      <?php echo ++$k; ?>
 		</td>
- 		<td> 	 	 	 	 	
-		      <?php echo $v['status_name']; ?>			
+ 		<td>
+		      <?php echo $v['status_name']; ?>
 		</td>
-		
+
 		<td>
-		     <?php echo User::model()->findByPk($v['created_by'])->user_organization_email_id; ?>		
+		     <?php echo User::model()->findByPk($v['created_by'])->user_organization_email_id; ?>
 		</td>
-		</tr> 
+		</tr>
        <?php
-    
+
        }// end if
-     }// 
+     }//
 ?>
 </table>
 

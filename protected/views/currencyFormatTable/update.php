@@ -1,8 +1,8 @@
 <?php
 $this->breadcrumbs=array(
-	'Currency Format'=>array('admin'),
+	'Formato de Moneda'=>array('admin'),
 	$model->currency_format_name=>array(),
-	'Edit',
+	'Editar',
 );
 
 $this->menu=array(
@@ -12,6 +12,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Currency Format </h1>
+<h1>Actualizar Formato de Moneda </h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

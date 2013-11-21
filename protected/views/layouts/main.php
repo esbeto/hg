@@ -123,7 +123,7 @@ function auto_logout() {
 		<li><?php echo CHtml::link('Idiomas', array('/languages/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Consejo de Educación', array('/eduboard/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Calificaciones', array('/qualification/admin'), array('class'=>'changeForm')); ?></li>
-		<li><?php echo CHtml::link('Estado del Estudiante', array('/studentstatusmaster/admin'), array('class'=>'changeForm')); ?></li>
+		<li><?php echo CHtml::link('Estado del Alumno', array('/studentstatusmaster/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Moneda', array('/currencyFormatTable/admin'), array('class'=>'changeForm')); ?></li>
 
 	</ul>

@@ -17,7 +17,7 @@
 <div class="row">
 	<div class="row-left">
 		<?php echo $form->labelEx($info,'title'); ?>
-		<?php echo $form->dropdownList($info,'title',$info->getTitleOptions(), array('empty' => 'Select Title')); ?><span class="status">&nbsp;</span>
+		<?php echo $form->dropdownList($info,'title',$info->getTitleOptions(), array('empty' => 'Seleccionar Saludo')); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($info,'title'); ?>
 	</div>
 	<div class="row-right">
@@ -68,7 +68,7 @@
 	</div>
 	<div class="row-right">
 		<?php echo $form->labelEx($info,'employee_type'); ?>
-		<?php echo $form->dropDownList($info,'employee_type',array(""=>"Select Type","1"=>"Teaching","0"=>"Non Teaching")); ?><span class="status">&nbsp;</span>
+		<?php echo $form->dropDownList($info,'employee_type',array(""=>"Seleccionar Tipo de Empleado","1"=>"Maestro","0"=>"Administrativo")); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($info,'employee_type'); ?>
 	</div>
 </div>
@@ -77,13 +77,13 @@
 
 	<div class="row-left">
 	      <?php echo $form->labelEx($model,'employee_transaction_designation_id'); ?>
-	      <?php echo $form->dropDownList($model,'employee_transaction_designation_id',EmployeeDesignation::items(), array('empty' => 'Select Designation')); ?><span class="status">&nbsp;</span>
+	      <?php echo $form->dropDownList($model,'employee_transaction_designation_id',EmployeeDesignation::items(), array('empty' => 'Seleccionar Designación')); ?><span class="status">&nbsp;</span>
 	      <?php echo $form->error($model,'employee_transaction_designation_id'); ?>
 	</div>
 
 	<div class="row-right">
 	      <?php echo $form->labelEx($model,'employee_transaction_department_id'); ?>
-	      <?php echo $form->dropDownList($model,'employee_transaction_department_id',Department::items(), array('empty' => 'Select Department')); ?><span class="status">&nbsp;</span>
+	      <?php echo $form->dropDownList($model,'employee_transaction_department_id',Department::items(), array('empty' => 'Seleccionar Departamento')); ?><span class="status">&nbsp;</span>
 	      <?php echo $form->error($model,'employee_transaction_department_id'); ?>
 	</div>
 </div>

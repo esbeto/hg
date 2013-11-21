@@ -69,9 +69,9 @@ class EmployeeInfo extends CActiveRecord
 	const TYPE_NPLUS='N+';
 	const TYPE_MARRIED='MARRIED';
 	const TYPE_UNMARRIED='UNMARRIED';
-	const TYPE_MR='Mr.';
-	const TYPE_MRS='Mrs.'; 
-	const TYPE_MISS='Ms.';
+	const TYPE_MR='Sr.';
+	const TYPE_MRS='Sra.';
+	const TYPE_MISS='Srita.';
 	const TYPE_PROF='Prof.';
 	const TYPE_DR='Dr.';
 
@@ -94,7 +94,7 @@ class EmployeeInfo extends CActiveRecord
 	}
 	public function getreportinglistname()
 	{
-	return $this->employee_first_name." ".$this->employee_last_name;	
+	return $this->employee_first_name." ".$this->employee_last_name;
 	}
 	/**
 	 * @return array validation rules for model attributes.
@@ -104,11 +104,11 @@ class EmployeeInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			
+
 			array('title, employee_first_name,employee_middle_name, employee_last_name,employee_type, employee_private_mobile, employee_joining_date, employee_private_email, employee_attendance_card_id', 'required','message'=>''),
 
 			array('employee_guardian_income,employee_aicte_id,employee_gtu_id, employee_guardian_city_pin, employee_guardian_phone_no, employee_guardian_mobile1, employee_guardian_mobile2,employee_organization_mobile,employee_private_mobile,employee_organization_mobile, employee_private_mobile, employee_account_no, employee_guardian_occupation_city, employee_guardian_city_pin, employee_guardian_phone_no, employee_guardian_mobile1, employee_guardian_mobile2, employee_created_by','numerical', 'integerOnly'=>true ,'message'=>''),
-			
+
                         array('employee_mother_name, employee_first_name, employee_middle_name, employee_last_name, employee_name_alias', 'CRegularExpressionValidator', 'pattern'=>'/^([A-Za-z]+)$/','message'=>''),
 
                         array('employee_guardian_relation,employee_guardian_name,employee_birthplace', 'CRegularExpressionValidator', 'pattern'=>'/^([A-Za-z ]+)$/','message'=>''),
@@ -116,11 +116,11 @@ class EmployeeInfo extends CActiveRecord
 			array('employee_private_email','unique', 'message'=>'email id must be unique'),
 
 			array('employee_attendance_card_id','unique', 'message'=>'Card id must be unique'),
-			
+
 			array('employee_marital_status, employee_probation_period', 'length', 'max'=>10),
 
 			array('employee_probation_period','CRegularExpressionValidator','pattern'=>'/^([A-Za-z0-9 ]+)$/','message'=>''),
-			
+
 			array('employee_name_alias, employee_first_name, employee_middle_name, employee_last_name, employee_birthplace, employee_reference', 'length', 'max'=>25),
 			array('employee_hobbies, employee_technical_skills, employee_project_details, employee_curricular', 'length', 'max'=>200, 'message'=>''),
 			array('employee_gender', 'length', 'max'=>6),
@@ -133,7 +133,7 @@ class EmployeeInfo extends CActiveRecord
 			array('employee_pancard_no','CRegularExpressionValidator','pattern'=>'/^([0-9A-za-z]+)$/','message'=>''),
 			//array('employee_attendance_card_id','CRegularExpressionValidator','pattern'=>'/^([0-9]+)$/','message'=>''),
 			//array('employee_hobbies','CRegularExpressionValidator','pattern'=>'/^([a-zA-z,]+)$/','message'=>''),
-			
+
 			array('employee_aicte_id,employee_gtu_id','CRegularExpressionValidator','pattern'=>'/^([0-9]+)$/','message'=>''),
 			array('employee_aicte_id,employee_gtu_id','length', 'max'=>5,'message'=>''),
 			array('employee_organization_mobile,employee_private_mobile,employee_guardian_mobile1, employee_guardian_mobile2','length', 'max'=>10, 'min'=>10,'allowEmpty'=>true),
@@ -173,25 +173,25 @@ class EmployeeInfo extends CActiveRecord
 	{
 		return array(
 			'employee_id' => 'Id',
-			'title' => 'Title',
-			'employee_no' => 'Employee No',
-			'employee_first_name' => 'First Name',
+			'title' => 'Saludo',
+			'employee_no' => 'No. de Empleado',
+			'employee_first_name' => 'Nombre',
 			'employee_middle_name' => 'Husband/Father Name',
-			'employee_last_name' => 'Last Name',
-			'employee_name_alias' => 'Name Alias',
+			'employee_last_name' => 'Apellido',
+			'employee_name_alias' => 'Alias',
 			'employee_mother_name' => 'Mother Name',
-			'employee_dob' => 'Date of Birth',
-			'employee_birthplace' => 'Birth Place',
+			'employee_dob' => 'Fecha de Nacimiento',
+			'employee_birthplace' => 'Lugar de Nacimiento',
 			'employee_gender' => 'Gender',
-			'employee_type'=>'Type',
+			'employee_type'=>'Tipo',
 			'employee_bloodgroup' => 'Blood Group',
 			'employee_marital_status' => 'Marital Status',
-			'employee_private_email' => 'Private Email',
+			'employee_private_email' => 'Email Personal',
 			'employee_organization_mobile' => 'Organization Mobile',
-			'employee_private_mobile' => 'Private Mobile No.',
+			'employee_private_mobile' => 'Teléfono Móvil Personal',
 			'employee_pancard_no' => 'Pancard No',
 			'employee_account_no' => 'Bank Account No',
-			'employee_joining_date' => 'Joining Date',
+			'employee_joining_date' => 'Fecha de Ingreso',
 			'employee_probation_period' => 'Probation Period',
 			'employee_hobbies' => 'Hobbies',
 			'employee_technical_skills' => 'Technical Skills',
@@ -212,7 +212,7 @@ class EmployeeInfo extends CActiveRecord
 			'employee_guardian_mobile1' => 'Mobile No 1',
 			'employee_guardian_mobile2' => 'Mobile No 2',
 			'employee_faculty_of' => 'Faculty of',
-			'employee_attendance_card_id' => 'Attendance Card',
+			'employee_attendance_card_id' => 'No. de Credencial',
 			'employee_tally_id' => 'Tally',
 			'employee_created_by' => 'Created By',
 			'employee_creation_date' => 'Creation Date',
@@ -280,7 +280,7 @@ class EmployeeInfo extends CActiveRecord
 		$criteria->compare('employee_type',$this->employee_type,true);
 		$criteria->compare('employee_aicte_id',$this->employee_aicte_id);
 		$criteria->compare('employee_gtu_id',$this->employee_gtu_id);
-		
+
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
@@ -316,13 +316,13 @@ class EmployeeInfo extends CActiveRecord
 		self::TYPE_UNMARRIED=>'UNMARRIED',
 		);
 	}
-	
+
 	public function getTitleOptions()
 		{
 			return array(
-			self::TYPE_MR=>'Mr.',
-			self::TYPE_MRS=>'Mrs.', 
-			self::TYPE_MISS=>'Ms.',
+			self::TYPE_MR=>'Sr.',
+			self::TYPE_MRS=>'Sra.',
+			self::TYPE_MISS=>'Srita.',
 			self::TYPE_PROF=>'Prof.',
 			self::TYPE_DR=>'Dr.',
 			);
@@ -352,16 +352,16 @@ class EmployeeInfo extends CActiveRecord
 		    self::$_items[$model->employee_id]=$model->employee_first_name;
 	    }
 
-	
+
     public function chkjoindate()
     {
 
 			$curr_date = date('d-m-Y');
 
 			if(strtotime($this->employee_joining_date) > strtotime($curr_date))
-			{					
-					$this->addError('employee_joining_date',"Joining date must be less than current date.");	
-					 return false;	
+			{
+					$this->addError('employee_joining_date',"Joining date must be less than current date.");
+					 return false;
 			}
 			else
 					return true;
@@ -370,17 +370,17 @@ class EmployeeInfo extends CActiveRecord
     public function chkbdate()
     {
 			if(empty($this->employee_joining_date)) {
-				//$this->addError('employee_dob',"Select Joining date first");	
+				//$this->addError('employee_dob',"Select Joining date first");
 				return true;
 			}
 			else {
-				
+
 			$curr_date = date('d-m-Y');
 
 			if(strtotime($this->employee_dob) > strtotime($this->employee_joining_date))
 			{
-				$this->addError('employee_dob',"Birthdate must be less than current date and Joining date.");	
-					 return false;	
+				$this->addError('employee_dob',"Birthdate must be less than current date and Joining date.");
+					 return false;
 			}
 			else
 					return true;

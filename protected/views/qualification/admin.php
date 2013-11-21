@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Qualification'=>array('admin'),
-	'Manage',
+	'Calificación'=>array('admin'),
+	'Administrar',
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Qualifications</h1>
+<h1>Administrar Calificaciones</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/qualificationExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/qualificationExportToExcel'), array('class'=>'btnblue'));?>
@@ -39,7 +39,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Qualification
+ <div class="portlet-title"> Calificación
  </div>
 
 <?php echo CHtml::link('Agregar +', array('qualification/create'), array('class'=>'btn green'))?>

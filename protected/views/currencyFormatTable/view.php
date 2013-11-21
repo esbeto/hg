@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Currency Format'=>array('admin'),
+	'Formato de Moneda'=>array('admin'),
 	$model->currency_format_name,
 );
 
 ?>
-<h1>View Currency Format</h1>
+<h1>Vista Formato de Moneda</h1>
 <div class="operation">
 <?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 <?php echo CHtml::link('Editar', array('update' ,'id'=>$model->currency_format_id), array('class'=>'btnupdate'));?>

@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Student Status'=>array('admin'),
+	'Estado del Alumno'=>array('admin'),
 	$model->status_name,
 );
 ?>
 
-<h1>View Student Status <?php //echo $model->id; ?></h1>
+<h1>Vista Estado del Alumno <?php //echo $model->id; ?></h1>
 <div class="operation">
 <?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>
 <?php echo CHtml::link('Editar', array('update' ,'id'=>$model->id), array('class'=>'btnupdate'));?>

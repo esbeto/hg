@@ -1,13 +1,13 @@
 <?php
 $this->breadcrumbs=array(
-	'Currency Formats'=>array('index'),
-	'Manage',
+	'Formato de Moneda'=>array('index'),
+	'Administrar',
 );
 ?>
 
-<h1>Currency Formats </h1>
+<h1>Administrar Formatos de Moneda</h1>
 <div class="portlet box blue">
- <div class="portlet-title"> Currency Formats
+ <div class="portlet-title"> Formatos de Moneda
  </div>
 <?php echo CHtml::link('Agregar +', array('currencyFormatTable/create'), array('class'=>'btn green'))?>
 

@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Student Status'=>array('admin'),
-	'Add',
+	'Estado del Alumno'=>array('admin'),
+	'Agregar',
 );
 
 $this->menu=array(
@@ -11,6 +11,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Add Student Status</h1>
+<h1>Agregar Estado de Alumno</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

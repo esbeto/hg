@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Employee'=>array('admin'),
-	'Manage',
+	'Empleado'=>array('admin'),
+	'Administrar',
 );
 
 $this->menu=array(
@@ -25,7 +25,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Employees</h1>
+<h1>Administrar Empleado</h1>
 
 <?php
     Yii::app()->clientScript->registerScript(
@@ -59,7 +59,7 @@ $('.search-form form').submit(function(){
 </div>
 
 <div class="portlet box blue">
- <div class="portlet-title"> Employee List
+ <div class="portlet-title"> Lista de Empleado
  </div>
 
 <?php echo CHtml::link('Agregar +', array('employeeTransaction/create'), array('class'=>'btn green'))?>
@@ -89,29 +89,29 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 		'class'=>'IndexColumn',
 		),
 		array(
-		      'header' => 'Employee No',
+		      'header' => 'Número de Empleado',
 		      'name' => 'employee_no',
 	              'value' => '$data->Rel_Emp_Info->employee_no',
                      ),
 		array(
-		      'header' => 'Attendence Card No',
+		      'header' => 'Número de Lista',
 		      'name' => 'employee_attendance_card_id',
 	              'value' => '$data->Rel_Emp_Info->employee_attendance_card_id',
                      ),
 		 array(
-		      'header' => 'Name',
+		      'header' => 'Nombre',
 		      'name' => 'employee_first_name',
 	              'value' => '$data->Rel_Emp_Info->employee_first_name',
                      ),
 
 		 array(
-		      'header' => 'Surname',
+		      'header' => 'Apellido',
 		      'name' => 'employee_last_name',
 	              'value' => '$data->Rel_Emp_Info->employee_last_name',
                      ),
 
 		 array(
-			'header' => 'Designation',
+			'header' => 'Designación',
 			'name'=>'employee_transaction_designation_id',
 			'value'=>'EmployeeDesignation::model()->findByPk($data->employee_transaction_designation_id)->employee_designation_name',
 		'filter' =>CHtml::listData(EmployeeDesignation::model()->findAll(),
@@ -119,7 +119,7 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 
 		),
 		array(
-			'header' => 'Department',
+			'header' => 'Departamento',
 			'name'=>'employee_transaction_department_id',
 			'value'=>'Department::model()->findByPk($data->employee_transaction_department_id)->department_name',
 				'filter' =>CHtml::listData(Department::model()->findAll(), 'department_id','department_name'),

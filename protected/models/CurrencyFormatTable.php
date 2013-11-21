@@ -60,9 +60,9 @@ class CurrencyFormatTable extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'currency_format_id' => 'Currency Format',
-			'currency_format' => 'Format',
-			'currency_format_name' => 'Name',
+			'currency_format_id' => 'ID',
+			'currency_format' => 'Formato de Moneda',
+			'currency_format_name' => 'Nombre',
 		);
 	}
 

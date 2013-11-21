@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Employee'=>array('admin'),
-	'Profile',
+	'Empleado'=>array('admin'),
+	'Perfil',
 );
 ?>
 
@@ -18,12 +18,13 @@ $this->breadcrumbs=array(
 <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
 	'headerTemplate'=>'<li><a href="{url}" title="{title}">{title}</a></li>',
         'tabs'=>array(
-          'Personal Profile' =>$this->renderPartial("tabs/view_tab1", array('lang'=>$lang, 'model' => $model, 'info'=>$info), $this),
-          'Guardian Info'=>$this->renderPartial("tabs/view_tab2", array('model' => $model, 'info'=>$info), $this),
-          'Address Info'=>$this->renderPartial("tabs/view_tab4", array('address'=>$address, 'lang'=>$lang, 'model' => $model, 'info'=>$info), $this),
-	'Academic Record'=>$this->renderPartial("tabs/view_academicrec", array('emp_record'=>$emp_record), $this),
+          'Perfil Personal' =>$this->renderPartial("tabs/view_tab1", array('lang'=>$lang, 'model' => $model, 'info'=>$info), $this),
+          /* 'Guardian Info'=>$this->renderPartial("tabs/view_tab2", array('model' => $model, 'info'=>$info), $this), */
+          'Info Dirección'=>$this->renderPartial("tabs/view_tab4", array('address'=>$address, 'lang'=>$lang, 'model' => $model, 'info'=>$info), $this),
+	/*
+    'Academic Record'=>$this->renderPartial("tabs/view_academicrec", array('emp_record'=>$emp_record), $this),
 	'Documents'=>$this->renderPartial("tabs/view_document", array('emp_doc'=>$emp_doc), $this),
-
+    */
         ),
 
 	'htmlOptions'=> array(

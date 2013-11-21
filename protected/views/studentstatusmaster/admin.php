@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Student Status'=>array('admin'),
-	'Manage',
+	'Estado del Alumno'=>array('admin'),
+	'Administrar',
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Student Status</h1>
+<h1>Administrar Estados de Alumno</h1>
 <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/StudentStatusExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/StudentStatusExportToExcel'), array('class'=>'btnblue'));?>
@@ -35,7 +35,7 @@ $('.search-form form').submit(function(){
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Student Status
+ <div class="portlet-title"> Estado del Alumno
  </div>
 
 <?php echo CHtml::link('Agregar +', array('studentstatusmaster/create'), array('class'=>'btn green'))?>

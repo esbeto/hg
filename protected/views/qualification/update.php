@@ -1,9 +1,9 @@
 <?php
 $this->breadcrumbs=array(
-	'qualifications'=>array('admin'),
+	'Calificación'=>array('admin'),
 	//$model->qualification_name=>array('view','id'=>$model->qualification_id),
 	$model->qualification_name=>array(),
-	'Edit',
+	'Editar',
 );
 
 $this->menu=array(
@@ -15,6 +15,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Edit Qualification  <?php //echo $model->qualification_id; ?></h1>
+<h1>Editar Calificación  <?php //echo $model->qualification_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

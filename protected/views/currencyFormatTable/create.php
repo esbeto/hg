@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Currency Formats'=>array('index'),
-	'Create',
+	'Formato de Moneda'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
@@ -9,6 +9,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Add Currency Format</h1>
+<h1>Agregar Formato de Moneda</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -70,10 +70,10 @@ class Studentstatusmaster extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'status_name' => 'Status',
-			'creation_date' => 'Creation Date',
-			'created_by' => 'Created By',
-			'organization_id' => 'Organization',
+			'status_name' => 'Estado',
+			'creation_date' => 'Fecha de Creación',
+			'created_by' => 'Creado Por',
+			'organization_id' => 'Organización',
 		);
 	}
 
@@ -94,12 +94,12 @@ class Studentstatusmaster extends CActiveRecord
 		$criteria->compare('created_by',$this->created_by);
 		$criteria->compare('organization_id',$this->organization_id);
 		$criteria->compare('student_status_master_detain_shift_id',$this->student_status_master_detain_shift_id);
-		
+
 
 		$data = new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 		$_SESSION['status_data'] = $data;
-		return $data; 
+		return $data;
 	}
 }
