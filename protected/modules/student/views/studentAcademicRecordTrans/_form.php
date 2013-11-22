@@ -1,6 +1,6 @@
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Add Academic Record
+ <div class="portlet-title">Agregar Calificación
  </div>
 <div class="ui-tabs-panel form">
 
@@ -33,12 +33,12 @@
 
 	<div class="row">
         <?php echo $form->labelEx($model,'student_academic_record_trans_qualification_id'); ?>
-	<?php echo $form->dropDownList($model,'student_academic_record_trans_qualification_id',CHtml::listData($remaining_course,'qualification_id','qualification_name'),array('empty' => 'Select Course','tabindex'=>1));?><span class="status">&nbsp;</span>
+	<?php echo $form->dropDownList($model,'student_academic_record_trans_qualification_id',CHtml::listData($remaining_course,'qualification_id','qualification_name'),array('empty' => 'Seleccionar Calificación','tabindex'=>1));?><span class="status">&nbsp;</span>
 	 <?php echo $form->error($model,'student_academic_record_trans_qualification_id'); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'student_academic_record_trans_eduboard_id'); ?>
-		<?php echo $form->dropDownList($model,'student_academic_record_trans_eduboard_id',Eduboard::items(), array('empty' => 'Select Eduboard','tabindex'=>2)); ?><span class="status">&nbsp;</span>
+		<?php echo $form->dropDownList($model,'student_academic_record_trans_eduboard_id',Eduboard::items(), array('empty' => 'Seleccionar','tabindex'=>2)); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'student_academic_record_trans_eduboard_id'); ?>
 	</div>
 	<div class="row">
@@ -47,7 +47,7 @@
 			$arr = array_combine(range($py,$y,1), range($py,$y,1));
 		?>
 		<?php echo $form->labelEx($model,'student_academic_record_trans_record_trans_year_id'); ?>
-		<?php echo $form->dropDownList($model,'student_academic_record_trans_record_trans_year_id',$arr, array('empty' => 'Select Year','tabindex'=>3)); ?><span class="status">&nbsp;</span>
+		<?php echo $form->dropDownList($model,'student_academic_record_trans_record_trans_year_id',$arr, array('empty' => 'Seleccionar','tabindex'=>3)); ?><span class="status">&nbsp;</span>
 		<?php echo $form->error($model,'student_academic_record_trans_record_trans_year_id'); ?>
 	</div>
 
@@ -92,7 +92,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save', array('class'=>'submit','tabindex'=>10)); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Agregar' : 'Guuardar', array('class'=>'submit','tabindex'=>10)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

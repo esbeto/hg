@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Academic Record'=>array('/student/studentTransaction/studentacademicrecord', 'id'=>$_REQUEST['id']),
-	'Add',
+	'Récord Académico'=>array('/student/studentTransaction/studentacademicrecord', 'id'=>$_REQUEST['id']),
+	'Agregar',
 );
 ?>
 

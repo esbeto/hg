@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	'Student '=>array('admin'),
-	'Enroll Student',
+	'Alumno '=>array('admin'),
+	'Registrar',
 );
 
 $this->menu=array(
-	
+
 	array('label'=>'', 'url'=>array('admin'),'linkOptions'=>array('class'=>'Manage','title'=>'Manage')),
 );
 ?>

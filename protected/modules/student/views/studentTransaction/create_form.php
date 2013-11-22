@@ -55,9 +55,9 @@
 
 	<div class="row">
 		<div class="row-left">
-			<?php echo $form->labelEx($info,'title'); ?>
-			<?php echo $form->dropdownList($info,'title',$info->getTitleOptions(), array('empty' => 'Select Title')); ?><span class="status">&nbsp;</span>
-			<?php echo $form->error($info,'title'); ?>
+			<?php /* echo $form->labelEx($info,'title'); ?>
+			<?php echo $form->dropdownList($info,'title',$info->getTitleOptions(), array('empty' => 'Seleccionar')); ?><span class="status">&nbsp;</span>
+			<?php echo $form->error($info,'title'); */ ?>
 		</div>
 	    	<div class="row-right">
 			<?php echo $form->labelEx($info,'student_first_name'); ?>
@@ -109,20 +109,20 @@
 
 		<div class="row-right">
 			<?php echo $form->labelEx($model,'student_academic_term_period_tran_id'); ?>
-			<?php echo $form->dropDownList($model,'student_academic_term_period_tran_id', CHtml::listData(AcademicTermPeriod::model()->findAll(), 'academic_terms_period_id', 'academic_term_period') ,array('prompt' => 'Select Year'));?><span class="status">&nbsp;</span>
+			<?php echo $form->dropDownList($model,'student_academic_term_period_tran_id', CHtml::listData(AcademicTermPeriod::model()->findAll(), 'academic_terms_period_id', 'academic_term_period') ,array('prompt' => 'Seleccionar'));?><span class="status">&nbsp;</span>
 			<?php echo $form->error($model,'student_academic_term_period_tran_id'); ?>
 		</div>
 	</div>
 	<div class="row">
 	      <div class="row-left">
 			<?php echo $form->labelEx($model,'student_academic_term_name_id'); ?>
-			<?php echo $form->dropDownList($model,'student_academic_term_name_id',$acdterm,array('prompt' => 'Select Semester'));
+			<?php echo $form->dropDownList($model,'student_academic_term_name_id',$acdterm,array('prompt' => 'Seleccionar'));
 			?><span class="status">&nbsp;</span>
 			<?php echo $form->error($model,'student_academic_term_name_id'); ?>
 		</div>
 	      <div class="row-right">
 			<?php echo $form->labelEx($model,'student_transaction_detain_student_flag'); ?>
-			<?php echo $form->dropDownList($model,'student_transaction_detain_student_flag',CHtml::listData(Studentstatusmaster::model()->findAll(), 'id', 'status_name'),array('prompt' => 'Student Status'));
+			<?php echo $form->dropDownList($model,'student_transaction_detain_student_flag',CHtml::listData(Studentstatusmaster::model()->findAll(), 'id', 'status_name'),array('prompt' => 'Seleccionar'));
 			?><span class="status">&nbsp;</span>
 			<?php echo $form->error($model,'student_transaction_detain_student_flag'); ?>
 		</div>
@@ -132,7 +132,7 @@
 	<div class="row">
 	      <div class="row-left">
 			<?php echo $form->labelEx($model,'student_transaction_course_id'); ?>
-			<?php echo $form->dropDownList($model,'student_transaction_course_id',  CHtml::listData(CourseMaster::model()->findAll(), 'course_master_id','course_name'),array('prompt' => 'Select Course'));
+			<?php echo $form->dropDownList($model,'student_transaction_course_id',  CHtml::listData(CourseMaster::model()->findAll(), 'course_master_id','course_name'),array('prompt' => 'Seleccionar'));
 			?><span class="status">&nbsp;</span>
 			<?php echo $form->error($model,'student_transaction_course_id'); ?>
 		</div>

@@ -27,16 +27,16 @@ class LoginForm extends CFormModel
 			// username and password are required
 			array('username, password ', 'required','on'=>'login','message'=>''),
 			array('username', 'required','on'=>'forgotpassword','message'=>''),
-			array('parent_username, parent_password', 'required','on'=>'parentlogin','message'=>''),		
+			array('parent_username, parent_password', 'required','on'=>'parentlogin','message'=>''),
 			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
 			array('password', 'authenticate','on'=>'login'),
 			array('parent_password', 'authenticate','on'=>'parentlogin'),
-			
+
 			array('username, password, verifyCode','required','on'=>'captchaRequired','message'=>''),
 			array('parent_username, parent_password, verifyCode','required','on'=>'parentcaptchaRequired','message'=>''),
-			
+
 			array('verifyCode', 'CaptchaExtendedValidator', 'allowEmpty'=>CCaptcha::checkRequirements()),
 
 		);
@@ -68,13 +68,13 @@ class LoginForm extends CFormModel
 			else
 			   $this->_identity=new ParentIdentity($this->parent_username,$this->parent_password);
 			if(!$this->_identity->authenticate()){
-				$this->addError('password','Incorrect username or password.');
-				$this->addError('parent_password','Incorrect username or password.');
+				$this->addError('password','Usuario o password incorrecto.');
+				$this->addError('parent_password','Usuario o password incorrecto.');
 			}
 		}
 	}
-	
-	
+
+
 	/**
 	 * Logs in the user using the given username and password in the model.
 	 * @return boolean whether login is successful

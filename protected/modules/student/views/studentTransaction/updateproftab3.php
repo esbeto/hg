@@ -6,27 +6,31 @@
 </style>
 <?php
 $this->breadcrumbs=array(
-	'Student List'=>array('admin'),
-	'Update Details',
+	'Lista de Alumnos'=>array('admin'),
+	'Actualizar Detalles',
 );?>
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Update Details
+ <div class="portlet-title">Actualizar Detalles
  </div>
 
 <div class="profile-tab profile-edit ui-tabs ui-widget ui-widget-content ui-corner-all ui-tabs-collapsible">
 
 <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
 <li class="ui-state-default ui-corner-top">
-  <?php echo CHtml::link('Personal Profile', array('updateprofiletab1', 'id'=>$_REQUEST['id'])); ?></li>
+  <?php echo CHtml::link('Perfil Personal', array('updateprofiletab1', 'id'=>$_REQUEST['id'])); ?></li>
+<!--
 <li class="ui-state-default ui-corner-top">
   <?php echo CHtml::link('Gaurdian Info', array('updateprofiletab2', 'id'=>$_REQUEST['id'])); ?></li>
+-->
 <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
-   <?php echo CHtml::link('Address Info', array('updateprofiletab3', 'id'=>$_REQUEST['id'])); ?></li>
+   <?php echo CHtml::link('Info de Dirección', array('updateprofiletab3', 'id'=>$_REQUEST['id'])); ?></li>
 <li class="ui-state-default ui-corner-top">
-   <?php echo CHtml::link('Academic Record', array('studentacademicrecord', 'id'=>$_REQUEST['id'])); ?></li>
+   <?php echo CHtml::link('Récord Académico', array('studentacademicrecord', 'id'=>$_REQUEST['id'])); ?></li>
+<!--
 <li class="ui-state-default ui-corner-top">
    <?php echo CHtml::link('Document', array('Studentdocs', 'id'=>$_REQUEST['id'])); ?></li>
+-->
 </ul>
 
 <div class="ui-tabs-panel form">
@@ -54,7 +58,7 @@ $this->breadcrumbs=array(
 	<?php echo $form->labelEx($address,'student_address_c_country'); ?>
 	<?php
 		echo $form->dropDownList($address,'student_address_c_country',Country::items(), array(
-			'prompt' => '-----------Select-----------',
+			'prompt' => 'Seleccionar',
 			'ajax' => array(
 			'type'=>'POST',
 			'url'=>CController::createUrl('dependent/UpdateStudCStates'),
@@ -70,7 +74,7 @@ $this->breadcrumbs=array(
 			if(isset($address->student_address_c_state))
 			echo $form->dropDownList($address,'student_address_c_state', CHtml::listData(State::model()->findAll(array('condition'=>'country_id='.$address->student_address_c_country)), 'state_id', 'state_name'),
 			array(
-			'prompt' => '-----------Select-----------',
+			'prompt' => 'Seleccionar',
 			'ajax' => array(
 			'type'=>'POST',
 			'url'=>CController::createUrl('dependent/UpdateStudCCities'),
@@ -79,7 +83,7 @@ $this->breadcrumbs=array(
 			)));
 			else
 			echo $form->dropDownList($address,'student_address_c_state',array(), 			array(
-			'prompt' => '-----------Select-----------',
+			'prompt' => 'Seleccionar',
 			'ajax' => array(
 			'type'=>'POST',
 			'url'=>CController::createUrl('dependent/UpdateStudCCities'),
@@ -99,7 +103,7 @@ $this->breadcrumbs=array(
 		if(isset($address->student_address_c_city))
 		echo $form->dropDownList($address,'student_address_c_city', CHtml::listData(City::model()->findAll(array('condition'=>'state_id='.$address->student_address_c_state)), 'city_id', 'city_name'));
 		else
-		echo $form->dropDownList($address,'student_address_c_city',array(), array('empty' => '-----------Select---------')); ?><span class="status">&nbsp;</span>
+		echo $form->dropDownList($address,'student_address_c_city',array(), array('empty' => 'Seleccionar')); ?><span class="status">&nbsp;</span>
 	<?php echo $form->error($address,'student_address_c_city'); ?>
 	</div>
 

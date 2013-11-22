@@ -1,36 +1,37 @@
 <?php
 $this->breadcrumbs=array(
-	'Student'=>array('update', 'id'=>$_REQUEST['id']),
-	'Academic Record',
+	'Lista de Alumnos'=>array('update', 'id'=>$_REQUEST['id']),
+	'Récord Académico',
 );?>
 <div class="portlet box blue">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Academic Record
+ <div class="portlet-title">Récord Académico
  </div>
 
 <div class="profile-tab profile-edit ui-tabs ui-widget ui-widget-content ui-corner-all ui-tabs-collapsible">
 
 <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
 <li class="ui-state-default ui-corner-top">
-  <?php echo CHtml::link('Personal Profile', array('updateprofiletab1', 'id'=>$_REQUEST['id'])); ?></li>
+  <?php echo CHtml::link('Perfil Personal', array('updateprofiletab1', 'id'=>$_REQUEST['id'])); ?></li>
+  <!--
 <li class="ui-state-default ui-corner-top">
   <?php echo CHtml::link('Gaurdian Info', array('updateprofiletab2', 'id'=>$_REQUEST['id'])); ?></li>
+-->
 <li class="ui-state-default ui-corner-top">
-   <?php echo CHtml::link('Address Info', array('updateprofiletab3', 'id'=>$_REQUEST['id'])); ?></li>
+   <?php echo CHtml::link('Info de Dirección', array('updateprofiletab3', 'id'=>$_REQUEST['id'])); ?></li>
 
 <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
-   <?php echo CHtml::link('Academic Record', array('studentacademicrecord', 'id'=>$_REQUEST['id'])); ?></li>
+   <?php echo CHtml::link('Récord Académico', array('studentacademicrecord', 'id'=>$_REQUEST['id'])); ?></li>
+   <!--
 <li class="ui-state-default ui-corner-top">
    <?php echo CHtml::link('Document', array('Studentdocs', 'id'=>$_REQUEST['id'])); ?></li>
+-->
 </ul>
 
 <div class="ui-tabs-panel form">
 
-
-<?php  if(Yii::app()->user->checkAccess('StudentTransaction.UpdateStudentData')  && (Yii::app()->user->getState('stud_id') == $_REQUEST['id']) || Yii::app()->user->checkAccess('StudentTransaction.UpdateAllStudentData')) {
-
-echo CHtml::link('Add New+',array('studentAcademicRecordTrans/create', 'id'=>$_REQUEST['id']),array('class'=>'btn green'));
-}
+<?php
+    echo CHtml::link('Agregar +',array('studentAcademicRecordTrans/create', 'id'=>$_REQUEST['id']),array('class'=>'btn green'));
 ?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(

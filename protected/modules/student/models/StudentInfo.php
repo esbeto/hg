@@ -43,8 +43,8 @@
 class StudentInfo extends CActiveRecord
 {
 
-	const TYPE_MALE='MALE';
-	const TYPE_FEMALE='FEMALE';
+	const TYPE_MALE='M';
+	const TYPE_FEMALE='F';
 	const TYPE_APLUS='A+';
 	const TYPE_AMINUS='A-';
 	const TYPE_BPLUS='B+';
@@ -90,7 +90,7 @@ class StudentInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title,student_mobile_no, student_enroll_no, student_first_name, student_last_name ,student_adm_date, student_created_by, student_creation_date, student_email_id_1', 'required','message'=>''),
+			array('student_mobile_no, student_enroll_no, student_first_name, student_last_name ,student_adm_date, student_created_by, student_creation_date, student_email_id_1', 'required','message'=>''),
 
 			array('student_gr_no, student_guardian_occupation_city, student_guardian_city_pin, student_guardian_phoneno, student_guardian_mobile,  student_created_by,student_mobile_no,student_guardian_income,student_merit_no', 'numerical', 'integerOnly'=>true,'message'=>''),
 			array('student_roll_no,student_gr_no', 'length', 'max'=>15),
@@ -151,23 +151,23 @@ class StudentInfo extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'student_id' => 'Student',
-			'title' => 'Title',
-			'student_roll_no' => 'Roll No',
-			'student_mobile_no' => 'Mobile No',
-			'student_merit_no' => 'Merit No',
-			'student_enroll_no' => 'Enrollment No',
+			'student_id' => 'ID',
+			'title' => 'Título',
+			'student_roll_no' => 'No. de Roll',
+			'student_mobile_no' => 'Teléfono',
+			'student_merit_no' => 'No Merito',
+			'student_enroll_no' => 'Matrícula',
 			'student_gr_no' => 'GR No',
-			'student_first_name' => 'First Name',
-			'student_middle_name' => 'Husband/Father Name',
-			'student_last_name' => 'Last Name',
-			'student_father_name' => 'Father Name',
-			'student_mother_name' => 'Mother Name',
+			'student_first_name' => 'Nombre',
+			'student_middle_name' => 'Apellido Paterno',
+			'student_last_name' => 'Apellidos',
+			'student_father_name' => 'Nombre de Padre',
+			'student_mother_name' => 'Nombre de Madre',
 			'student_living_status' => 'Resident Status',
-			'student_adm_date' => 'Admission Date',
-			'student_dob' => 'Date of Birth',
-			'student_birthplace' => 'Birth / Native Place',
-			'student_gender' => 'Gender',
+			'student_adm_date' => 'Fecha de Admisión',
+			'student_dob' => 'Fecha de Nacimiento',
+			'student_birthplace' => 'Lugar de Nacimiento',
+			'student_gender' => 'Sexo',
 			'student_guardian_name' => 'Name',
 			'student_guardian_relation' => 'Relation',
 			'student_guardian_qualification' => 'Qualification',
@@ -181,10 +181,10 @@ class StudentInfo extends CActiveRecord
 			'student_guardian_mobile' => 'Guardian Mobile',
 			'student_email_id_1' => 'Email',
 			'student_email_id_2' => 'Private Email ID',
-			'student_bloodgroup' => 'Blood Group',
+			'student_bloodgroup' => 'Grupo Sanguíneo',
 			'student_tally_ledger_name' => 'Tally',
-			'student_created_by' => 'Student Created By',
-			'student_creation_date' => 'Student Creation Date',
+			'student_created_by' => 'Creado Por',
+			'student_creation_date' => 'Fecha de Creación',
 			'student_dtod_regular_status'=>'DTOD/Regular Status',
 		);
 	}

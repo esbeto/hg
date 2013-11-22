@@ -23,36 +23,36 @@ $parent = new $ParentLogin;
 	<td>
 	<label> First Name </label></td><td><?php echo $studInfo->student_first_name;?>
 	</td>
-</tr>	
+</tr>
 
 <tr>
 	<td>
 	<label> Last Name </label></td><td><?php echo $studInfo->student_last_name;?>
 	</td>
-</tr>	
+</tr>
 <tr>
 	<td>
 	<label> Gender </label></td><td><?php echo $studInfo->student_gender;?>
 	</td>
-</tr>	
+</tr>
 <tr>
 	<td>
 	<label> Mobile No. </label></td><td><?php echo $studInfo->student_mobile_no;?>
 	</td>
-</tr>	
+</tr>
 <tr>
 	<td>
-	<label> Admission Date </label></td><td><?php 
+	<label> Admission Date </label></td><td><?php
 		if($studInfo->student_adm_date != NULL)
 		echo date('d-m-Y',strtotime($studInfo->student_adm_date));
 		?>
 	</td>
-</tr>	
+</tr>
 <tr>
 	<td>
-	<label> DOB </label></td><td><?php 
+	<label> DOB </label></td><td><?php
 		if($studInfo->student_dob != NULL)
-		echo date('d-m-Y',strtotime($studInfo->student_dob));		
+		echo date('d-m-Y',strtotime($studInfo->student_dob));
 		?>
 	</td>
 </tr>
@@ -61,7 +61,7 @@ $parent = new $ParentLogin;
 	<label> Academic Year </label>
 	</td>
 	<td>
-	   <?php 
+	   <?php
 		if(isset($student_transaction[0]->student_academic_term_period_tran_id))
 		  echo AcademicTermPeriod::model()->findByPk($student_transaction[0]->student_academic_term_period_tran_id)->academic_term_period;
 		else
@@ -74,7 +74,7 @@ $parent = new $ParentLogin;
 	<label> Semester </label>
 	</td>
 	<td>
-	  <?php 
+	  <?php
 		if(isset($student_transaction[0]->student_academic_term_name_id))
 		  echo AcademicTerm::model()->findByPk($student_transaction[0]->student_academic_term_name_id)->academic_term_name;
 		else
@@ -85,14 +85,14 @@ $parent = new $ParentLogin;
 <tr>
 	<td><label> Nationality </label></td>
 	<td>
-	   <?php 
+	   <?php
 		if(isset($student_transaction[0]->student_transaction_nationality_id))
 		echo Nationality::model()->findByPk($student_transaction[0]->student_transaction_nationality_id)->nationality_name;
 		else
 		echo "N/A";
 		?>
 	</td>
-</tr>		
+</tr>
 
 </table>
 </br></br>
@@ -118,7 +118,7 @@ $parent = new $ParentLogin;
 	</td>
 </tr>
 <?php if(isset(Yii::app()->modules['parents'])) { ?>
-	
+
 <tr>
 	<td>
 	<label> Parent Email ID  </label></td><td><?php echo $parent->parent_user_name;?>
@@ -170,12 +170,12 @@ $parent = new $ParentLogin;
 	<label> Language 1  </label>
 	</td>
 	<td>
-	<?php 
+	<?php
 		$lang1 = LanguagesKnown::model()->findByPk($student_transaction[0]->student_transaction_languages_known_id)->languages_known1;
 		if(isset($lang1))
 		echo Languages::model()->findByPk($lang1)->languages_name;
 		else
-		echo "N/A";	
+		echo "N/A";
 	?>
 	</td>
 </tr>
@@ -184,12 +184,12 @@ $parent = new $ParentLogin;
 	<label> Language 2  </label>
 	</td>
 	<td>
-	<?php 
+	<?php
 		$lang2 = LanguagesKnown::model()->findByPk($student_transaction[0]->student_transaction_languages_known_id)->languages_known2;
 		if(isset($lang2))
 		echo Languages::model()->findByPk($lang2)->languages_name;
 		else
-		echo "N/A";	
+		echo "N/A";
 	?>
 	</td>
 </tr>
@@ -202,25 +202,25 @@ $parent = new $ParentLogin;
 <tr>
 <td colspan="2" align="center">Current Address</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> Line1  </label></td><td><?php 
+	<label> Line1  </label></td><td><?php
 		echo $studAdd->student_address_c_line1;
 		?>
 	</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> Line2  </label></td><td><?php 
+	<label> Line2  </label></td><td><?php
 		$studAdd->student_address_c_line2;
 		?>
 	</td>
 </tr>
 
 
-<tr>	
+<tr>
 	<td>
-	<label> City </label></td><td><?php 
+	<label> City </label></td><td><?php
 		if($studAdd->student_address_c_city !=0)
 		echo City::model()->findByPk($studAdd->student_address_c_city)->city_name;
 		else
@@ -228,27 +228,27 @@ $parent = new $ParentLogin;
 		?>
 	</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> Zip / Postal Code </label></td><td><?php 
+	<label> Zip / Postal Code </label></td><td><?php
 		echo $studAdd->student_address_c_pin;
 		?>
 	</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> State / Province</label></td><td><?php 
+	<label> State / Province</label></td><td><?php
 		if($studAdd->student_address_c_state !=0)
 		echo State::model()->findByPk($studAdd->student_address_c_state)->state_name;
 		else
 			echo "";
-			
+
 		?>
 	</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> Country </label></td><td><?php 
+	<label> Country </label></td><td><?php
 		if($studAdd->student_address_c_country!=0)
 		echo  Country::model()->findByPk($studAdd->student_address_c_country)->name;
 		else
@@ -260,25 +260,25 @@ $parent = new $ParentLogin;
 <tr>
 <td colspan="2" align="center">Permanent Address</td>
 </tr>
-<tr>	
+<tr>
 	<td>
 	<label> Line1  </label></td><td><?php
 		echo $studAdd->student_address_p_line1;
 		?>
 	</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> Line2  </label></td><td><?php 
+	<label> Line2  </label></td><td><?php
 		echo $studAdd->student_address_p_line2;
 		?>
 	</td>
 </tr>
 
 
-<tr>	
+<tr>
 	<td>
-	<label> City </label></td><td><?php 
+	<label> City </label></td><td><?php
 		if($studAdd->student_address_p_city !=0)
 		echo City::model()->findByPk($studAdd->student_address_p_city)->city_name;
 		else
@@ -286,16 +286,16 @@ $parent = new $ParentLogin;
 		?>
 	</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> Zip / Postal Code </label></td><td><?php 
+	<label> Zip / Postal Code </label></td><td><?php
 		echo $studAdd->student_address_p_pin;
 		?>
 	</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> State / Province </label></td><td><?php 
+	<label> State / Province </label></td><td><?php
 		if($studAdd->student_address_p_state !=0)
 		echo State::model()->findByPk($studAdd->student_address_p_state)->state_name;
 		else
@@ -303,9 +303,9 @@ $parent = new $ParentLogin;
 		?>
 	</td>
 </tr>
-<tr>	
+<tr>
 	<td>
-	<label> Country </label></td><td><?php 
+	<label> Country </label></td><td><?php
 		if($studAdd->student_address_p_country!=0)
 		echo  Country::model()->findByPk($studAdd->student_address_p_country)->name;
 	else
@@ -327,7 +327,7 @@ if ($student_docs != null){
 
 	<tr>
 		<th>
-		      SN.		
+		      SN.
 		</th>
 		<th>
 		      Title
@@ -336,21 +336,21 @@ if ($student_docs != null){
 		      Document Category
 		</th>
 		<th width="70px">
-		      Description		
+		      Description
 		</th>
 		<th>
 		      Submit Date
 		</th>
- 		
+
  	</tr>
-	<?php 
-	
+	<?php
+
 	foreach($student_docs as $m=>$v) {
-		
+
 		$StudentDocs = StudentDocs::model()->findByPk($v['student_docs_trans_stud_docs_id']);
             ?>	<tr>
 			<td>
-			      <?php echo ++$k; ?>		
+			      <?php echo ++$k; ?>
 			</td>
 			<td>
 			      <?php echo $StudentDocs->title;?>
@@ -359,23 +359,23 @@ if ($student_docs != null){
 			      <?php echo DocumentCategoryMaster::model()->findByPk($StudentDocs->doc_category_id)->doc_category_name; ?>
 			</td>
 			<td width="70px">
-			      <?php echo $StudentDocs->student_docs_desc; ?>		
+			      <?php echo $StudentDocs->student_docs_desc; ?>
 			</td>
 			<td>
 			      <?php $docdate = date_create($StudentDocs->student_docs_submit_date);
 				echo date_format($docdate,'d-m-Y');?>
 			</td>
- 		</tr> 
+ 		</tr>
        <?php
-    
+
      }// end for loop
-	
+
 ?>
 </table>
 <?php }
-	else 
+	else
 		echo "No document available";
-	
+
 
  ?>
 </br></br>
@@ -389,7 +389,7 @@ if ($studentqualification != null){
 
 	<tr>
 		<th>
-		      SN.		
+		      SN.
 		</th>
 		<th>
 		     Qualification
@@ -418,13 +418,13 @@ if ($studentqualification != null){
 		<th>
 		   Practical Percentage
 		</th>
-		
+
  	</tr>
-	<?php 
+	<?php
 	foreach($studentqualification as $m=>$v) {
             ?>	<tr>
 			<td>
-			      <?php echo ++$k; ?>		
+			      <?php echo ++$k; ?>
 			</td>
 			<td>
 			      <?php echo Qualification::model()->findByPk($v['student_academic_record_trans_qualification_id'])->qualification_name; ?>
@@ -453,11 +453,11 @@ if ($studentqualification != null){
 			<td>
 			      <?php echo $v['practical_percentage']; ?>
 			</td>
- 		</tr> 
+ 		</tr>
        <?php
 
      }// end for loop
-	
+
 ?>
 </table>
 <?php }

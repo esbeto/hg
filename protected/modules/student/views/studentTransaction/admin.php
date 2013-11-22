@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Student'=>array('admin'),
-	'Manage',
+	'Alumno'=>array('admin'),
+	'Administrar',
 );
 
 ?>
 
-<h1>Registered Students</h1>
+<h1>Alumnos Registrados</h1>
 
 <?php
     Yii::app()->clientScript->registerScript(
@@ -43,7 +43,7 @@ $this->breadcrumbs=array(
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Student List
+ <div class="portlet-title"> Lista de Alumnos
  </div>
 
 <?php echo CHtml::link('Agregar +', array('studentTransaction/create'), array('class'=>'btn green'))?>
@@ -82,7 +82,6 @@ $dataProvider->getPagination()->setPageSize($pageSize);
 			'name' => 'student_first_name',
  	                'value' => '$data->Rel_Stud_Info->student_first_name',
                      ),
-
 		array(
 			'name' => 'student_last_name',
 	                'value' => '$data->Rel_Stud_Info->student_last_name',

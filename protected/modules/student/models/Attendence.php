@@ -22,7 +22,7 @@ class Attendence extends CActiveRecord
 {
 	public $branch_name,$division_name,$subject_master_name,$batch_name,$shift_type,$student_first_name,$academic_term_period,$academic_term_name;
 	public $acdm_period,$acdm_name,$branch,$div,$batch,$subject,$employee_first_name,$student_enroll_no,$student_roll_no,$subject_type_name,$subject_master_id;
-	public $start_date,$end_date; 
+	public $start_date,$end_date;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -54,7 +54,7 @@ class Attendence extends CActiveRecord
 			array('st_id, shift_id, sem_id, sem_name_id, branch_id, employee_id, div_id, sub_id, attendence_date,student_attendence_period_id' ,'required', 'message'=>''),
 			array('st_id, shift_id, sem_id, branch_id, div_id, sub_id, batch_id, timetable_id, attendence_organization_id, employee_id,student_attendence_period_id', 'numerical', 'integerOnly'=>true, 'message'=>''),
 			array('attendence', 'required', 'on'=>'attendencedivisionreport','message'=>''),
-			
+
 			array('sem_id, sem_name_id, branch_id, div_id', 'required', 'on'=>'update'),
 			array('attendence', 'length', 'max'=>10),
 			array('attendence_date', 'length', 'max'=>10),
@@ -83,7 +83,7 @@ class Attendence extends CActiveRecord
 				'rel_atd_sem'=>array(self::BELONGS_TO, 'AcademicTermPeriod','sem_id'),
 				'rel_atd_shift' => array(self::BELONGS_TO, 'Shift', 'shift_id'),
 				'rel_atd_student' => array(self::BELONGS_TO, 'StudentInfo','', 'on' => 'st_id=student_info_transaction_id'),
-				'rel_atd_employee' => array(self::BELONGS_TO, 'EmployeeInfo','', 'on' => 't.employee_id=employee_info_transaction_id'),				
+				'rel_atd_employee' => array(self::BELONGS_TO, 'EmployeeInfo','', 'on' => 't.employee_id=employee_info_transaction_id'),
 				'rel_atd_atn' => array(self::BELONGS_TO, 'AcademicTerm', 'sem_name_id'),
 				'Rel_sub_type'=>array(self::BELONGS_TO, 'SubjectType', 'rel_atd_subject.subject_master_id'),
 		);
@@ -142,7 +142,7 @@ class Attendence extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		if(Yii::app()->user->getState('emp_id'))
-		{		
+		{
 			/*$criteria->condition = 'attendence_organization_id= :attendence_organization_id && t.employee_id = :em_id';
 	        	$criteria->params = array(':attendence_organization_id' => Yii::app()->user->getState('org_id'),
 					':em_id' =>Yii::app()->user->getState('emp_id'),
@@ -164,7 +164,7 @@ class Attendence extends CActiveRecord
 		else
 		{
 			$acdm_terms = AcademicTerm::model()->findAll('current_sem=1 and academic_term_organization_id='.Yii::app()->user->getState('org_id'));
-		
+
 			$data = array();
 			foreach($acdm_terms as $list)
 			{
@@ -177,22 +177,22 @@ class Attendence extends CActiveRecord
 
 		}
 		$criteria->with = array('rel_atd_subject','rel_atd_student','rel_atd_employee','rel_atd_shift');  /// Note: Define relation with related table....
-		
+
 		$criteria->compare('id',$this->id);
 		$criteria->compare('st_id',$this->st_id);
 		$criteria->compare('employee_id',$this->employee_id);
-		
+
 		//$criteria->compare('rel_atd_branch.branch_name',$this->branch_name,true);  // Note: Compare related table field with relation....
-		$criteria->compare('rel_atd_student.student_enroll_no',$this->student_enroll_no,true); 
+		$criteria->compare('rel_atd_student.student_enroll_no',$this->student_enroll_no,true);
 
-		$criteria->compare('rel_atd_student.student_first_name',$this->student_first_name,true);  
-		$criteria->compare('rel_atd_employee.employee_first_name',$this->employee_first_name,true);  
-		$criteria->compare('rel_atd_shift.shift_type',$this->shift_type,true);  
-		//$criteria->compare('rel_atd_sem.academic_term_period',$this->academic_term_period,true); 
+		$criteria->compare('rel_atd_student.student_first_name',$this->student_first_name,true);
+		$criteria->compare('rel_atd_employee.employee_first_name',$this->employee_first_name,true);
+		$criteria->compare('rel_atd_shift.shift_type',$this->shift_type,true);
+		//$criteria->compare('rel_atd_sem.academic_term_period',$this->academic_term_period,true);
 
-		//$criteria->compare('rel_atd_subject.subject_master_name',$this->subject_master_name,true);  
+		//$criteria->compare('rel_atd_subject.subject_master_name',$this->subject_master_name,true);
 
-		//$criteria->compare('rel_atd_atn.academic_term_name',$this->academic_term_name,true); 
+		//$criteria->compare('rel_atd_atn.academic_term_name',$this->academic_term_name,true);
 		$criteria->compare('attendence',$this->attendence,true);
 		$criteria->compare('Rel_sub_type.subject_type_name',$this->subject_type_name,true);
 		$criteria->compare('sem_id',$this->sem_id);
@@ -227,7 +227,7 @@ class Attendence extends CActiveRecord
             else
                 return $value;
         }
- 
+
 
 	public function update_search($shift,$branch,$sem_name,$sem_period_id,$div_id,$sub_id)
 	{

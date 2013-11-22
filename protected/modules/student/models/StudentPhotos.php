@@ -37,7 +37,7 @@ class StudentPhotos extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('student_photos_path', 'required', 'on'=>'update'),
-			//array('student_photos_path', 'length', 'max'=>50),			
+			//array('student_photos_path', 'length', 'max'=>50),
 			array('student_photos_path', 'file','maxSize'=>1024*1024*2, 'tooLarge'=>'The Photo was larger than 2MB. Please upload a smaller photo.','types'=>'jpg, jpeg, gif, png, JPG', 'allowEmpty'=>true),
 			//array('student_photos_path', 'checkfile'),
 			array('student_photos_id, student_photos_desc, student_photos_path', 'safe', 'on'=>'search'),
@@ -62,8 +62,8 @@ class StudentPhotos extends CActiveRecord
 	{
 		return array(
 			'student_photos_id' => 'Student Photos',
-			'student_photos_desc' => 'Photo Description',
-			'student_photos_path' => 'Photo',
+			'student_photos_desc' => 'Descripción de Foto',
+			'student_photos_path' => 'Foto',
 		);
 	}
 
@@ -92,14 +92,14 @@ class StudentPhotos extends CActiveRecord
 		$ext = substr(strrchr($this->student_photos_path,'.'),1);
 		if($ext=="jpg")
 			{
-			    
+
 			    return true;
-				  				
+
 			}
 			else
 			{
-				$this->addError('student_photos_path',"File is not valid.");	
-				return false;					
+				$this->addError('student_photos_path',"File is not valid.");
+				return false;
 			}
 	}*/
 }

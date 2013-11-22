@@ -82,7 +82,7 @@ class StudentAcademicRecordTrans extends CActiveRecord
 	{
 	    	if(($this->theory_mark_obtained > $this->theory_mark_max) || ($this->practical_mark_obtained > $this->practical_mark_max))
 		{
-			if(($this->theory_mark_obtained > $this->theory_mark_max) && ($this->practical_mark_obtained > $this->practical_mark_max)) 
+			if(($this->theory_mark_obtained > $this->theory_mark_max) && ($this->practical_mark_obtained > $this->practical_mark_max))
 			{
 				$this->addError('theory_mark_obtained','Obtained Marks Always Less Than Max Mark');
 				$this->addError('practical_mark_obtained','Obtained Marks Always Less Than Max Mark');
@@ -91,13 +91,13 @@ class StudentAcademicRecordTrans extends CActiveRecord
 				$this->addError('theory_mark_obtained','Obtained Marks Always Less Than Max Mark');
 			else
 				$this->addError('practical_mark_obtained','Obtained Marks Always Less Than Max Mark');
-		}	
+		}
 	}
 	public function checkpercentage($attribute,$params)
 	{
 		if(($this->theory_percentage > 100) || ($this->practical_percentage > 100))
 		{
-			if(($this->theory_percentage > 100) && ($this->practical_percentage > 100)) 
+			if(($this->theory_percentage > 100) && ($this->practical_percentage > 100))
 			{
 				$this->addError('theory_percentage','Percentage Always Less Than 100');
 				$this->addError('practical_percentage','Percentage Always Less Than 100');
@@ -106,26 +106,26 @@ class StudentAcademicRecordTrans extends CActiveRecord
 				$this->addError('theory_percentage','Percentage Always Less Than 100');
 			else
 				$this->addError('practical_percentage','Percentage Always Less Than 100');
-		}	
+		}
 	}
-	
+
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
 	public function attributeLabels()
 	{
 		return array(
-			'student_academic_record_trans_id' => 'Student Academic Record Trans',
-			'student_academic_record_trans_stud_id' => 'Student Academic Record Trans Student',
-			'student_academic_record_trans_qualification_id' => 'Course',
-			'student_academic_record_trans_eduboard_id' => 'Eduboard',
-			'student_academic_record_trans_record_trans_year_id' => 'Academic Year',
-			'theory_mark_obtained' => 'Theory Mark Obtained',
-			'theory_mark_max' => 'Theory Mark Max',
-			'theory_percentage' => 'Theory Percentage',
-			'practical_mark_obtained' => 'Practical Mark Obtained',
-			'practical_mark_max' => 'Practical Mark Max',
-			'practical_percentage' => 'Practical Percentage',
+			'student_academic_record_trans_id' => 'ID',
+			'student_academic_record_trans_stud_id' => 'Alumno',
+			'student_academic_record_trans_qualification_id' => 'Clase',
+			'student_academic_record_trans_eduboard_id' => 'Consejo Educativo',
+			'student_academic_record_trans_record_trans_year_id' => 'Año Académico',
+			'theory_mark_obtained' => 'Calificación Teórica',
+			'theory_mark_max' => 'Calificación máxima posible',
+			'theory_percentage' => 'Calificación Teórica en porcentaje',
+			'practical_mark_obtained' => 'Calificación Práctica',
+			'practical_mark_max' => 'Calificación máxima posible',
+			'practical_percentage' => 'Calificación Práctica en porcentaje',
 		);
 	}
 
@@ -184,7 +184,7 @@ class StudentAcademicRecordTrans extends CActiveRecord
 			$criteria->compare('practical_mark_max',$this->practical_mark_max);
 			$criteria->compare('practical_percentage',$this->practical_percentage);
 
-			
+
 			$student_qualification = new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
 			));
@@ -196,7 +196,7 @@ class StudentAcademicRecordTrans extends CActiveRecord
 	{
 		if(($this->theory_mark_obtained > $this->theory_mark_max) || ($this->practical_mark_obtained > $this->practical_mark_max))
 		{
-			if(($this->theory_mark_obtained > $this->theory_mark_max) && ($this->practical_mark_obtained > $this->practical_mark_max)) 
+			if(($this->theory_mark_obtained > $this->theory_mark_max) && ($this->practical_mark_obtained > $this->practical_mark_max))
 			{
 				$this->addError('theory_mark_obtained','obtained Marks always Less than Max Mark');
 				$this->addError('practical_mark_obtained','obtained Marks always Less than Max Mark');
@@ -206,15 +206,15 @@ class StudentAcademicRecordTrans extends CActiveRecord
 			else
 				$this->addError('practical_mark_obtained','obtained Marks always Less than Max Mark');
 			return false;
-		
+
 		}
 		else
 		{
 			return true;
-		}	
-		
+		}
+
 
 	}
 	*/
-		
+
 }

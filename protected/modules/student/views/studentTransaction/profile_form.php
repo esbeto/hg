@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Student'=>array('admin'),
-	'Profile',
+	'Alumno'=>array('admin'),
+	'Perfil',
 );
 ?>
 <div class="operation">
@@ -16,11 +16,11 @@ $this->breadcrumbs=array(
 <?php $this->widget('zii.widgets.jui.CJuiTabs', array(
 	'headerTemplate'=>'<li><a href="{url}" title="{title}">{title}</a></li>',
         'tabs'=>array(
-          'Personal Profile' =>$this->renderPartial("tabs/view_tab1", array('lang'=>$lang, 'model' => $model, 'info'=>$info), $this),
-          'Guardian Info'=>$this->renderPartial("tabs/view_tab2", array('model' => $model, 'info'=>$info), $this),
-          'Address Info'=>$this->renderPartial("tabs/view_tab4", array('address'=>$address, 'lang'=>$lang, 'model' => $model, 'info'=>$info), $this),
-	 'Academic Record'=>$this->renderPartial("viewAcademicRecord", array('stud_qua'=>$stud_qua), $this),
-	'Documents'=>$this->renderPartial("viewDocs", array('studentdocstrans'=>$studentdocstrans), $this),
+          'Perfil Personal' =>$this->renderPartial("tabs/view_tab1", array('lang'=>$lang, 'model' => $model, 'info'=>$info), $this),
+          /*'Guardian Info'=>$this->renderPartial("tabs/view_tab2", array('model' => $model, 'info'=>$info), $this), */
+          'Info de Dirección'=>$this->renderPartial("tabs/view_tab4", array('address'=>$address, 'lang'=>$lang, 'model' => $model, 'info'=>$info), $this),
+	 'Récord Académico'=>$this->renderPartial("viewAcademicRecord", array('stud_qua'=>$stud_qua), $this),
+	/*'Documents'=>$this->renderPartial("viewDocs", array('studentdocstrans'=>$studentdocstrans), $this), */
         ),
 
 

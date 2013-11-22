@@ -54,7 +54,7 @@ class StudentAddress extends CActiveRecord
 			array('student_address_c_country, student_address_c_city, student_address_c_pin, student_address_c_state, student_address_p_city, student_address_p_pin, student_address_p_state, student_address_p_country , stud_address_chkbox', 'numerical', 'integerOnly'=>true,'message'=>''),
 
 			array(' student_address_c_pin,student_address_p_pin,student_address_phone, student_address_mobile', 'CRegularExpressionValidator', 'pattern'=>'/^([0-9]+)$/'),
-			
+
 			array('student_address_c_taluka,student_address_c_district,student_address_p_taluka,student_address_p_district','safe'),
 			array('student_address_c_pin,student_address_p_pin', 'length', 'max'=>8,'message'=>''),
 			array('student_address_phone', 'length', 'max'=>15,'message'=>''),
@@ -90,12 +90,12 @@ class StudentAddress extends CActiveRecord
 	{
 		return array(
 			'student_address_id' => 'Student Address',
-			'student_address_c_line1' => 'Line1',
-			'student_address_c_line2' => 'Line2',
-			'student_address_c_country' => 'Country',
-			'student_address_c_city' => 'City',
-			'student_address_c_pin' => 'Zip / Postal Code',
-			'student_address_c_state' => 'State / Province',
+			'student_address_c_line1' => 'Dirección',
+			'student_address_c_line2' => 'Dirección 2',
+			'student_address_c_country' => 'País',
+			'student_address_c_city' => 'Ciudad',
+			'student_address_c_pin' => 'Código Postal',
+			'student_address_c_state' => 'Estado / Provincia',
 			'student_address_p_line1' => 'Line1',
 			'student_address_p_line2' => 'Line2',
 			'student_address_p_city' => 'City',
@@ -108,7 +108,7 @@ class StudentAddress extends CActiveRecord
 			'student_address_c_district'=> 'District',
 			'student_address_p_taluka'=> 'Taluka',
 			'student_address_p_district'=> 'District',
-		
+
 		);
 	}
 
