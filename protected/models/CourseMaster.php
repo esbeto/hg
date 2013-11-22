@@ -83,16 +83,16 @@ class CourseMaster extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'course_master_id' => 'Course Master',
-			'course_name' => 'Course Name',
-			'course_category_id' => 'Course Category',
-			'course_level' => 'Course Level',
-			'course_completion_hours' => 'Course Completion Hours',
-			'course_code' => 'Course Code',
-			'course_cost' => 'Course Cost',
-			'course_desc' => 'Course Description',
-			'course_created_by' => 'Course Created By',
-			'course_creation_date' => 'Course Creation Date',
+			'course_master_id' => 'ID',
+			'course_name' => 'Clase',
+			'course_category_id' => 'Categoría',
+			'course_level' => 'Nivel',
+			'course_completion_hours' => 'Horas Requeridas',
+			'course_code' => 'Clave',
+			'course_cost' => 'Costo',
+			'course_desc' => 'Descripción',
+			'course_created_by' => 'Creado Por',
+			'course_creation_date' => 'Fecha de Creación',
 		);
 	}
 
@@ -122,6 +122,6 @@ class CourseMaster extends CActiveRecord
 		));
 		$_SESSION['course_records']=$course_data;
 		return $course_data;
-		
+
 	}
 }

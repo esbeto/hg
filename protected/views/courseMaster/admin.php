@@ -1,16 +1,16 @@
 <?php
 $this->breadcrumbs=array(
-	'Course Master'=>array('admin'),
-	'Manage',
+	'Clases'=>array('admin'),
+	'Administrar',
 );
 ?>
-<h1>Manage Courses</h1>
+<h1>Administrar Clases</h1>
  <div class="operation">
 <?php echo CHtml::link('PDF', array('exportToPDFExcel/courseExportToPdf'), array('class'=>'btnyellow', 'target'=>'_blank'));?>
 <?php echo CHtml::link('Excel', array('exportToPDFExcel/courseExportToExcel'), array('class'=>'btnblue'));?>
 </div>
 <div class="portlet box blue">
- <div class="portlet-title"> Course Master
+ <div class="portlet-title"> Clases
  </div>
 <?php echo CHtml::link('Agregar +', array('courseMaster/create'), array('class'=>'btn green'))?>
 

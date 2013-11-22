@@ -1,16 +1,16 @@
 <?php
 $this->breadcrumbs=array(
-	'Course Category'=>array('index'),
-	'Manage',
+	'Categorías de Clases'=>array('index'),
+	'Administrar',
 );
 ?>
 
-<h1>Manage Course Category</h1>
+<h1>Administrar Categorías</h1>
 
 <div class="portlet box blue">
 
 
- <div class="portlet-title"> Course Category
+ <div class="portlet-title"> Categorías
  </div>
 
 <?php echo CHtml::link('Agregar +', array('qualificationType/create'), array('class'=>'btn green'))?>

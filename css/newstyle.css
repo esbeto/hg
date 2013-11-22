@@ -64,7 +64,7 @@
   background-color: #7694BB;
   width: 17%;
   float: left;
-  min-height: 598px;
+  min-height: 555px;
 }
 
 ul#accordion > li, ul#accordion > ul > li> a  {
@@ -198,7 +198,6 @@ body {
 .page-content {
   background-color: #FFFFFF;
   margin-top: 0;
-  padding: 1.5%;
   float: left;
   width: 80%;
   height: 555px;
@@ -293,8 +292,9 @@ ul.dropdown-menu {
 
 iframe {
   float: left;
-  min-height: 555px;
-  width: 101%;
+  min-height: 535px;
+  margin: 20px;
+  width: 100%;
 }
 
 .dropdown-menu:after {
@@ -318,7 +318,7 @@ li.sub-menu {
   color: #000000;
   float: right;
   height: 20px;
-  padding: 15px;
+  padding: 15px 0;
   text-align: center;
   width: 100%;
 }

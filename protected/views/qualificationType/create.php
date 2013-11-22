@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Course Category'=>array('admin'),
-	'Create',
+	'Categorías de Clases'=>array('admin'),
+	'Agregar',
 );
 
 ?>
 
-<h1>Create Course Category</h1>
+<h1>Agregar Categoría de Clases</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
 

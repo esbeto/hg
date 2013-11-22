@@ -70,15 +70,15 @@ class CourseUnitTable extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'course_unit_id' => 'Course Unit',
-			'course_unit_master_id' => 'Course Unit Master',
-			'course_unit_ref_code' => 'Unit Ref Code',
-			'course_unit_name' => 'Unit Name',
-			'course_unit_level' => 'Unit Level',
-			'course_unit_credit' => 'Unit Credit',
-			'course_unit_hours' => 'Unit Hours',
-			'course_unit_created_by' => 'Course Unit Created By',
-			'course_unit_creation_date' => 'Course Unit Creation Date',
+			'course_unit_id' => 'ID',
+			'course_unit_master_id' => 'Unidad de Curso',
+			'course_unit_ref_code' => 'Clave de Unidad',
+			'course_unit_name' => 'Unidad',
+			'course_unit_level' => 'Nivel',
+			'course_unit_credit' => 'Créditos',
+			'course_unit_hours' => 'Horas',
+			'course_unit_created_by' => 'Creado Por',
+			'course_unit_creation_date' => 'Fecha de Creación',
 		);
 	}
 

@@ -66,10 +66,10 @@ class QualificationType extends CActiveRecord
 	{
 		return array(
 			'qualification_type_id' => 'Qualification Type',
-			'qualification_type_name' => 'Type Name',
-			'qualification_type_desc' => 'Description',
-			'qualification_type_created_by' => 'Created By',
-			'qualification_type_creation_date' => 'Creation Date',
+			'qualification_type_name' => 'Categoría',
+			'qualification_type_desc' => 'Descripción',
+			'qualification_type_created_by' => 'Creada Por',
+			'qualification_type_creation_date' => 'Fecha de Creación',
 		);
 	}
 

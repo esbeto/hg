@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-	'Course Masters'=>array('index'),
-	'Create',
+	'Clases'=>array('index'),
+	'Agregar',
 );
 
 $this->menu=array(
@@ -9,6 +9,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Course</h1>
+<h1>Agregar Clase</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

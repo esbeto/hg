@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
-	'Course Category'=>array('admin'),
+	'Categorías de Clases'=>array('admin'),
 	$model->qualification_type_name,
 );
 
 ?>
 
-<h1>View Course Category <?php //echo $model->qualification_type_id; ?></h1>
+<h1>Vista Categorías de Clases <?php //echo $model->qualification_type_id; ?></h1>
 
 <div class="operation">
 <?php echo CHtml::link('Regresar', array('admin'), array('class'=>'btnback'));?>

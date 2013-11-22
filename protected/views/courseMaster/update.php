@@ -1,9 +1,9 @@
 <?php
 $this->breadcrumbs=array(
-	'Course Masters'=>array('index'),
+	'Clases'=>array('index'),
 	//$model->course_master_id=>array('view','id'=>$model->course_master_id),
 	$model->course_name=>array(),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(
@@ -14,6 +14,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Course <?php //echo $model->course_master_id; ?></h1>
+<h1>Actualizar Curso <?php //echo $model->course_master_id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
