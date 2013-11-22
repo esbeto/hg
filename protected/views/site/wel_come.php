@@ -1,5 +1,5 @@
-<h1> Welcome to EduSec </h1>
+<h1> Bienvenido </h1>
 
-<p> There is no such organization created yet please create atleast one organization in this application </p>
+<p> Necesita agregar un Instituto </p>
 
-<?php echo CHtml::link('Create Organization',Yii::app()->createUrl('site/createOrg'));?> 
+<?php echo CHtml::link('Crear Organización',Yii::app()->createUrl('site/createOrg'));?>

@@ -1,5 +1,5 @@
 <div class="user-image">
-<?php 
+<?php
   $pic = EmployeePhotos::model()->findByPk($checkUser->employee_transaction_emp_photos_id)->employee_photos_path;?>
 <?php echo CHtml::image(Yii::app()->baseUrl.'/college_data/emp_images/'.$pic, 'Employee', array('height'=>200,'width'=>'200')); ?>
 
@@ -9,10 +9,10 @@
    $user = User::model()->findByPk(Yii::app()->user->id)->user_organization_email_id;
 ?>
 <ul class="unstyled span10 personal-profile">
-<li><label>First Name:</label><?php echo $employee->employee_first_name; ?></li>
-<li><label>Last Name:</label><?php echo $employee->employee_last_name; ?></li>
-<li><label>Gender:</label> <?php echo $employee->employee_gender; ?></li>
-<li><label>Birth Date:</label> <?php echo $employee->employee_dob; ?></li>
+<li><label>Nombre:</label><?php echo $employee->employee_first_name; ?></li>
+<li><label>Apellidos:</label><?php echo $employee->employee_last_name; ?></li>
+<li><label>Sexo:</label> <?php echo $employee->employee_gender; ?></li>
+<li><label>Nacimiento:</label> <?php echo $employee->employee_dob; ?></li>
 <li><label>Email:</label><?php echo $employee->employee_private_email; ?> </li>
 </ul>
 
@@ -24,15 +24,15 @@ $model = CourseMaster::model()->findAll(array(
 ?>
 <div class="portlet box blue" style="width: 50%; clear: left; min-height: 232px;">
 <i class="icon-reorder"></i>
- <div class="portlet-title">New Publish Course
+ <div class="portlet-title">Cursos Publicados
  </div>
 <?php if(!empty($model)) { ?>
 <table class="course-details">
 <tr>
-<th>Course Name</th>
-<th>Course Level</th>
-<th>Course Code</th>
-<th>Course Cost</th>
+<th>Nombre</th>
+<th>Nivel</th>
+<th>Clave</th>
+<th>Costo</th>
 </tr>
 <?php
   foreach($model as $list) {
@@ -59,14 +59,14 @@ $recStud = StudentTransaction::model()->findAll(array(
 ?>
 <div class="portlet box green" style="width: 47%; margin-left: 25px; min-height: 232px;">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Latest Enrolled Student
+ <div class="portlet-title">Último Alumno Registrado
  </div>
 <?php if(!empty($recStud)) { ?>
 <table class="course-details">
 <tr>
-<th style="width:140px;">Student Name</th>
-<th style="width:140px;">Enroll in Course</th>
-<th style="width:140px;">Joining Date</th>
+<th style="width:140px;">Nombre</th>
+<th style="width:140px;">Clase</th>
+<th style="width:140px;">Fecha de Admisión</th>
 </tr>
 <?php
   foreach($recStud as $list) {
@@ -81,7 +81,7 @@ $recStud = StudentTransaction::model()->findAll(array(
 </table>
 <?php }
 else
-echo '<span style="padding: 20px;">Student not Exist</span>';
+echo '<span style="padding: 20px;">No existe</span>';
 ?>
 </div>
 

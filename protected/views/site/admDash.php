@@ -6,15 +6,15 @@ $model = CourseMaster::model()->findAll(array(
 ?>
 <div class="portlet box blue" style="width: 50%; clear: left; min-height: 232px;">
 <i class="icon-reorder"></i>
- <div class="portlet-title">New Publish Course
+ <div class="portlet-title">Cursos Publicados
  </div>
 <?php if(!empty($model)) { ?>
 <table class="course-details">
 <tr>
-<th>Course Name</th>
-<th>Course Level</th>
-<th>Course Code</th>
-<th>Course Cost</th>
+<th>Nombre</th>
+<th>Nivel</th>
+<th>Clave</th>
+<th>Costo</th>
 </tr>
 <?php
   foreach($model as $list) {
@@ -41,14 +41,14 @@ $recStud = StudentTransaction::model()->findAll(array(
 ?>
 <div class="portlet box green" style="width: 47%; margin-left: 25px; min-height: 232px;">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Latest Enrolled Student
+ <div class="portlet-title">Último Alumno Registrado
  </div>
 <?php if(!empty($recStud)) { ?>
 <table class="course-details">
 <tr>
-<th style="width:140px;">Student Name</th>
-<th style="width:140px;">Enroll in Course</th>
-<th style="width:140px;">Joining Date</th>
+<th style="width:140px;">Nombre</th>
+<th style="width:140px;">Clase</th>
+<th style="width:140px;">Fecha de Admisión</th>
 </tr>
 <?php
   foreach($recStud as $list) {
@@ -67,7 +67,7 @@ echo '<span style="padding: 20px;">Student not Exist</span>';
 ?>
 </div>
 
-<?php 
+<?php
 $studCount = array();
 $courses = Yii::app()->db->createCommand()
     ->select('count(*) as studCount, student_transaction_course_id, course_name ')
@@ -81,12 +81,12 @@ foreach($courses as $course)
 ?>
 <div class="portlet box green" style="width: 50%; margin-top: 20px; overflow: hidden;">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Coursewise Students 
+ <div class="portlet-title">Alumnos por Materias
  </div>
 <?php $this->Widget('application.extensions.highcharts.HighchartsWidget',
 array(
-'options'=>array( 
-   'title'=>array('text'=>'Coursewise Student'),
+'options'=>array(
+   'title'=>array('text'=>'Alumno'),
    'colors'=> array('#F64A16', '#0ECDFD', '#FFF000'),
 'credits' => array('enabled' => true),
 'exporting' => array('enabled' => true),
@@ -95,7 +95,7 @@ array(
 		'allowPointSelect'=>true,'cursor'=>'pointer',
 		'dataLabels'=>array('enabled'=>false),
 		'showInLegend'=>true
-         )	
+         )
 ),
 'series' => array(
 	array(
@@ -108,7 +108,7 @@ array(
 );
 ?>
 </div>
-<?php 
+<?php
 
 $stud = Yii::app()->db->createCommand()
     ->select('count(*) as studCount ')
@@ -124,23 +124,23 @@ $unPaid  = $stud['studCount'] - $paidStud['paidCount'];
 
 <div class="portlet box blue" style="margin-top: 20px; overflow: hidden; width: 47%; margin-left: 25px;">
 <i class="icon-reorder"></i>
- <div class="portlet-title">Student Fees History
+ <div class="portlet-title">Historial de Pagos
  </div>
-<?php 
+<?php
 $this->Widget('application.extensions.highcharts.HighchartsWidget', array(
    'options'=>array(
       'chart' => array('type'=>'column'),
-       'colors'=> array('#C7E718', '#DB901B'), 	
-      'title' => array('text' => 'Student Fees Details'),
+       'colors'=> array('#C7E718', '#DB901B'),
+      'title' => array('text' => 'Detalles'),
  	'xAxis' => array(
-    	'categories'=> array('Paid / Unpaid')
+    	'categories'=> array('Pagado / Sin Pagar')
       ),
       'yAxis' => array(
-         'title' => array('text' => 'Paid Student Count')
+         'title' => array('text' => 'Pagado')
       ),
       'series' => array(
-         array('name' => 'Paid', 'data' => array((int)$paidStud['paidCount'])),
-         array('name' => 'Unpaid', 'data' => array((int)$unPaid))
+         array('name' => 'Pagado', 'data' => array((int)$paidStud['paidCount'])),
+         array('name' => 'Sin Pagar', 'data' => array((int)$unPaid))
       )
    )
 ));

@@ -290,7 +290,7 @@ ul.dropdown-menu {
 }
 
 
-iframe {
+#content-frame {
   float: left;
   min-height: 535px;
   margin: 20px;

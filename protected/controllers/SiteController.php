@@ -21,13 +21,13 @@ class SiteController extends Controller
 			// They can be accessed via: index.php?r=site/page&view=FileName
 			'page'=>array(
 				'class'=>'CViewAction',
-			),
+			)
 		);
 	}
 
 	public function actionWelcome()
 	{
-		$this->layout='select_company_main';		
+		$this->layout='select_company_main';
 		$this->render('wel_come',array());
 	}
 
@@ -52,7 +52,7 @@ class SiteController extends Controller
         // Uncomment the following line if AJAX validation is needed
          $this->performAjaxValidation($model);
 
-        if(isset($_POST['Organization']['organization_name']) && 
+        if(isset($_POST['Organization']['organization_name']) &&
 		!empty($_POST['Organization']['phone']) && !empty($_POST['Organization']['email']))
         {
             $country_model = new Country;
@@ -78,7 +78,7 @@ class SiteController extends Controller
             $model->state = $state_model->state_id;
             $model->country = $country_model->id;
 
-		
+
             if($model->save(false)) {
 		$user->user_organization_email_id=$model->email;
 		$user->user_password=md5($model->email.$model->email);
@@ -89,7 +89,7 @@ class SiteController extends Controller
 		$user->save();
 		$auth_assign->itemname = 'SuperAdmin';
 		$auth_assign->userid = $user->user_id;
-		$auth_assign->save(false); 
+		$auth_assign->save(false);
 
 		$this->redirect(array('redirectLogin'));
 	    }
@@ -132,7 +132,7 @@ class SiteController extends Controller
             		'model'=>$model
         				));
     	}
-	
+
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -180,14 +180,14 @@ class SiteController extends Controller
 		     $subject = "Login details for Edusec";
 		     mail($model->username, $subject, $message, $headers);
 		     $this->redirect(array('smsNotification','status'=>'success'));
-		} 
+		}
 		else
 		     $this->redirect(array('smsNotification','status'=>'user_not_exist'));
 
 		}
         	$this->render('forgotpassword', array('model'=>$model));
 	}
-	
+
 	public function actionSmsNotification()
 	{
 		$this->layout='installation_layout';
@@ -200,7 +200,7 @@ class SiteController extends Controller
 	public function actionContact()
 	{
 		$model=new ContactForm;
-                
+
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];
@@ -220,13 +220,13 @@ class SiteController extends Controller
 	 */
 
 	public function actionLogin()
-	{	
+	{
 		$this->layout='login_layout';
 		if(Yii::app()->user->isGuest)
 		{
-			
+
 		  $login=new LoginUser;
-		  $model = $this->captchaRequired()? new LoginForm('captchaRequired') : new LoginForm('login');	
+		  $model = $this->captchaRequired()? new LoginForm('captchaRequired') : new LoginForm('login');
 
 		  if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		  {
@@ -248,7 +248,7 @@ class SiteController extends Controller
 		  if($emplogin)
 		  {
 			Yii::app()->user->setState('emp_id',$emplogin->employee_transaction_id);
-		  }	
+		  }
 
 		  $login->user_id=Yii::app()->user->id;
 		  $login->status=1;
@@ -274,7 +274,7 @@ class SiteController extends Controller
 
 
 	public function captchaRequired()
-        {           
+        {
                return Yii::app()->session->itemAt('captchaRequired') >= $this->attempts;
 		//return ($this->counter >= $this->attempts);
         }
@@ -283,7 +283,7 @@ class SiteController extends Controller
 	public function actionLogout()
 	{
 		if(isset(Yii::app()->user->id)) {
-			LoginUser::model()->updateAll(array( 'status' => 0, 'log_out_time'=> new CDbExpression('NOW()')),'user_id='.Yii::app()->user->id.' AND status = 1');	
+			LoginUser::model()->updateAll(array( 'status' => 0, 'log_out_time'=> new CDbExpression('NOW()')),'user_id='.Yii::app()->user->id.' AND status = 1');
 			Yii::app()->user->logout();
 			$this->redirect(array('login'));
 		}

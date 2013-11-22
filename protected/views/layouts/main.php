@@ -145,6 +145,11 @@ function auto_logout() {
 		<li><?php echo CHtml::link('Administrar Clases', array('courseMaster/admin'), array('class'=>'changeForm')); ?></li>
 		<li><?php echo CHtml::link('Categorías de Clases', array('qualificationType/admin'), array('class'=>'changeForm')); ?></li>
 	</ul>
+	<i class="icon-user"></i>
+	<li>Juegos <i class="icon-angle-down"></i></li>
+	<ul>
+		<li><?php echo CHtml::link('Lista de Juegos', array('page', 'view'=>'juegos'), array('class'=>'changeForm')); ?></li>
+	</ul>
 	<!--
 	<i class="icon-user"></i><li>Messages <i class="icon-angle-down"></i> </li>
 	<ul>
